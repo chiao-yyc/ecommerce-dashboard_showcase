@@ -1,0 +1,84 @@
+// Gradient Mixins
+// 為各種漸變效果提供可重複使用的 mixins
+
+// 變形漸變效果
+@mixin morphing-gradient($colors...) {
+  background: linear-gradient(45deg, #{$colors});
+  background-size: 400% 400%;
+  animation: morphGradient 6s ease infinite;
+  
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+    background-size: 100% 100%;
+  }
+}
+
+// 彩虹漸變效果
+@mixin rainbow-gradient($speed: 3s) {
+  background: linear-gradient(
+    45deg,
+    #ff0000, #ff8000, #ffff00, #80ff00,
+    #00ff00, #00ff80, #00ffff, #0080ff,
+    #0000ff, #8000ff, #ff00ff, #ff0080
+  );
+  background-size: 1200% 1200%;
+  animation: rainbowFlow #{$speed} linear infinite;
+}
+
+// 漸變動畫關鍵幀
+
+@keyframes morphGradient {
+  0%, 100% { 
+    background-position: 0% 50%; 
+    filter: hue-rotate(0deg);
+  }
+  33% { 
+    background-position: 100% 0%; 
+    filter: hue-rotate(120deg);
+  }
+  66% { 
+    background-position: 0% 100%; 
+    filter: hue-rotate(240deg);
+  }
+}
+
+@keyframes rainbowFlow {
+  0% { 
+    background-position: 0% 50%; 
+  }
+  100% { 
+    background-position: 1200% 50%; 
+  }
+}
+
+// 漸變文字效果
+@mixin gradient-text($colors...) {
+  background: linear-gradient(45deg, #{$colors});
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: gradientText 3s ease infinite;
+}
+
+@keyframes gradientText {
+  0%, 100% { 
+    background-position: 0% 50%; 
+  }
+  50% { 
+    background-position: 100% 50%; 
+  }
+}
+
+// 響應式漸變 (根據視窗大小調整)
+@mixin responsive-gradient($colors...) {
+  background: linear-gradient(45deg, #{$colors});
+  
+  @media (max-width: 768px) {
+    background: linear-gradient(0deg, #{$colors});
+  }
+  
+  @media (max-width: 480px) {
+    background: linear-gradient(90deg, #{$colors});
+  }
+}

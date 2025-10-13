@@ -1,0 +1,216 @@
+// Modern Glass Effect Mixins - 現代毛玻璃效果系統
+// 基於 Glass UI 設計規範和現代瀏覽器最佳實踐
+// 參考：https://ui.glass/generator
+
+// ==========================================================================
+// Glass Blur System - 模糊效果系統
+// ==========================================================================
+
+// 標準毛玻璃效果 - 基於業界標準 20px blur
+@mixin glass-base($blur: 20px, $saturation: 180%) {
+  backdrop-filter: blur($blur) saturate($saturation);
+  -webkit-backdrop-filter: blur($blur) saturate($saturation);
+  border-radius: var(--radius);
+  position: relative;
+  
+  // 微光邊框效果
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  
+  // 立體陰影系統
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.12),
+    0 2px 8px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+    
+  // Firefox 後備方案
+  @supports not (backdrop-filter: blur(20px)) {
+    background: rgba(255, 255, 255, 0.9);
+    
+    .dark & {
+      background: rgba(0, 0, 0, 0.8);
+    }
+  }
+}
+
+// 玻璃透明度等級系統
+@mixin glass-opacity-subtle {
+  background: rgba(255, 255, 255, 0.12);
+  
+  .dark & {
+    background: rgba(255, 255, 255, 0.08);
+  }
+}
+
+@mixin glass-opacity-light {
+  background: rgba(255, 255, 255, 0.18);
+  
+  .dark & {
+    background: rgba(255, 255, 255, 0.12);
+  }
+}
+
+@mixin glass-opacity-medium {
+  background: rgba(255, 255, 255, 0.25);
+  
+  .dark & {
+    background: rgba(255, 255, 255, 0.15);
+  }
+}
+
+@mixin glass-opacity-strong {
+  background: rgba(255, 255, 255, 0.35);
+  
+  .dark & {
+    background: rgba(255, 255, 255, 0.20);
+  }
+}
+
+@mixin glass-opacity-intense {
+  background: rgba(255, 255, 255, 0.45);
+  
+  .dark & {
+    background: rgba(255, 255, 255, 0.25);
+  }
+}
+
+// ==========================================================================
+// Glass Component System - 組件專用玻璃效果
+// ==========================================================================
+
+// 玻璃卡片效果 - 中等層次感
+@mixin glass-card($opacity-level: 'light') {
+  @include glass-base();
+  @include glass-opacity-light;
+  
+  // 卡片特有的軟陰影
+  box-shadow: 
+    0 4px 24px rgba(0, 0, 0, 0.08),
+    0 1px 6px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+      0 8px 40px rgba(0, 0, 0, 0.12),
+      0 2px 12px rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  }
+}
+
+// 玻璃按鈕效果 - 輕量互動
+@mixin glass-button() {
+  @include glass-base(16px, 160%);
+  @include glass-opacity-subtle;
+  
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  min-height: 40px;
+  
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  
+  &:hover {
+    @include glass-opacity-light;
+    transform: translateY(-1px);
+    
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.10),
+      0 2px 8px rgba(0, 0, 0, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  }
+  
+  &:active {
+    transform: translateY(0);
+    @include glass-opacity-subtle;
+    
+    box-shadow: 
+      0 2px 16px rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+  
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+  }
+}
+
+// 玻璃輸入框效果 - 柔和互動
+@mixin glass-input() {
+  @include glass-base(12px, 140%);
+  @include glass-opacity-subtle;
+  
+  padding: 12px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  color: hsl(var(--foreground));
+  
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &:focus {
+    outline: none;
+    @include glass-opacity-light;
+    border-color: rgba(255, 255, 255, 0.35);
+    
+    box-shadow: 
+      0 0 0 3px rgba(255, 255, 255, 0.15),
+      0 4px 24px rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  }
+  
+  &::placeholder {
+    color: hsl(var(--muted-foreground));
+    opacity: 0.7;
+  }
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+// 玻璃側邊欄效果 - 強層次感
+@mixin glass-sidebar() {
+  @include glass-base(24px, 200%);
+  @include glass-opacity-medium;
+  
+  // 側邊欄特有的深度陰影
+  box-shadow: 
+    0 12px 48px rgba(0, 0, 0, 0.12),
+    0 4px 16px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset -1px 0 0 rgba(255, 255, 255, 0.2);
+}
+
+// 玻璃彈窗效果 - 最強層次感
+@mixin glass-modal() {
+  @include glass-base(30px, 220%);
+  @include glass-opacity-strong;
+  
+  // 彈窗特有的強烈立體感
+  box-shadow: 
+    0 20px 80px rgba(0, 0, 0, 0.20),
+    0 8px 32px rgba(0, 0, 0, 0.12),
+    0 2px 8px rgba(0, 0, 0, 0.08),
+    inset 0 2px 0 rgba(255, 255, 255, 0.6),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+}
+
+// 玻璃導航效果 - 輕量清透
+@mixin glass-navigation() {
+  @include glass-base(16px, 160%);
+  @include glass-opacity-subtle;
+  
+  // 導航欄特有的輕量陰影
+  box-shadow: 
+    0 2px 16px rgba(0, 0, 0, 0.06),
+    0 1px 4px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+}

@@ -1,0 +1,79 @@
+# =========================================
+# 電商管理平台 - 生產環境 Docker Compose
+# =========================================
+# 用途: 部署前端應用和文件服務
+# 注意: Supabase 應在雲端伺服器上獨立部署
+#
+# 使用方式:
+# 1. 配置 .env.production（設定 VITE_SUPABASE_URL 為雲端 Supabase API）
+# 2. 啟動服務: docker compose -f docker-compose.prod.yml up -d
+# 或使用腳本: ./scripts/prod.sh up
+
+version: '3.8'
+
+services:
+  # =========================================
+  # 前端應用服務（Nginx + 靜態檔案）
+  # =========================================
+  admin-vue:
+    build:
+      context: ./admin-platform-vue
+      # 使用生產環境 Dockerfile（多階段建置）
+      dockerfile: Dockerfile
+    ports:
+      # 對外開放 8080 埠，對應容器內 nginx 的 80 埠
+      - "8080:80"
+    env_file:
+      # 使用生產環境變數（包含 Supabase API URL）
+      - ./.env.production
+    networks:
+      - default
+    # 生產環境不需要 volume mount
+    # Nginx 會直接提供建置後的靜態檔案
+    restart: unless-stopped
+    # 通過 VITE_SUPABASE_URL 環境變數連接雲端 Supabase（HTTP連線）
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/health"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+
+  # =========================================
+  # VitePress 文件服務（生產環境）
+  # =========================================
+  docs:
+    build:
+      context: .
+      # 使用生產環境 Dockerfile（Build + Nginx）
+      dockerfile: Dockerfile.docs.prod
+    ports:
+      # 對外開放 8081 埠，對應容器內的 8080 埠（Cloud Run 預設）
+      - "8081:8080"
+    environment:
+      # 設定 PORT 環境變數（本地測試用，Cloud Run 會自動提供）
+      - PORT=8080
+    networks:
+      - default
+    restart: unless-stopped
+    # 健康檢查
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+
+# =========================================
+# Named Volumes
+# =========================================
+# 注意: 生產環境使用 Nginx 提供靜態檔案，不需要 node_modules volume
+volumes:
+
+# =========================================
+# Networks
+# =========================================
+networks:
+  # 前端和文件服務使用內部網路
+  # 前端通過環境變數中的 VITE_SUPABASE_URL 連接雲端 Supabase（HTTP）
+  default:

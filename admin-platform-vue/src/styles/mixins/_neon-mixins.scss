@@ -1,0 +1,518 @@
+// Neon Glow Mixins  
+// 為霓虹發光效果提供可重複使用的 mixins
+
+// 基礎霓虹發光效果
+@mixin neon-glow($r: 0, $g: 255, $b: 255, $intensity: 1) {
+  $color: rgb($r, $g, $b);
+  $base-shadow: 0 0 5px rgba($r, $g, $b, 0.5 * $intensity);
+  $mid-shadow: 0 0 20px rgba($r, $g, $b, 0.4 * $intensity);  
+  $far-shadow: 0 0 35px rgba($r, $g, $b, 0.3 * $intensity);
+  
+  box-shadow: #{$base-shadow}, #{$mid-shadow}, #{$far-shadow};
+  border: 1px solid rgba($r, $g, $b, 0.3);
+  transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &:hover {
+    $hover-base: 0 0 8px rgba($r, $g, $b, 0.6 * $intensity);
+    $hover-mid: 0 0 25px rgba($r, $g, $b, 0.5 * $intensity);
+    $hover-far: 0 0 40px rgba($r, $g, $b, 0.4 * $intensity);
+    
+    box-shadow: #{$hover-base}, #{$hover-mid}, #{$hover-far};
+  }
+}
+
+// 霓虹文字效果 (v2 - 柔和且兼容亮/暗模式)
+@mixin neon-text($r: 0, $g: 255, $b: 255, $size: 1) {
+  color: rgb($r, $g, $b);
+
+  // 預設 (淺色模式) 樣式：
+  // 效果較收斂，更像輪廓光，確保在白底上的可讀性
+  text-shadow:
+    0 0 2px rgba($r, $g, $b, 0.5 * $size),
+    0 0 6px rgba($r, $g, $b, 0.3 * $size),
+    0 0 12px rgba($r, $g, $b, 0.2 * $size);
+
+  // 當處於暗色模式 (.dark) 中時，使用更強、更柔和的發光效果
+  .dark & {
+    text-shadow:
+      0 0 4px rgba($r, $g, $b, 0.9 * $size),
+      0 0 8px rgba($r, $g, $b, 0.8 * $size),
+      0 0 16px rgba($r, $g, $b, 0.6 * $size),
+      0 0 24px rgba($r, $g, $b, 0.4 * $size),
+      0 0 40px rgba($r, $g, $b, 0.2 * $size);
+  }
+}
+
+// 脈動霓虹效果
+@mixin neon-pulse($r: 0, $g: 255, $b: 255) {
+  animation: neonPulse 2s ease-in-out infinite alternate;
+  
+  @keyframes neonPulse {
+    from {
+      box-shadow: 
+        0 0 5px rgba($r, $g, $b, 0.4),
+        0 0 10px rgba($r, $g, $b, 0.3),
+        0 0 15px rgba($r, $g, $b, 0.2);
+    }
+    to {
+      box-shadow: 
+        0 0 10px rgba($r, $g, $b, 0.8),
+        0 0 20px rgba($r, $g, $b, 0.6),
+        0 0 30px rgba($r, $g, $b, 0.4);
+    }
+  }
+}
+
+// 閃爍霓虹效果
+@mixin neon-flicker($r: 0, $g: 255, $b: 255) {
+  animation: neonFlicker 4s linear infinite;
+  
+  @keyframes neonFlicker {
+    0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+      opacity: 1;
+      box-shadow: 
+        0 0 5px rgba($r, $g, $b, 0.5),
+        0 0 20px rgba($r, $g, $b, 0.4),
+        0 0 35px rgba($r, $g, $b, 0.3);
+    }
+    20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+      opacity: 0.4;
+      box-shadow: none;
+    }
+  }
+}
+
+// 賽博龐克邊框
+@mixin cyber-border($r: 0, $g: 255, $b: 255, $width: 2px) {
+  position: relative;
+  border: none;
+  background: rgba($r, $g, $b, 0.1);
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      45deg,
+      transparent 30%,
+      rgba($r, $g, $b, 0.8) 50%,
+      transparent 70%
+    );
+    padding: #{$width};
+    border-radius: inherit;
+    mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    mask-composite: subtract;
+    -webkit-mask-composite: source-out;
+    animation: cyberScan 3s linear infinite;
+  }
+  
+  @keyframes cyberScan {
+    0% { 
+      background-position: -200% 0; 
+    }
+    100% { 
+      background-position: 200% 0; 
+    }
+  }
+}
+
+// 霓虹按鈕效果
+@mixin neon-button($r: 0, $g: 255, $b: 255) {
+  @include neon-glow($r, $g, $b, 0.8);
+  background: rgba($r, $g, $b, 0.1);
+  color: rgb($r, $g, $b);
+  border: 1px solid rgba($r, $g, $b, 0.5);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &:hover {
+    @include neon-glow($r, $g, $b, 1.2);
+    background: rgba($r, $g, $b, 0.2);
+    transform: translateY(-2px);
+  }
+  
+  &:active {
+    transform: translateY(0);
+    @include neon-glow($r, $g, $b, 0.6);
+  }
+}
+
+// 雙色霓虹效果
+@mixin dual-neon($r1: 255, $g1: 0, $b1: 255, $r2: 0, $g2: 255, $b2: 255) {
+  box-shadow: 
+    -5px 0 10px rgba($r1, $g1, $b1, 0.5),
+    5px 0 10px rgba($r2, $g2, $b2, 0.5),
+    0 0 20px rgba($r1, $g1, $b1, 0.3),
+    0 0 30px rgba($r2, $g2, $b2, 0.3);
+  border: 1px solid;
+  border-image: linear-gradient(
+    45deg, 
+    rgba($r1, $g1, $b1, 0.8), 
+    rgba($r2, $g2, $b2, 0.8)
+  ) 1;
+}
+
+// 預設霓虹色彩方案
+@mixin neon-cyan() {
+  @include neon-glow(0, 255, 255);
+}
+
+@mixin neon-pink() {
+  @include neon-glow(255, 20, 147);
+}
+
+@mixin neon-green() {
+  @include neon-glow(57, 255, 20);
+}
+
+@mixin neon-purple() {
+  @include neon-glow(138, 43, 226);
+}
+
+@mixin neon-orange() {
+  @include neon-glow(255, 165, 0);
+}
+
+// ========================================================================== 
+// 自適應雙模式霓虹效果
+// ========================================================================== 
+
+// 自適應霓虹光暈 - 根據模式自動選擇顏色
+@mixin adaptive-neon-glow($light-r: 74, $light-g: 14, $light-b: 78, $dark-r: 0, $dark-g: 255, $dark-b: 255, $intensity: 1) {
+  // Light 模式：深色調，確保在白底上可讀
+  :not(.dark) & {
+    @include neon-glow($light-r, $light-g, $light-b, $intensity);
+  }
+  
+  // Dark 模式：亮色調，保持炫酷效果
+  .dark & {
+    @include neon-glow($dark-r, $dark-g, $dark-b, $intensity);
+  }
+}
+
+// 自適應霓虹文字 - 根據模式自動選擇顏色（柔和版本）
+@mixin adaptive-neon-text($light-r: 74, $light-g: 14, $light-b: 78, $dark-r: 0, $dark-g: 255, $dark-b: 255, $size: 1) {
+  // Light 模式：深色調，柔和光暈
+  :not(.dark) & {
+    color: rgb($light-r, $light-g, $light-b);
+    text-shadow:
+      0 0 2px rgba($light-r, $light-g, $light-b, 0.4 * $size),
+      0 0 6px rgba($light-r, $light-g, $light-b, 0.2 * $size),
+      0 0 12px rgba($light-r, $light-g, $light-b, 0.1 * $size);
+  }
+  
+  // Dark 模式：亮色調，柔和光暈
+  .dark & {
+    color: rgb($dark-r, $dark-g, $dark-b);
+    text-shadow:
+      0 0 3px rgba($dark-r, $dark-g, $dark-b, 0.5 * $size),
+      0 0 8px rgba($dark-r, $dark-g, $dark-b, 0.3 * $size),
+      0 0 16px rgba($dark-r, $dark-g, $dark-b, 0.2 * $size),
+      0 0 24px rgba($dark-r, $dark-g, $dark-b, 0.1 * $size);
+  }
+}
+
+// 自適應霓虹按鈕
+@mixin adaptive-neon-button($light-r: 74, $light-g: 14, $light-b: 78, $dark-r: 0, $dark-g: 255, $dark-b: 255) {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  // Light 模式
+  :not(.dark) & {
+    @include neon-glow($light-r, $light-g, $light-b, 0.8);
+    background: rgba($light-r, $light-g, $light-b, 0.08);
+    color: rgb($light-r, $light-g, $light-b);
+    border: 1px solid rgba($light-r, $light-g, $light-b, 0.4);
+    
+    &:hover {
+      @include neon-glow($light-r, $light-g, $light-b, 1.2);
+      background: rgba($light-r, $light-g, $light-b, 0.15);
+      transform: translateY(-2px);
+    }
+    
+    &:active {
+      transform: translateY(0);
+      @include neon-glow($light-r, $light-g, $light-b, 0.6);
+    }
+  }
+  
+  // Dark 模式
+  .dark & {
+    @include neon-glow($dark-r, $dark-g, $dark-b, 0.8);
+    background: rgba($dark-r, $dark-g, $dark-b, 0.1);
+    color: rgb($dark-r, $dark-g, $dark-b);
+    border: 1px solid rgba($dark-r, $dark-g, $dark-b, 0.5);
+    
+    &:hover {
+      @include neon-glow($dark-r, $dark-g, $dark-b, 1.2);
+      background: rgba($dark-r, $dark-g, $dark-b, 0.2);
+      transform: translateY(-2px);
+    }
+    
+    &:active {
+      transform: translateY(0);
+      @include neon-glow($dark-r, $dark-g, $dark-b, 0.6);
+    }
+  }
+}
+
+// ========================================================================== 
+// Light 模式專用深色調霓虹預設
+// ========================================================================== 
+
+// Light 模式適用的深色霓虹色彩
+@mixin adaptive-neon-purple() {
+  @include adaptive-neon-glow(74, 14, 78, 255, 0, 150); // 深紫 → 亮粉
+}
+
+@mixin adaptive-neon-blue() {
+  @include adaptive-neon-glow(10, 37, 64, 0, 255, 255); // 深藍 → 亮青
+}
+
+@mixin adaptive-neon-red() {
+  @include adaptive-neon-glow(139, 0, 0, 255, 64, 96); // 深紅 → 亮紅
+}
+
+@mixin adaptive-neon-teal() {
+  @include adaptive-neon-glow(19, 64, 64, 57, 255, 20); // 深青綠 → 亮綠
+}
+
+// 自適應文字顏色預設
+@mixin adaptive-neon-text-purple() {
+  @include adaptive-neon-text(74, 14, 78, 255, 0, 150);
+}
+
+@mixin adaptive-neon-text-blue() {
+  @include adaptive-neon-text(10, 37, 64, 0, 255, 255);
+}
+
+@mixin adaptive-neon-text-red() {
+  @include adaptive-neon-text(139, 0, 0, 255, 64, 96);
+}
+
+// 自適應按鈕顏色預設  
+@mixin adaptive-neon-button-purple() {
+  @include adaptive-neon-button(74, 14, 78, 255, 0, 150);
+}
+
+@mixin adaptive-neon-button-blue() {
+  @include adaptive-neon-button(10, 37, 64, 0, 255, 255);
+}
+
+@mixin adaptive-neon-button-red() {
+  @include adaptive-neon-button(139, 0, 0, 255, 64, 96);
+}
+
+// ========================================================================== 
+// 文字與光暈分離設計系統
+// ========================================================================== 
+
+// 分離式自適應霓虹文字 - 文字色與光暈色獨立控制
+@mixin separated-neon-text(
+  $light-text-r: 120, $light-text-g: 45, $light-text-b: 135,
+  $light-glow-r: 200, $light-glow-g: 150, $light-glow-b: 220,
+  $dark-text-r: 255, $dark-text-g: 0, $dark-text-b: 150,
+  $dark-glow-r: 255, $dark-glow-g: 100, $dark-glow-b: 200,
+  $intensity: 1
+) {
+  // Light 模式：優雅專業配色
+  :not(.dark) & {
+    color: rgb($light-text-r, $light-text-g, $light-text-b);
+    text-shadow:
+      0 0 2px rgba($light-glow-r, $light-glow-g, $light-glow-b, 0.4 * $intensity),
+      0 0 6px rgba($light-glow-r, $light-glow-g, $light-glow-b, 0.2 * $intensity),
+      0 0 12px rgba($light-glow-r, $light-glow-g, $light-glow-b, 0.1 * $intensity);
+  }
+  
+  // Dark 模式：保持霓虹炫酷感
+  .dark & {
+    color: rgb($dark-text-r, $dark-text-g, $dark-text-b);
+    text-shadow:
+      0 0 3px rgba($dark-glow-r, $dark-glow-g, $dark-glow-b, 0.5 * $intensity),
+      0 0 8px rgba($dark-glow-r, $dark-glow-g, $dark-glow-b, 0.3 * $intensity),
+      0 0 16px rgba($dark-glow-r, $dark-glow-g, $dark-glow-b, 0.2 * $intensity),
+      0 0 24px rgba($dark-glow-r, $dark-glow-g, $dark-glow-b, 0.1 * $intensity);
+  }
+}
+
+// 多層漸層光暈文字 - 三層光暈效果
+@mixin gradient-neon-text(
+  $text-r: 120, $text-g: 45, $text-b: 135,
+  $inner-r: 200, $inner-g: 150, $inner-b: 220,
+  $middle-r: 255, $middle-g: 200, $middle-b: 180,
+  $outer-r: 255, $outer-g: 220, $outer-b: 200,
+  $intensity: 1
+) {
+  // Light 模式：漸層光暈
+  :not(.dark) & {
+    color: rgb($text-r, $text-g, $text-b);
+    text-shadow:
+      0 0 2px rgba($inner-r, $inner-g, $inner-b, 0.5 * $intensity),   // 內層：相近色
+      0 0 8px rgba($middle-r, $middle-g, $middle-b, 0.3 * $intensity), // 中層：過渡色
+      0 0 16px rgba($outer-r, $outer-g, $outer-b, 0.2 * $intensity);   // 外層：溫暖色
+  }
+  
+  // Dark 模式使用原有邏輯
+  .dark & {
+    color: rgb($text-r + 100, $text-g + 100, $text-b + 50); // 自動調亮
+    text-shadow:
+      0 0 3px rgba($text-r + 100, $text-g + 100, $text-b + 50, 0.5 * $intensity),
+      0 0 8px rgba($text-r + 100, $text-g + 100, $text-b + 50, 0.3 * $intensity),
+      0 0 16px rgba($text-r + 100, $text-g + 100, $text-b + 50, 0.2 * $intensity);
+  }
+}
+
+// ========================================================================== 
+// 優雅專業風配色預設
+// ========================================================================== 
+
+// 深紫文字 + 淡粉光暈：優雅專業
+@mixin elegant-purple-text() {
+  @include separated-neon-text(
+    120, 45, 135,    // Light 文字：深紫色
+    200, 150, 220,   // Light 光暈：淡紫粉
+    255, 100, 200,   // Dark 文字：亮粉紫
+    255, 150, 255    // Dark 光暈：亮粉色
+  );
+}
+
+// 深藍文字 + 淡青光暈：商務專業
+@mixin professional-blue-text() {
+  @include separated-neon-text(
+    45, 85, 135,     // Light 文字：商務深藍
+    150, 200, 255,   // Light 光暈：天空藍
+    100, 200, 255,   // Dark 文字：亮藍色
+    150, 220, 255    // Dark 光暈：淡藍色
+  );
+}
+
+// 酒紅文字 + 珊瑚光暈：溫暖活力
+@mixin warm-coral-text() {
+  @include separated-neon-text(
+    150, 45, 65,     // Light 文字：酒紅色
+    255, 180, 150,   // Light 光暈：珊瑚粉
+    255, 120, 120,   // Dark 文字：亮紅色
+    255, 180, 180    // Dark 光暈：淡紅粉
+  );
+}
+
+// 森林綠文字 + 薄荷光暈：自然清新
+@mixin fresh-mint-text() {
+  @include separated-neon-text(
+    60, 120, 80,     // Light 文字：森林綠
+    180, 255, 200,   // Light 光暈：薄荷綠
+    120, 255, 150,   // Dark 文字：亮綠色
+    180, 255, 200    // Dark 光暈：薄荷色
+  );
+}
+
+// 靛青文字 + 電光藍光暈：現代科技
+@mixin tech-indigo-text() {
+  @include separated-neon-text(
+    75, 90, 140,     // Light 文字：現代靛青
+    120, 180, 255,   // Light 光暈：電光藍
+    150, 180, 255,   // Dark 文字：亮靛青
+    120, 200, 255    // Dark 光暈：科技藍
+  );
+}
+
+// 漸層光暈預設：多層次溫暖效果
+@mixin gradient-warm-text() {
+  @include gradient-neon-text(
+    120, 45, 135,    // 文字：深紫色
+    200, 150, 220,   // 內層：淡紫粉
+    255, 200, 180,   // 中層：蜜桃色
+    255, 220, 200    // 外層：溫暖米色
+  );
+}
+
+// ========================================================================== 
+// 方案二：溫暖對比風專用 Mixin
+// ========================================================================== 
+
+// 酒紅標題 + 珊瑚光暈
+@mixin warm-scheme-title() {
+  @include separated-neon-text(
+    150, 45, 65,     // Light 文字：酒紅色
+    255, 180, 150,   // Light 光暈：珊瑚粉
+    255, 120, 120,   // Dark 文字：亮紅色
+    255, 180, 180    // Dark 光暈：淡紅粉
+  );
+}
+
+// 森林綠按鈕 + 薄荷光暈
+@mixin warm-scheme-button() {
+  @include adaptive-neon-button(60, 120, 80, 120, 255, 150);
+}
+
+// 深橙警告 + 蜜桃光暈
+@mixin warm-scheme-warning() {
+  @include separated-neon-text(
+    180, 90, 30,     // Light 文字：深橙色
+    255, 200, 150,   // Light 光暈：蜜桃色
+    255, 150, 80,    // Dark 文字：亮橙色
+    255, 200, 120    // Dark 光暈：金橙色
+  );
+}
+
+// 森林綠成功 + 薄荷光暈
+@mixin warm-scheme-success() {
+  @include separated-neon-text(
+    60, 120, 80,     // Light 文字：森林綠
+    180, 255, 200,   // Light 光暈：薄荷綠
+    120, 255, 150,   // Dark 文字：亮綠色
+    180, 255, 200    // Dark 光暈：薄荷色
+  );
+}
+
+// ========================================================================== 
+// 方案三：現代科技風專用 Mixin
+// ========================================================================== 
+
+// 靛青標題 + 電光藍光暈
+@mixin tech-scheme-title() {
+  @include separated-neon-text(
+    75, 90, 140,     // Light 文字：現代靛青
+    120, 180, 255,   // Light 光暈：電光藍
+    150, 180, 255,   // Dark 文字：亮靛青
+    120, 200, 255    // Dark 光暈：科技藍
+  );
+}
+
+// 靛青按鈕 + 科技藍光暈
+@mixin tech-scheme-button() {
+  @include adaptive-neon-button(75, 90, 140, 100, 200, 255);
+}
+
+// 深橙警告 + 蜜桃光暈（與方案二相同）
+@mixin tech-scheme-warning() {
+  @include separated-neon-text(
+    180, 90, 30,     // Light 文字：深橙色
+    255, 200, 150,   // Light 光暈：蜜桃色
+    255, 150, 80,    // Dark 文字：亮橙色
+    255, 200, 120    // Dark 光暈：金橙色
+  );
+}
+
+// 科技綠成功 + 螢光綠光暈
+@mixin tech-scheme-success() {
+  @include separated-neon-text(
+    60, 140, 120,    // Light 文字：科技綠
+    120, 255, 200,   // Light 光暈：螢光綠
+    120, 255, 180,   // Dark 文字：亮科技綠
+    150, 255, 220    // Dark 光暈：淡螢光綠
+  );
+}
+
+// 靛青專業文字 + 科技藍光暈
+@mixin tech-scheme-professional() {
+  @include separated-neon-text(
+    65, 80, 130,     // Light 文字：深靛青
+    110, 170, 245,   // Light 光暈：淡電光藍
+    130, 180, 255,   // Dark 文字：中等靛青
+    150, 200, 255    // Dark 光暈：亮科技藍
+  );
+}

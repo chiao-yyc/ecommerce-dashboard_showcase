@@ -1,0 +1,65 @@
+# =========================================
+# Cloud Build 配置 - VitePress 文件服務
+# =========================================
+# 用於 GCP Console 手動建置和部署
+
+steps:
+  # 步驟 1: 建置 Docker 映像（多階段建置：VitePress Build + Nginx）
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '-f'
+      - 'Dockerfile.docs.prod'
+      - '-t'
+      - 'asia-east1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/ecommerce-dashboard/docs:$COMMIT_SHA'
+      - '-t'
+      - 'asia-east1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/ecommerce-dashboard/docs:latest'
+      - '.'
+
+  # 步驟 2: 推送映像到 Artifact Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'push'
+      - 'asia-east1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/ecommerce-dashboard/docs:$COMMIT_SHA'
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'push'
+      - 'asia-east1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/ecommerce-dashboard/docs:latest'
+
+  # 步驟 3: 部署到 Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:slim'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'deploy'
+      - 'ecommerce-docs'
+      - '--image'
+      - 'asia-east1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/ecommerce-dashboard/docs:$COMMIT_SHA'
+      - '--region'
+      - 'asia-east1'
+      - '--platform'
+      - 'managed'
+      - '--allow-unauthenticated'
+      - '--port'
+      - '8080'
+      - '--cpu'
+      - '1'
+      - '--memory'
+      - '512Mi'
+      - '--min-instances'
+      - '0'
+      - '--max-instances'
+      - '5'
+
+# 註：VitePress 文件服務為純靜態內容，無需環境變數
+
+# 建置選項
+options:
+  machineType: 'E2_HIGHCPU_8'  # 使用更快的機器加速建置
+  logging: CLOUD_LOGGING_ONLY
+
+# 產出映像
+images:
+  - 'asia-east1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/ecommerce-dashboard/docs:$COMMIT_SHA'
+  - 'asia-east1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/ecommerce-dashboard/docs:latest'

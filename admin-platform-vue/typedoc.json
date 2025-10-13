@@ -1,0 +1,32 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": [
+    "src/api/services/OrderAnalyticsService.ts",
+    "src/api/services/ProductAnalyticsService.ts",
+    "src/api/services/CustomerAnalyticsZeroExpansionService.ts",
+    "src/api/services/CustomerSegmentationService.ts",
+    "src/api/services/SupportAnalyticsApiService.ts",
+    "src/api/services/AgentApiService.ts",
+    "src/api/services/CampaignScoringApiService.ts",
+    "src/api/services/GroupNotificationApiService.ts",
+    "src/api/services/HolidayApiService.ts",
+    "src/api/services/NotificationApiService.ts"
+  ],
+  "out": "../docs/02-development/api/auto-generated",
+  "plugin": ["typedoc-plugin-markdown"],
+  "excludePrivate": true,
+  "excludeProtected": false,
+  "excludeInternal": true,
+  "excludeExternals": true,
+  "readme": "none",
+  "disableSources": false,
+  "hideGenerator": true,
+  "gitRevision": "docs",
+  "name": "E-commerce API Services - Auto-generated Documentation",
+  "includeVersion": true,
+  "skipErrorChecking": true,
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "noEmit": true
+  }
+}

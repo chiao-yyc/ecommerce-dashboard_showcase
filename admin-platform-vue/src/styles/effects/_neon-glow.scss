@@ -1,0 +1,411 @@
+// Neon Glow Effects
+// 霓虹發光效果的完整實現
+
+// 匯入霓虹 mixins
+@use '../mixins/neon-mixins' as neon;
+
+// 基礎霓虹發光效果
+.neon-glow {
+  @include neon.neon-cyan();
+}
+
+// 預設霓虹色彩
+.neon-cyan {
+  @include neon.neon-cyan();
+}
+
+.neon-pink {
+  @include neon.neon-pink();
+}
+
+.neon-green {
+  @include neon.neon-green();
+}
+
+.neon-purple {
+  @include neon.neon-purple();
+}
+
+.neon-orange {
+  @include neon.neon-orange();
+}
+
+// 霓虹文字效果
+.neon-text {
+  @include neon.neon-text(0, 255, 255);
+  font-weight: bold;
+}
+
+.neon-text-pink {
+  @include neon.neon-text(255, 20, 147);
+  font-weight: bold;
+}
+
+.neon-text-green {
+  @include neon.neon-text(57, 255, 20);
+  font-weight: bold;
+}
+
+.neon-text-purple {
+  @include neon.neon-text(138, 43, 226);
+  font-weight: bold;
+}
+
+.neon-text-orange {
+  @include neon.neon-text(255, 165, 0);
+  font-weight: bold;
+}
+
+// 霓虹標題效果
+.neon-title {
+  @include neon.neon-text(0, 255, 255, 1.5);
+  font-size: 2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 1rem 0;
+}
+
+// 脈動霓虹效果
+.neon-pulse {
+  @include neon.neon-pulse(0, 255, 255);
+  
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+.neon-pulse-pink {
+  @include neon.neon-pulse(255, 20, 147);
+  
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+.neon-pulse-green {
+  @include neon.neon-pulse(57, 255, 20);
+  
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+// 閃爍霓虹效果
+.neon-flicker {
+  @include neon.neon-flicker(0, 255, 255);
+  
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+    opacity: 1;
+    box-shadow: 
+      0 0 5px rgba(0, 255, 255, 0.5),
+      0 0 20px rgba(0, 255, 255, 0.4),
+      0 0 35px rgba(0, 255, 255, 0.3);
+  }
+}
+
+// 賽博龐克邊框
+.cyber-border {
+  padding: 1rem;
+  @include neon.cyber-border(0, 255, 255);
+}
+
+.cyber-border-pink {
+  padding: 1rem;
+  @include neon.cyber-border(255, 20, 147);
+}
+
+.cyber-border-green {
+  padding: 1rem;
+  @include neon.cyber-border(57, 255, 20);
+}
+
+// 霓虹按鈕效果
+.neon-button {
+  @include neon.neon-button(0, 255, 255);
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.neon-button-pink {
+  @include neon.neon-button(255, 20, 147);
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.neon-button-green {
+  @include neon.neon-button(57, 255, 20);
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.neon-button-purple {
+  @include neon.neon-button(138, 43, 226);
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+// 雙色霓虹效果
+.dual-neon {
+  @include neon.dual-neon(255, 0, 255, 0, 255, 255);
+}
+
+.dual-neon-fire {
+  @include neon.dual-neon(255, 69, 0, 255, 215, 0);
+}
+
+.dual-neon-ocean {
+  @include neon.dual-neon(0, 191, 255, 0, 255, 127);
+}
+
+// 霓虹卡片效果
+.neon-card {
+  @include neon.neon-glow(0, 255, 255, 0.8);
+  background: rgba(0, 0, 0, 0.8);
+  color: rgb(0, 255, 255);
+  padding: 2rem;
+  border-radius: var(--radius);
+  backdrop-filter: blur(10px);
+  
+  h1, h2, h3, h4, h5, h6 {
+    @include neon.neon-text(0, 255, 255, 0.8);
+  }
+}
+
+.neon-card-pink {
+  @include neon.neon-glow(255, 20, 147, 0.8);
+  background: rgba(0, 0, 0, 0.8);
+  color: rgb(255, 20, 147);
+  padding: 2rem;
+  border-radius: var(--radius);
+  backdrop-filter: blur(10px);
+  
+  h1, h2, h3, h4, h5, h6 {
+    @include neon.neon-text(255, 20, 147, 0.8);
+  }
+}
+
+// 霓虹分隔線
+.neon-divider {
+  height: 1px;
+  background: transparent;
+  position: relative;
+  margin: 2rem 0;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: rgb(0, 255, 255);
+    box-shadow: 
+      0 0 5px rgb(0, 255, 255),
+      0 0 10px rgb(0, 255, 255);
+    animation: neonLine 3s ease-in-out infinite;
+  }
+  
+  @keyframes neonLine {
+    0%, 100% {
+      opacity: 1;
+      filter: brightness(1);
+    }
+    50% {
+      opacity: 0.7;
+      filter: brightness(1.5);
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    &::before {
+      animation: none;
+    }
+  }
+}
+
+// 霓虹輸入框
+.neon-input {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  color: rgb(0, 255, 255);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  transition: all 0.3s ease;
+  
+  &:focus {
+    outline: none;
+    border-color: rgb(0, 255, 255);
+    box-shadow: 
+      0 0 10px rgba(0, 255, 255, 0.5),
+      0 0 20px rgba(0, 255, 255, 0.3),
+      inset 0 0 10px rgba(0, 255, 255, 0.1);
+  }
+  
+  &::placeholder {
+    color: rgba(0, 255, 255, 0.6);
+  }
+}
+
+// 霓虹進度條
+.neon-progress {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 2px;
+  position: relative;
+  overflow: hidden;
+  
+  &-bar {
+    height: 16px;
+    border-radius: 8px;
+    background: rgb(0, 255, 255);
+    box-shadow: 
+      0 0 10px rgb(0, 255, 255),
+      inset 0 0 10px rgba(255, 255, 255, 0.2);
+    transition: width 0.3s ease;
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+      );
+      animation: neonSweep 2s infinite;
+    }
+  }
+  
+  @keyframes neonSweep {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    &-bar::after {
+      animation: none;
+    }
+  }
+}
+
+// 霓虹載入動畫
+.neon-loading {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(0, 255, 255, 0.3);
+  border-top-color: rgb(0, 255, 255);
+  border-radius: 50%;
+  animation: neonSpin 1s linear infinite;
+  box-shadow: 
+    0 0 15px rgba(0, 255, 255, 0.5);
+  
+  @keyframes neonSpin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+    border: 3px solid rgb(0, 255, 255);
+  }
+}
+
+// 霓虹背景效果
+.neon-bg {
+  background: radial-gradient(
+    circle at 20% 80%,
+    rgba(0, 255, 255, 0.1) 0%,
+    transparent 50%
+  ),
+  radial-gradient(
+    circle at 80% 20%,
+    rgba(255, 20, 147, 0.1) 0%,
+    transparent 50%
+  ),
+  radial-gradient(
+    circle at 40% 40%,
+    rgba(138, 43, 226, 0.05) 0%,
+    transparent 50%
+  );
+  min-height: 100vh;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 255, 255, 0.02) 2px,
+        rgba(0, 255, 255, 0.02) 4px
+      );
+    pointer-events: none;
+    z-index: -1;
+  }
+}
+
+// 高對比度模式適配
+@media (prefers-contrast: high) {
+  .neon-glow,
+  .neon-cyan,
+  .neon-pink,
+  .neon-green,
+  .neon-purple,
+  .neon-orange {
+    box-shadow: 0 0 3px currentColor;
+    border: 2px solid currentColor;
+  }
+  
+  .neon-text,
+  .neon-text-pink,
+  .neon-text-green,
+  .neon-text-purple,
+  .neon-text-orange {
+    text-shadow: 1px 1px 0 black;
+  }
+}
+
+// 暗色主題優化
+.dark {
+  .neon-bg {
+    background: 
+      radial-gradient(
+        circle at 20% 80%,
+        rgba(0, 255, 255, 0.05) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 80% 20%,
+        rgba(255, 20, 147, 0.05) 0%,
+        transparent 50%
+      ),
+      black;
+  }
+}

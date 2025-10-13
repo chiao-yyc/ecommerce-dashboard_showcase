@@ -1,0 +1,78 @@
+name: Deploy to Cloud Run
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'admin-platform-vue/**'
+      - '.github/workflows/deploy-cloud-run.yml'
+  workflow_dispatch:  # 允許手動觸發
+
+env:
+  PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+  SERVICE_NAME: ecommerce-admin
+  REGION: asia-east1
+  IMAGE_NAME: gcr.io/${{ secrets.GCP_PROJECT_ID }}/ecommerce-admin
+
+jobs:
+  deploy:
+    name: Build and Deploy to Cloud Run
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout 代碼
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. 設置 Google Cloud CLI
+      - name: Setup Google Cloud CLI
+        uses: google-github-actions/setup-gcloud@v2
+        with:
+          service_account_key: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
+          export_default_credentials: true
+
+      # 3. 配置 Docker 認證到 GCR
+      - name: Configure Docker to use gcloud
+        run: gcloud auth configure-docker
+
+      # 4. 構建 Docker 映像（使用 .env.production 檔案）
+      - name: Build Docker image
+        run: |
+          docker build \
+            -f admin-platform-vue/Dockerfile \
+            -t ${{ env.IMAGE_NAME }}:${{ github.sha }} \
+            -t ${{ env.IMAGE_NAME }}:latest \
+            ./admin-platform-vue
+
+      # 5. 推送映像到 Google Container Registry
+      - name: Push Docker image to GCR
+        run: |
+          docker push ${{ env.IMAGE_NAME }}:${{ github.sha }}
+          docker push ${{ env.IMAGE_NAME }}:latest
+
+      # 6. 部署到 Cloud Run
+      - name: Deploy to Cloud Run
+        run: |
+          gcloud run deploy ${{ env.SERVICE_NAME }} \
+            --image=${{ env.IMAGE_NAME }}:${{ github.sha }} \
+            --platform=managed \
+            --region=${{ env.REGION }} \
+            --allow-unauthenticated \
+            --port=80 \
+            --cpu=1 \
+            --memory=512Mi \
+            --min-instances=0 \
+            --max-instances=10 \
+            --cpu-throttling \
+            --set-env-vars="VITE_SUPABASE_URL=${{ secrets.VITE_SUPABASE_URL }},VITE_SUPABASE_ANON_KEY=${{ secrets.VITE_SUPABASE_ANON_KEY }},VITE_BASE_URL=${{ secrets.VITE_BASE_URL }},NODE_ENV=production"
+
+      # 7. 輸出部署 URL
+      - name: Output deployment URL
+        run: |
+          echo "Deployment completed!"
+          gcloud run services describe ${{ env.SERVICE_NAME }} \
+            --platform=managed \
+            --region=${{ env.REGION }} \
+            --format='value(status.url)'

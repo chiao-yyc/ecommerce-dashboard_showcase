@@ -1,0 +1,49 @@
+# =========================================
+# 電商管理平台 - VitePress 文件服務 Dockerfile (生產環境)
+# =========================================
+# 用於提供專案技術文件的生產伺服器
+# 基於 VitePress 官方最佳實踐：Build + Nginx
+
+# =========================================
+# Stage 1: 建置階段
+# =========================================
+FROM node:20-alpine AS builder
+
+WORKDIR /app
+
+# 安裝 Git（VitePress 需要 Git 來生成最後修改時間）
+RUN apk add --no-cache git
+
+# 複製 package 檔案（優化 Docker 快取層）
+COPY package*.json ./
+
+# 安裝依賴
+RUN npm install
+
+# 複製整個專案（VitePress 需要存取 docs/ 目錄和相關配置）
+COPY . .
+
+# 建置 VitePress 靜態檔案
+# 輸出位置: docs/.vitepress/dist
+RUN npx vitepress build docs
+
+# =========================================
+# Stage 2: 生產階段
+# =========================================
+FROM nginx:alpine
+
+# 複製建置好的靜態檔案到 nginx
+COPY --from=builder /app/docs/.vitepress/dist /usr/share/nginx/html
+
+# 複製 Nginx 配置模板（使用 envsubst 替換變數）
+COPY nginx.docs.conf.template /etc/nginx/conf.d/default.conf.template
+
+# 複製啟動腳本
+COPY docker-entrypoint.docs.sh /docker-entrypoint.docs.sh
+RUN chmod +x /docker-entrypoint.docs.sh
+
+# 開放端口（Cloud Run 會通過 PORT 環境變數動態分配）
+EXPOSE 8080
+
+# 使用啟動腳本（Cloud Run 會自動處理健康檢查）
+ENTRYPOINT ["/docker-entrypoint.docs.sh"]

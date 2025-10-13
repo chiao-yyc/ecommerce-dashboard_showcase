@@ -1,0 +1,27 @@
+# =========================================
+# 電商管理平台 - VitePress 文件服務 Dockerfile (開發環境)
+# =========================================
+# 用於提供專案技術文件的開發伺服器
+# 注意：此為開發環境用，生產環境請使用 Dockerfile.docs.prod
+
+FROM node:20-alpine
+
+# 設定工作目錄
+WORKDIR /app
+
+# 複製 package 檔案（優化 Docker 快取層）
+COPY package*.json ./
+
+# 安裝依賴
+RUN npm install
+
+# 複製整個專案（VitePress 需要存取 docs/ 目錄和相關配置）
+COPY . .
+
+# 開放 VitePress 開發伺服器埠號
+EXPOSE 8080
+
+# 啟動 VitePress 開發伺服器
+# 使用 --port 8080 與 docker-compose 配置一致
+# 使用 --host 0.0.0.0 允許 Docker 容器外部訪問
+CMD ["npx", "vitepress", "dev", "docs", "--port", "8080", "--host", "0.0.0.0"]

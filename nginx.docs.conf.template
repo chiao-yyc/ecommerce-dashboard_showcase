@@ -1,0 +1,115 @@
+# =========================================
+# 電商管理平台 - VitePress 文件服務 Nginx 配置模板（生產環境）
+# =========================================
+# 使用 envsubst 替換 ${PORT} 變數
+# 支援 VitePress SPA 路由模式
+
+# 伺服器配置
+server {
+    # 監聽 Cloud Run 提供的 PORT 環境變數
+    listen ${PORT};
+    listen [::]:${PORT};
+
+    # 伺服器名稱
+    server_name localhost;
+
+    # 根目錄設定（指向 VitePress 建置輸出）
+    root /usr/share/nginx/html;
+    index index.html;
+
+    # 字符編碼
+    charset utf-8;
+
+    # =========================================
+    # Gzip 壓縮配置
+    # =========================================
+    gzip on;
+    gzip_vary on;
+    gzip_min_length 1024;
+    gzip_comp_level 6;
+    gzip_types
+        text/plain
+        text/css
+        text/xml
+        text/javascript
+        application/json
+        application/javascript
+        application/xml+rss
+        application/rss+xml
+        font/truetype
+        font/opentype
+        application/vnd.ms-fontobject
+        image/svg+xml;
+
+    # =========================================
+    # 靜態資源快取策略（VitePress 官方建議）
+    # =========================================
+
+    # JavaScript 和 CSS 檔案（含 hash，可長期快取）
+    location ~* \.(js|css)$ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+        access_log off;
+    }
+
+    # 圖片、字型等靜態資源
+    location ~* \.(png|jpg|jpeg|gif|ico|svg|webp|woff|woff2|ttf|eot)$ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+        access_log off;
+    }
+
+    # =========================================
+    # VitePress SPA 路由支援
+    # =========================================
+    # 所有路徑都指向 index.html（除了實際存在的檔案）
+    location / {
+        try_files $uri $uri/ /index.html;
+
+        # 安全標頭
+        add_header X-Frame-Options "SAMEORIGIN" always;
+        add_header X-Content-Type-Options "nosniff" always;
+        add_header X-XSS-Protection "1; mode=block" always;
+    }
+
+    # =========================================
+    # 健康檢查端點
+    # =========================================
+    location /health {
+        access_log off;
+        return 200 "healthy\n";
+        add_header Content-Type text/plain;
+    }
+
+    # =========================================
+    # 錯誤頁面
+    # =========================================
+    # 404 錯誤也返回 index.html（由 VitePress Router 處理）
+    error_page 404 /index.html;
+
+    # 50x 錯誤頁面
+    error_page 500 502 503 504 /50x.html;
+    location = /50x.html {
+        root /usr/share/nginx/html;
+    }
+
+    # =========================================
+    # 安全性設定
+    # =========================================
+    # 禁止訪問隱藏檔案
+    location ~ /\. {
+        deny all;
+        access_log off;
+        log_not_found off;
+    }
+
+    # 禁止訪問敏感檔案
+    location ~ /(?:\.env|\.git|\.gitignore|README\.md|package\.json|composer\.json)$ {
+        deny all;
+        access_log off;
+        log_not_found off;
+    }
+
+    # 隱藏 Nginx 版本號
+    server_tokens off;
+}

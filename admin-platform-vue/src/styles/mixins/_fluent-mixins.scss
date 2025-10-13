@@ -1,0 +1,480 @@
+// Microsoft Fluent Design System Mixins - 官方標準實現
+// 基於 Microsoft Fluent UI 2 (Fluent Design System) 規範
+// 參考：https://fluent2.microsoft.design/
+
+// ==========================================================================
+// Fluent Depth & Shadow System - 深度陰影系統
+// ==========================================================================
+
+// Fluent 陰影定義 - 比 Material 更柔和
+@mixin fluent-shadow-2 {
+  box-shadow: 
+    0px 0.3px 0.9px rgba(0, 0, 0, 0.12),
+    0px 1.6px 3.6px rgba(0, 0, 0, 0.16);
+}
+
+@mixin fluent-shadow-4 {
+  box-shadow: 
+    0px 0.6px 1.8px rgba(0, 0, 0, 0.12),
+    0px 3.2px 7.2px rgba(0, 0, 0, 0.16);
+}
+
+@mixin fluent-shadow-8 {
+  box-shadow: 
+    0px 1.2px 3.6px rgba(0, 0, 0, 0.12),
+    0px 6.4px 14.4px rgba(0, 0, 0, 0.16);
+}
+
+@mixin fluent-shadow-16 {
+  box-shadow: 
+    0px 2.4px 7.2px rgba(0, 0, 0, 0.12),
+    0px 12.8px 28.8px rgba(0, 0, 0, 0.16);
+}
+
+@mixin fluent-shadow-64 {
+  box-shadow: 
+    0px 9.6px 28.8px rgba(0, 0, 0, 0.12),
+    0px 51.2px 115.2px rgba(0, 0, 0, 0.16);
+}
+
+// ==========================================================================
+// Fluent Corner Radius System - 圓角系統
+// ==========================================================================
+
+@mixin fluent-radius-none {
+  border-radius: 0;
+}
+
+@mixin fluent-radius-small {
+  border-radius: 2px;
+}
+
+@mixin fluent-radius-medium {
+  border-radius: 4px;
+}
+
+@mixin fluent-radius-large {
+  border-radius: 8px;
+}
+
+@mixin fluent-radius-circular {
+  border-radius: 50%;
+}
+
+// ==========================================================================
+// Fluent Motion System - 動畫系統
+// ==========================================================================
+
+// Fluent 緩動曲線
+@mixin fluent-motion-fast-out-slow-in {
+  transition-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+}
+
+@mixin fluent-motion-linear-out-slow-in {
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+@mixin fluent-motion-fast-out-linear-in {
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+
+@mixin fluent-motion-standard {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+// 標準動畫時長
+@mixin fluent-duration-fast {
+  transition-duration: 150ms;
+}
+
+@mixin fluent-duration-normal {
+  transition-duration: 250ms;
+}
+
+@mixin fluent-duration-slow {
+  transition-duration: 500ms;
+}
+
+// ==========================================================================
+// Fluent Typography Scale - 字體系統
+// ==========================================================================
+
+@mixin fluent-caption {
+  font-family: var(--font-family);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+}
+
+@mixin fluent-body {
+  font-family: var(--font-family);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+@mixin fluent-body-strong {
+  font-family: var(--font-family);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+}
+
+@mixin fluent-subtitle {
+  font-family: var(--font-family);
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+}
+
+@mixin fluent-title {
+  font-family: var(--font-family);
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 600;
+}
+
+@mixin fluent-large-title {
+  font-family: var(--font-family);
+  font-size: 40px;
+  line-height: 52px;
+  font-weight: 600;
+}
+
+@mixin fluent-display {
+  font-family: var(--font-family);
+  font-size: 68px;
+  line-height: 92px;
+  font-weight: 600;
+}
+
+// ==========================================================================
+// Fluent Interactive States - 互動狀態系統
+// ==========================================================================
+
+// Fluent 懸停效果 (比 Material 更微妙)
+@mixin fluent-hover-subtle {
+  &:hover {
+    background-color: hsl(var(--primary) / 0.06);
+    transition: background-color 150ms cubic-bezier(0.1, 0.9, 0.2, 1);
+  }
+}
+
+@mixin fluent-hover-light {
+  &:hover {
+    background-color: hsl(var(--accent) / 0.1);
+    transition: background-color 150ms cubic-bezier(0.1, 0.9, 0.2, 1);
+  }
+}
+
+// Fluent 按壓效果
+@mixin fluent-pressed-subtle {
+  &:active {
+    background-color: hsl(var(--primary) / 0.12);
+    transform: scale(0.98);
+    transition: all 100ms cubic-bezier(0.4, 0, 1, 1);
+  }
+}
+
+// Fluent 焦點效果 (特色的雙層邊框)
+@mixin fluent-focus-visible {
+  &:focus-visible {
+    outline: 2px solid hsl(var(--primary));
+    outline-offset: 2px;
+    border-radius: inherit;
+  }
+}
+
+// ==========================================================================
+// Fluent Component Mixins - 組件混入
+// ==========================================================================
+
+// Fluent Button (Standard)
+@mixin fluent-button-standard {
+  @include fluent-radius-medium;
+  @include fluent-body-strong;
+  @include fluent-motion-fast-out-slow-in;
+  @include fluent-duration-fast;
+  @include fluent-focus-visible;
+  
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  min-width: 96px;
+  padding: 5px 12px;
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  
+  &:hover {
+    @include fluent-shadow-2;
+    background-color: hsl(var(--primary) / 0.9);
+  }
+  
+  &:active {
+    @include fluent-pressed-subtle;
+    @include fluent-shadow-4;
+  }
+  
+  &:disabled {
+    background-color: hsl(var(--muted));
+    color: hsl(var(--muted-foreground));
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+// Fluent Button (Subtle)
+@mixin fluent-button-subtle {
+  @include fluent-radius-medium;
+  @include fluent-body-strong;
+  @include fluent-motion-fast-out-slow-in;
+  @include fluent-duration-fast;
+  @include fluent-focus-visible;
+  
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  min-width: 96px;
+  padding: 5px 12px;
+  background-color: transparent;
+  color: hsl(var(--primary));
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  
+  @include fluent-hover-subtle;
+  @include fluent-pressed-subtle;
+  
+  &:disabled {
+    color: hsl(var(--muted-foreground));
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+// Fluent Button (Outline)
+@mixin fluent-button-outline {
+  @include fluent-radius-medium;
+  @include fluent-body-strong;
+  @include fluent-motion-fast-out-slow-in;
+  @include fluent-duration-fast;
+  @include fluent-focus-visible;
+  
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  min-width: 96px;
+  padding: 5px 12px;
+  background-color: transparent;
+  color: hsl(var(--primary));
+  border: 1px solid hsl(var(--border));
+  cursor: pointer;
+  text-decoration: none;
+  
+  &:hover {
+    background-color: hsl(var(--accent));
+    border-color: hsl(var(--primary));
+  }
+  
+  @include fluent-pressed-subtle;
+  
+  &:disabled {
+    border-color: hsl(var(--muted));
+    color: hsl(var(--muted-foreground));
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+// Fluent Card
+@mixin fluent-card {
+  @include fluent-radius-large;
+  @include fluent-shadow-2;
+  @include fluent-motion-standard;
+  @include fluent-duration-normal;
+  
+  background-color: hsl(var(--card));
+  color: hsl(var(--card-foreground));
+  border: 1px solid hsl(var(--border));
+  padding: 16px;
+  
+  &:hover {
+    @include fluent-shadow-4;
+    transform: translateY(-1px);
+  }
+}
+
+// Fluent Card (Elevated)
+@mixin fluent-card-elevated {
+  @include fluent-radius-large;
+  @include fluent-shadow-8;
+  @include fluent-motion-standard;
+  @include fluent-duration-normal;
+  
+  background-color: hsl(var(--card));
+  color: hsl(var(--card-foreground));
+  border: none;
+  padding: 20px;
+  
+  &:hover {
+    @include fluent-shadow-16;
+    transform: translateY(-2px);
+  }
+}
+
+// Fluent Input Field
+@mixin fluent-input-field {
+  @include fluent-radius-medium;
+  @include fluent-body;
+  @include fluent-motion-fast-out-slow-in;
+  @include fluent-duration-fast;
+  @include fluent-focus-visible;
+  
+  min-height: 32px;
+  padding: 0 8px;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  border: 1px solid hsl(var(--border));
+  
+  &:hover {
+    border-color: hsl(var(--primary) / 0.6);
+  }
+  
+  &:focus {
+    border-color: hsl(var(--primary));
+    @include fluent-shadow-2;
+  }
+  
+  &:disabled {
+    background-color: hsl(var(--muted) / 0.3);
+    color: hsl(var(--muted-foreground));
+    border-color: hsl(var(--muted));
+  }
+}
+
+// Fluent Navigation Item
+@mixin fluent-nav-item {
+  @include fluent-radius-medium;
+  @include fluent-body;
+  @include fluent-motion-fast-out-slow-in;
+  @include fluent-duration-fast;
+  @include fluent-focus-visible;
+  
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 8px 12px;
+  color: hsl(var(--foreground));
+  text-decoration: none;
+  border-radius: 6px;
+  
+  &:hover {
+    background-color: hsl(var(--accent) / 0.1);
+  }
+  
+  &:active {
+    background-color: hsl(var(--accent) / 0.2);
+  }
+  
+  &[aria-current="page"],
+  &.active {
+    background-color: hsl(var(--primary) / 0.1);
+    color: hsl(var(--primary));
+    font-weight: 600;
+  }
+}
+
+// ==========================================================================
+// Fluent Acrylic Effect - 磨砂玻璃效果 (Fluent 特色)
+// ==========================================================================
+
+@mixin fluent-acrylic-light {
+  background: linear-gradient(135deg, 
+    hsl(var(--background) / 0.9) 0%, 
+    hsl(var(--background) / 0.7) 100%
+  );
+  backdrop-filter: blur(30px) saturate(1.8);
+  border: 1px solid hsl(var(--border) / 0.3);
+}
+
+@mixin fluent-acrylic-dark {
+  background: linear-gradient(135deg, 
+    hsl(var(--background) / 0.8) 0%, 
+    hsl(var(--background) / 0.6) 100%
+  );
+  backdrop-filter: blur(30px) saturate(1.5);
+  border: 1px solid hsl(var(--border) / 0.2);
+}
+
+// Fluent Mica Effect (輕量版 Acrylic)
+@mixin fluent-mica {
+  background: hsl(var(--background) / 0.95);
+  backdrop-filter: blur(20px) saturate(1.2);
+  border: 1px solid hsl(var(--border) / 0.2);
+}
+
+// ==========================================================================
+// Fluent Color System - 配色系統
+// ==========================================================================
+
+// Fluent 品牌色彩
+@mixin fluent-brand-primary {
+  color: hsl(var(--primary));
+  transition: color 150ms cubic-bezier(0.1, 0.9, 0.2, 1);
+}
+
+@mixin fluent-brand-secondary {
+  color: hsl(var(--secondary));
+  transition: color 150ms cubic-bezier(0.1, 0.9, 0.2, 1);
+}
+
+// Fluent 表面色彩
+@mixin fluent-surface-primary {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  transition: all 150ms cubic-bezier(0.1, 0.9, 0.2, 1);
+}
+
+@mixin fluent-surface-secondary {
+  background-color: hsl(var(--muted));
+  color: hsl(var(--muted-foreground));
+  transition: all 150ms cubic-bezier(0.1, 0.9, 0.2, 1);
+}
+
+// ==========================================================================
+// Fluent Accessibility - 無障礙支援
+// ==========================================================================
+
+// 高對比模式支援
+@media (prefers-contrast: high) {
+  .fluent-button {
+    border: 2px solid currentColor;
+    
+    &:focus-visible {
+      outline-width: 3px;
+      outline-offset: 3px;
+    }
+  }
+  
+  .fluent-card {
+    border: 2px solid hsl(var(--border));
+  }
+}
+
+// 減少動畫偏好支援
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+  
+  .fluent-card:hover {
+    transform: none;
+  }
+}

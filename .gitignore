@@ -1,0 +1,253 @@
+# ==============================================================================
+# E-commerce Dashboard 專案 - 根目錄 .gitignore 
+# 統一管理所有子專案的共通忽略規則
+# ==============================================================================
+
+# -----------------------------------------------------------------------------
+# Node.js 基礎設定
+# -----------------------------------------------------------------------------
+# 依賴包
+node_modules/
+.pnpm-store/
+.yarn/
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+
+# 日誌文件
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+.pm2/
+
+# 運行時數據
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# -----------------------------------------------------------------------------
+# 構建輸出目錄
+# -----------------------------------------------------------------------------
+dist/
+dist-ssr/
+build/
+out/
+.next/
+.nuxt/
+.vite/
+.turbo/
+
+# 臨時文件
+*.tmp
+*.temp
+.tmp/
+.temp/
+
+# -----------------------------------------------------------------------------
+# TypeScript & JavaScript
+# -----------------------------------------------------------------------------
+*.tsbuildinfo
+.tsbuildinfo
+*.d.ts.map
+*.js.map
+*.mjs.map
+
+# -----------------------------------------------------------------------------
+# 測試相關
+# -----------------------------------------------------------------------------
+# 測試覆蓋率報告
+coverage/
+coverage-*
+*.lcov
+.nyc_output
+
+# 測試結果
+test-results/
+playwright-report/
+.vitest/
+
+# E2E 測試輸出
+*.webm
+*.mp4
+screenshots/
+videos/
+
+# -----------------------------------------------------------------------------
+# 環境變數設定
+# -----------------------------------------------------------------------------
+# 基礎環境變數檔案
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.staging
+.env.backup
+.env.*.local
+
+# 生產環境配置（包含敏感資訊）
+.env.production
+
+# 註：admin-platform-vue/.env.production 包含公開的前端變數
+# 透過該目錄的 .gitignore 設置例外規則加入 Git
+
+# dotenvx
+.env.keys
+.env.vault
+
+# -----------------------------------------------------------------------------
+# IDE 與編輯器
+# -----------------------------------------------------------------------------
+# VSCode
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+# JetBrains IDEs
+.idea/
+*.swp
+*.swo
+*~
+
+# Sublime Text
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
+
+# Vim
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+
+# -----------------------------------------------------------------------------
+# 系統文件
+# -----------------------------------------------------------------------------
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows
+*.tmp
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+
+# -----------------------------------------------------------------------------
+# 開發工具特定
+# -----------------------------------------------------------------------------
+# VitePress
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+.vitepress/dist/
+.vitepress/cache/
+
+# Storybook
+storybook-static/
+.out/
+
+# Webpack
+.webpack/
+
+# Parcel
+.parcel-cache/
+
+# -----------------------------------------------------------------------------
+# 資料庫與快取
+# -----------------------------------------------------------------------------
+# SQLite
+*.sqlite
+*.sqlite3
+*.db
+
+# Redis dumps
+dump.rdb
+
+# -----------------------------------------------------------------------------
+# 安全敏感文件
+# -----------------------------------------------------------------------------
+# SSL 證書
+*.pem
+*.key
+*.crt
+*.cer
+*.p12
+*.pfx
+
+# SSH 密鑰
+id_rsa
+id_dsa
+id_ecdsa
+id_ed25519
+
+# -----------------------------------------------------------------------------
+# 版本控制
+# -----------------------------------------------------------------------------
+# Git
+.git/
+.gitignore_backup
+
+# -----------------------------------------------------------------------------
+# 部署相關
+# -----------------------------------------------------------------------------
+# Docker
+.dockerignore
+Dockerfile.prod
+
+# Cloud deployment
+.vercel
+.netlify
+
+# -----------------------------------------------------------------------------
+# 專案特定忽略
+# -----------------------------------------------------------------------------
+# 文檔同步日誌
+.doc-sync.log
+tools/sync-*.log
+
+# 備份文件
+*.backup
+*.bak
+
+# 開發除錯
+debug.log
+error.log
+*.debug
+
+# 性能分析
+*.prof
+*.cpuprofile
+*.heapsnapshot
+
+# 內部規劃文件
+demo_plan.md
+CLAUDE.local.md

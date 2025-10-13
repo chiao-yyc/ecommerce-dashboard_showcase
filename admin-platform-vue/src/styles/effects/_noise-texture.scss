@@ -1,0 +1,239 @@
+// Noise Texture Effects
+// 為噪點紋理效果提供完整的實現
+
+// 生成 SVG 噪點圖案 - 細噪點
+@function generate-fine-noise() {
+  $svg: "data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E";
+  $svg: "#{$svg}%3Cfilter id='noiseFilter'%3E";
+  $svg: "#{$svg}%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='1' stitchTiles='stitch'/%3E";
+  $svg: "#{$svg}%3C/filter%3E";
+  $svg: "#{$svg}%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.4'/%3E";
+  $svg: "#{$svg}%3C/svg%3E";
+  @return url("#{$svg}");
+}
+
+// 生成 SVG 噪點圖案 - 粗噪點
+@function generate-coarse-noise() {
+  $svg: "data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E";
+  $svg: "#{$svg}%3Cfilter id='noiseFilter'%3E";
+  $svg: "#{$svg}%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='2' stitchTiles='stitch'/%3E";
+  $svg: "#{$svg}%3C/filter%3E";
+  $svg: "#{$svg}%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.6'/%3E";
+  $svg: "#{$svg}%3C/svg%3E";
+  @return url("#{$svg}");
+}
+
+// 生成彩色噪點圖案
+@function generate-color-noise() {
+  $svg: "data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E";
+  $svg: "#{$svg}%3Cfilter id='noiseFilter'%3E";
+  $svg: "#{$svg}%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' seed='5' stitchTiles='stitch'/%3E";
+  $svg: "#{$svg}%3CfeColorMatrix type='saturate' values='2'/%3E";
+  $svg: "#{$svg}%3C/filter%3E";
+  $svg: "#{$svg}%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.3'/%3E";
+  $svg: "#{$svg}%3C/svg%3E";
+  @return url("#{$svg}");
+}
+
+// 基礎噪點覆蓋層 mixin
+@mixin noise-overlay($type: fine, $opacity: 0.1, $blend: multiply) {
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0;
+    opacity: var(--noise-opacity, #{$opacity});
+    mix-blend-mode: #{$blend};
+    pointer-events: none;
+    z-index: 1;
+    
+    @if $type == fine {
+      background-image: generate-fine-noise();
+    } @else if $type == coarse {
+      background-image: generate-coarse-noise();
+    } @else if $type == color {
+      background-image: generate-color-noise();
+    }
+  }
+}
+
+// 動畫噪點效果
+@mixin animated-noise($duration: 0.1s) {
+  @include noise-overlay();
+  
+  &::before {
+    animation: noiseAnimation #{$duration} infinite linear;
+  }
+  
+  @keyframes noiseAnimation {
+    0%, 100% { 
+      transform: translate(0, 0); 
+    }
+    10% { 
+      transform: translate(-1px, -1px); 
+    }
+    20% { 
+      transform: translate(1px, 1px); 
+    }
+    30% { 
+      transform: translate(-1px, 1px); 
+    }
+    40% { 
+      transform: translate(1px, -1px); 
+    }
+    50% { 
+      transform: translate(-2px, 0); 
+    }
+    60% { 
+      transform: translate(2px, 0); 
+    }
+    70% { 
+      transform: translate(0, -2px); 
+    }
+    80% { 
+      transform: translate(0, 2px); 
+    }
+    90% { 
+      transform: translate(-1px, 0); 
+    }
+  }
+}
+
+// 復古電視效果
+@mixin retro-tv-noise() {
+  @include noise-overlay(fine, 0.15, screen);
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.03) 2px,
+      rgba(0, 0, 0, 0.03) 4px
+    );
+    pointer-events: none;
+    z-index: 2;
+  }
+  
+  // 掃描線動畫
+  &::before {
+    animation: tvStatic 0.2s infinite linear;
+  }
+  
+  @keyframes tvStatic {
+    0% { 
+      transform: translate(0, 0) scale(1); 
+    }
+    10% { 
+      transform: translate(-1px, 1px) scale(1.01); 
+    }
+    20% { 
+      transform: translate(1px, -1px) scale(0.99); 
+    }
+    30% { 
+      transform: translate(-1px, -1px) scale(1.02); 
+    }
+    40% { 
+      transform: translate(1px, 1px) scale(0.98); 
+    }
+    50% { 
+      transform: translate(0, -1px) scale(1.01); 
+    }
+    60% { 
+      transform: translate(-1px, 0) scale(0.99); 
+    }
+    70% { 
+      transform: translate(1px, 0) scale(1.02); 
+    }
+    80% { 
+      transform: translate(0, 1px) scale(0.98); 
+    }
+    90% { 
+      transform: translate(1px, -1px) scale(1.01); 
+    }
+    100% { 
+      transform: translate(0, 0) scale(1); 
+    }
+  }
+}
+
+// 膠片質感效果
+@mixin film-grain($intensity: 0.08) {
+  @include noise-overlay(fine, $intensity, overlay);
+  
+  // 添加微妙的色彩偏移
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0;
+    background: radial-gradient(
+      circle,
+      transparent 60%,
+      rgba(139, 69, 19, 0.02) 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+}
+
+// 具體的噪點效果類別
+.noise-texture {
+  @include noise-overlay();
+}
+
+.noise-fine {
+  @include noise-overlay(fine, 0.1);
+}
+
+.noise-coarse {
+  @include noise-overlay(coarse, 0.15);
+}
+
+.noise-color {
+  @include noise-overlay(color, 0.08);
+}
+
+.noise-animated {
+  @include animated-noise();
+}
+
+.retro-tv {
+  @include retro-tv-noise();
+}
+
+.film-grain {
+  @include film-grain();
+}
+
+// 響應式噪點效果 (在小螢幕上降低強度)
+@media (max-width: 768px) {
+  .noise-texture,
+  .noise-fine,
+  .noise-coarse,
+  .noise-color {
+    &::before {
+      opacity: 0.05;
+    }
+  }
+}
+
+// 減少動畫首選項支援
+@media (prefers-reduced-motion: reduce) {
+  .noise-animated::before,
+  .retro-tv::before {
+    animation: none;
+  }
+}

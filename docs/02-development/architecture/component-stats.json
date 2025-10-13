@@ -1,0 +1,4416 @@
+{
+  "generated_at": "2025-09-25T16:27:46.167Z",
+  "generation_time": "2025/9/26 上午12:27:46",
+  "content_hash": "e1098c2c239fa48f42ac229a4866d250",
+  "stats": {
+    "components": {
+      "files": [],
+      "directories": [
+        {
+          "name": "ai",
+          "path": "ai",
+          "files": [
+            {
+              "name": "AIAlertAnalysis.vue",
+              "path": "ai/AIAlertAnalysis.vue",
+              "type": ".vue",
+              "size": 7223
+            },
+            {
+              "name": "AIAlertEnhancement.vue",
+              "path": "ai/AIAlertEnhancement.vue",
+              "type": ".vue",
+              "size": 9548
+            },
+            {
+              "name": "AIAlertTestPanel.vue",
+              "path": "ai/AIAlertTestPanel.vue",
+              "type": ".vue",
+              "size": 12340
+            },
+            {
+              "name": "AIProviderManagement.vue",
+              "path": "ai/AIProviderManagement.vue",
+              "type": ".vue",
+              "size": 32710
+            },
+            {
+              "name": "OllamaTestPanel.vue",
+              "path": "ai/OllamaTestPanel.vue",
+              "type": ".vue",
+              "size": 6861
+            }
+          ],
+          "directories": [],
+          "total": 5
+        },
+        {
+          "name": "analytics",
+          "path": "analytics",
+          "files": [
+            {
+              "name": "ABCAnalysisChart.vue",
+              "path": "analytics/ABCAnalysisChart.vue",
+              "type": ".vue",
+              "size": 17919
+            },
+            {
+              "name": "AnalyticsChartCard.vue",
+              "path": "analytics/AnalyticsChartCard.vue",
+              "type": ".vue",
+              "size": 6900
+            },
+            {
+              "name": "AnalyticsContentCard.vue",
+              "path": "analytics/AnalyticsContentCard.vue",
+              "type": ".vue",
+              "size": 799
+            },
+            {
+              "name": "AnalyticsDashboard.vue",
+              "path": "analytics/AnalyticsDashboard.vue",
+              "type": ".vue",
+              "size": 14716
+            },
+            {
+              "name": "AnalyticsErrorState.vue",
+              "path": "analytics/AnalyticsErrorState.vue",
+              "type": ".vue",
+              "size": 7645
+            },
+            {
+              "name": "AnalyticsExportButton.vue",
+              "path": "analytics/AnalyticsExportButton.vue",
+              "type": ".vue",
+              "size": 2770
+            },
+            {
+              "name": "AnalyticsLoadingState.vue",
+              "path": "analytics/AnalyticsLoadingState.vue",
+              "type": ".vue",
+              "size": 6326
+            },
+            {
+              "name": "AnalyticsRefreshButton.vue",
+              "path": "analytics/AnalyticsRefreshButton.vue",
+              "type": ".vue",
+              "size": 1286
+            },
+            {
+              "name": "AnalyticsSettingsPanel.vue",
+              "path": "analytics/AnalyticsSettingsPanel.vue",
+              "type": ".vue",
+              "size": 1939
+            },
+            {
+              "name": "AnalyticsTabNavigation.vue",
+              "path": "analytics/AnalyticsTabNavigation.vue",
+              "type": ".vue",
+              "size": 4779
+            },
+            {
+              "name": "CancellationAnalysisChart.vue",
+              "path": "analytics/CancellationAnalysisChart.vue",
+              "type": ".vue",
+              "size": 19442
+            },
+            {
+              "name": "CustomerAnalyticsWithSkeleton.vue",
+              "path": "analytics/CustomerAnalyticsWithSkeleton.vue",
+              "type": ".vue",
+              "size": 16175
+            },
+            {
+              "name": "CustomerBehaviorChart.vue",
+              "path": "analytics/CustomerBehaviorChart.vue",
+              "type": ".vue",
+              "size": 21941
+            },
+            {
+              "name": "CustomerSegmentChart.vue",
+              "path": "analytics/CustomerSegmentChart.vue",
+              "type": ".vue",
+              "size": 12102
+            },
+            {
+              "name": "DeliveryPerformanceChart.vue",
+              "path": "analytics/DeliveryPerformanceChart.vue",
+              "type": ".vue",
+              "size": 14905
+            },
+            {
+              "name": "DemandForecastChart.vue",
+              "path": "analytics/DemandForecastChart.vue",
+              "type": ".vue",
+              "size": 17976
+            },
+            {
+              "name": "OrderFunnelChart.vue",
+              "path": "analytics/OrderFunnelChart.vue",
+              "type": ".vue",
+              "size": 33846
+            },
+            {
+              "name": "PaymentPerformanceChart.vue",
+              "path": "analytics/PaymentPerformanceChart.vue",
+              "type": ".vue",
+              "size": 13842
+            },
+            {
+              "name": "ProfitabilityDashboard.vue",
+              "path": "analytics/ProfitabilityDashboard.vue",
+              "type": ".vue",
+              "size": 18528
+            },
+            {
+              "name": "SlowMovingProductList.vue",
+              "path": "analytics/SlowMovingProductList.vue",
+              "type": ".vue",
+              "size": 23516
+            },
+            {
+              "name": "StockAlertsPanel.vue",
+              "path": "analytics/StockAlertsPanel.vue",
+              "type": ".vue",
+              "size": 21169
+            },
+            {
+              "name": "UserBehaviorFunnelChart.vue",
+              "path": "analytics/UserBehaviorFunnelChart.vue",
+              "type": ".vue",
+              "size": 22189
+            }
+          ],
+          "directories": [],
+          "total": 22
+        },
+        {
+          "name": "auth",
+          "path": "auth",
+          "files": [
+            {
+              "name": "AuthHead.vue",
+              "path": "auth/AuthHead.vue",
+              "type": ".vue",
+              "size": 778
+            },
+            {
+              "name": "LoginForm.vue",
+              "path": "auth/LoginForm.vue",
+              "type": ".vue",
+              "size": 5952
+            },
+            {
+              "name": "RegisterForm.vue",
+              "path": "auth/RegisterForm.vue",
+              "type": ".vue",
+              "size": 5975
+            }
+          ],
+          "directories": [],
+          "total": 3
+        },
+        {
+          "name": "calendar",
+          "path": "calendar",
+          "files": [
+            {
+              "name": "BaseCalendar.vue",
+              "path": "calendar/BaseCalendar.vue",
+              "type": ".vue",
+              "size": 29805
+            },
+            {
+              "name": "CalendarEventItem.vue",
+              "path": "calendar/CalendarEventItem.vue",
+              "type": ".vue",
+              "size": 7421
+            }
+          ],
+          "directories": [],
+          "total": 2
+        },
+        {
+          "name": "campaign",
+          "path": "campaign",
+          "files": [
+            {
+              "name": "CampaignCalendar.vue",
+              "path": "campaign/CampaignCalendar.vue",
+              "type": ".vue",
+              "size": 6309
+            },
+            {
+              "name": "CampaignList.vue",
+              "path": "campaign/CampaignList.vue",
+              "type": ".vue",
+              "size": 6701
+            },
+            {
+              "name": "CampaignScoringSection.vue",
+              "path": "campaign/CampaignScoringSection.vue",
+              "type": ".vue",
+              "size": 6548
+            }
+          ],
+          "directories": [
+            {
+              "name": "campaign-list",
+              "path": "campaign/campaign-list",
+              "files": [
+                {
+                  "name": "DataTableHeaderActions.vue",
+                  "path": "campaign/campaign-list/DataTableHeaderActions.vue",
+                  "type": ".vue",
+                  "size": 1254
+                },
+                {
+                  "name": "DataTableRowActions.vue",
+                  "path": "campaign/campaign-list/DataTableRowActions.vue",
+                  "type": ".vue",
+                  "size": 1728
+                },
+                {
+                  "name": "columns.ts",
+                  "path": "campaign/campaign-list/columns.ts",
+                  "type": ".ts",
+                  "size": 10480
+                },
+                {
+                  "name": "data.ts",
+                  "path": "campaign/campaign-list/data.ts",
+                  "type": ".ts",
+                  "size": 112
+                },
+                {
+                  "name": "field-config.ts",
+                  "path": "campaign/campaign-list/field-config.ts",
+                  "type": ".ts",
+                  "size": 2418
+                }
+              ],
+              "directories": [],
+              "total": 5
+            }
+          ],
+          "total": 8
+        },
+        {
+          "name": "cards",
+          "path": "cards",
+          "files": [
+            {
+              "name": "AmountDetailsCard.vue",
+              "path": "cards/AmountDetailsCard.vue",
+              "type": ".vue",
+              "size": 2170
+            },
+            {
+              "name": "EditableInfoCard.vue",
+              "path": "cards/EditableInfoCard.vue",
+              "type": ".vue",
+              "size": 8442
+            },
+            {
+              "name": "InfoCard.vue",
+              "path": "cards/InfoCard.vue",
+              "type": ".vue",
+              "size": 2441
+            },
+            {
+              "name": "OverviewCard.vue",
+              "path": "cards/OverviewCard.vue",
+              "type": ".vue",
+              "size": 1846
+            },
+            {
+              "name": "ProductInfoCard.vue",
+              "path": "cards/ProductInfoCard.vue",
+              "type": ".vue",
+              "size": 4988
+            },
+            {
+              "name": "UserInfoCard.vue",
+              "path": "cards/UserInfoCard.vue",
+              "type": ".vue",
+              "size": 3465
+            }
+          ],
+          "directories": [],
+          "total": 6
+        },
+        {
+          "name": "charts",
+          "path": "charts",
+          "files": [
+            {
+              "name": "ChartCard.vue",
+              "path": "charts/ChartCard.vue",
+              "type": ".vue",
+              "size": 1513
+            },
+            {
+              "name": "ChartColorDemo.vue",
+              "path": "charts/ChartColorDemo.vue",
+              "type": ".vue",
+              "size": 5362
+            },
+            {
+              "name": "ChartEmpty.vue",
+              "path": "charts/ChartEmpty.vue",
+              "type": ".vue",
+              "size": 663
+            },
+            {
+              "name": "ChartError.vue",
+              "path": "charts/ChartError.vue",
+              "type": ".vue",
+              "size": 1195
+            },
+            {
+              "name": "ChartSkeleton.vue",
+              "path": "charts/ChartSkeleton.vue",
+              "type": ".vue",
+              "size": 714
+            },
+            {
+              "name": "ChartWrap.vue",
+              "path": "charts/ChartWrap.vue",
+              "type": ".vue",
+              "size": 752
+            },
+            {
+              "name": "Heatmap.vue",
+              "path": "charts/Heatmap.vue",
+              "type": ".vue",
+              "size": 14513
+            }
+          ],
+          "directories": [
+            {
+              "name": "base",
+              "path": "charts/base",
+              "files": [
+                {
+                  "name": "SingleContainer.vue",
+                  "path": "charts/base/SingleContainer.vue",
+                  "type": ".vue",
+                  "size": 2211
+                },
+                {
+                  "name": "XYContainer.vue",
+                  "path": "charts/base/XYContainer.vue",
+                  "type": ".vue",
+                  "size": 2504
+                }
+              ],
+              "directories": [],
+              "total": 2
+            },
+            {
+              "name": "pure",
+              "path": "charts/pure",
+              "files": [
+                {
+                  "name": "ActionPriorityChart.vue",
+                  "path": "charts/pure/ActionPriorityChart.vue",
+                  "type": ".vue",
+                  "size": 1552
+                },
+                {
+                  "name": "AttributionChart.vue",
+                  "path": "charts/pure/AttributionChart.vue",
+                  "type": ".vue",
+                  "size": 5077
+                },
+                {
+                  "name": "BottleneckChart.vue",
+                  "path": "charts/pure/BottleneckChart.vue",
+                  "type": ".vue",
+                  "size": 2164
+                },
+                {
+                  "name": "BusinessHealthRadarChart.vue",
+                  "path": "charts/pure/BusinessHealthRadarChart.vue",
+                  "type": ".vue",
+                  "size": 9953
+                },
+                {
+                  "name": "BusinessMomentumChart.vue",
+                  "path": "charts/pure/BusinessMomentumChart.vue",
+                  "type": ".vue",
+                  "size": 2871
+                },
+                {
+                  "name": "CollaborationChart.vue",
+                  "path": "charts/pure/CollaborationChart.vue",
+                  "type": ".vue",
+                  "size": 6184
+                },
+                {
+                  "name": "CustomerValueScatterChart.vue",
+                  "path": "charts/pure/CustomerValueScatterChart.vue",
+                  "type": ".vue",
+                  "size": 9648
+                },
+                {
+                  "name": "EfficiencyTrendChart.vue",
+                  "path": "charts/pure/EfficiencyTrendChart.vue",
+                  "type": ".vue",
+                  "size": 2907
+                },
+                {
+                  "name": "HealthTrendChart.vue",
+                  "path": "charts/pure/HealthTrendChart.vue",
+                  "type": ".vue",
+                  "size": 2266
+                },
+                {
+                  "name": "HourlyEfficiencyChart.vue",
+                  "path": "charts/pure/HourlyEfficiencyChart.vue",
+                  "type": ".vue",
+                  "size": 2720
+                },
+                {
+                  "name": "LTVTrendChart.vue",
+                  "path": "charts/pure/LTVTrendChart.vue",
+                  "type": ".vue",
+                  "size": 1962
+                },
+                {
+                  "name": "LayerPerformanceChart.vue",
+                  "path": "charts/pure/LayerPerformanceChart.vue",
+                  "type": ".vue",
+                  "size": 3958
+                },
+                {
+                  "name": "MultiDimensionRevenueTrendChart.vue",
+                  "path": "charts/pure/MultiDimensionRevenueTrendChart.vue",
+                  "type": ".vue",
+                  "size": 8076
+                },
+                {
+                  "name": "OverlapCalendarChart.vue",
+                  "path": "charts/pure/OverlapCalendarChart.vue",
+                  "type": ".vue",
+                  "size": 11174
+                },
+                {
+                  "name": "PerformanceTrendsChart.vue",
+                  "path": "charts/pure/PerformanceTrendsChart.vue",
+                  "type": ".vue",
+                  "size": 23476
+                },
+                {
+                  "name": "RFMDistributionChart.vue",
+                  "path": "charts/pure/RFMDistributionChart.vue",
+                  "type": ".vue",
+                  "size": 1654
+                },
+                {
+                  "name": "RevenueHeatmapChart.vue",
+                  "path": "charts/pure/RevenueHeatmapChart.vue",
+                  "type": ".vue",
+                  "size": 8312
+                },
+                {
+                  "name": "RiskComparisonChart.vue",
+                  "path": "charts/pure/RiskComparisonChart.vue",
+                  "type": ".vue",
+                  "size": 2014
+                },
+                {
+                  "name": "RiskDistributionChart.vue",
+                  "path": "charts/pure/RiskDistributionChart.vue",
+                  "type": ".vue",
+                  "size": 1801
+                },
+                {
+                  "name": "RiskLevelChart.vue",
+                  "path": "charts/pure/RiskLevelChart.vue",
+                  "type": ".vue",
+                  "size": 2501
+                },
+                {
+                  "name": "RiskTrendChart.vue",
+                  "path": "charts/pure/RiskTrendChart.vue",
+                  "type": ".vue",
+                  "size": 2693
+                }
+              ],
+              "directories": [],
+              "total": 21
+            }
+          ],
+          "total": 30
+        },
+        {
+          "name": "common",
+          "path": "common",
+          "files": [
+            {
+              "name": "BusinessNumberWithUuid.vue",
+              "path": "common/BusinessNumberWithUuid.vue",
+              "type": ".vue",
+              "size": 1712
+            },
+            {
+              "name": "Copyable.vue",
+              "path": "common/Copyable.vue",
+              "type": ".vue",
+              "size": 688
+            },
+            {
+              "name": "PDFExportButton.vue",
+              "path": "common/PDFExportButton.vue",
+              "type": ".vue",
+              "size": 4440
+            },
+            {
+              "name": "ReloadButton.vue",
+              "path": "common/ReloadButton.vue",
+              "type": ".vue",
+              "size": 478
+            },
+            {
+              "name": "SimpleExportChart.vue",
+              "path": "common/SimpleExportChart.vue",
+              "type": ".vue",
+              "size": 3951
+            },
+            {
+              "name": "TableDateTime.vue",
+              "path": "common/TableDateTime.vue",
+              "type": ".vue",
+              "size": 964
+            }
+          ],
+          "directories": [
+            {
+              "name": "loading",
+              "path": "common/loading",
+              "files": [
+                {
+                  "name": "ChartSkeleton.vue",
+                  "path": "common/loading/ChartSkeleton.vue",
+                  "type": ".vue",
+                  "size": 5415
+                },
+                {
+                  "name": "EnhancedSkeleton.vue",
+                  "path": "common/loading/EnhancedSkeleton.vue",
+                  "type": ".vue",
+                  "size": 2623
+                },
+                {
+                  "name": "TableSkeleton.vue",
+                  "path": "common/loading/TableSkeleton.vue",
+                  "type": ".vue",
+                  "size": 5707
+                },
+                {
+                  "name": "UniversalLoadingState.vue",
+                  "path": "common/loading/UniversalLoadingState.vue",
+                  "type": ".vue",
+                  "size": 8208
+                },
+                {
+                  "name": "UniversalProgress.vue",
+                  "path": "common/loading/UniversalProgress.vue",
+                  "type": ".vue",
+                  "size": 3212
+                },
+                {
+                  "name": "UniversalSpinner.vue",
+                  "path": "common/loading/UniversalSpinner.vue",
+                  "type": ".vue",
+                  "size": 2253
+                },
+                {
+                  "name": "index.ts",
+                  "path": "common/loading/index.ts",
+                  "type": ".ts",
+                  "size": 3383
+                }
+              ],
+              "directories": [],
+              "total": 7
+            }
+          ],
+          "total": 13
+        },
+        {
+          "name": "composite",
+          "path": "composite",
+          "files": [
+            {
+              "name": "BaseSheet.vue",
+              "path": "composite/BaseSheet.vue",
+              "type": ".vue",
+              "size": 1627
+            },
+            {
+              "name": "ConfirmDialog.vue",
+              "path": "composite/ConfirmDialog.vue",
+              "type": ".vue",
+              "size": 2015
+            },
+            {
+              "name": "FileUploadInput.vue",
+              "path": "composite/FileUploadInput.vue",
+              "type": ".vue",
+              "size": 1567
+            },
+            {
+              "name": "PermissionMatrix.vue",
+              "path": "composite/PermissionMatrix.vue",
+              "type": ".vue",
+              "size": 1969
+            },
+            {
+              "name": "SelectSearchInput.vue",
+              "path": "composite/SelectSearchInput.vue",
+              "type": ".vue",
+              "size": 4470
+            }
+          ],
+          "directories": [],
+          "total": 5
+        },
+        {
+          "name": "customer",
+          "path": "customer",
+          "files": [
+            {
+              "name": "CustomerList.vue",
+              "path": "customer/CustomerList.vue",
+              "type": ".vue",
+              "size": 5898
+            },
+            {
+              "name": "UserOrderList.vue",
+              "path": "customer/UserOrderList.vue",
+              "type": ".vue",
+              "size": 2783
+            }
+          ],
+          "directories": [
+            {
+              "name": "charts",
+              "path": "customer/charts",
+              "files": [
+                {
+                  "name": "LTVPurchaseTrend.vue",
+                  "path": "customer/charts/LTVPurchaseTrend.vue",
+                  "type": ".vue",
+                  "size": 2058
+                },
+                {
+                  "name": "LTVPurchaseTrendArea.vue",
+                  "path": "customer/charts/LTVPurchaseTrendArea.vue",
+                  "type": ".vue",
+                  "size": 2121
+                },
+                {
+                  "name": "LTVPurchaseTrendSparkle.vue",
+                  "path": "customer/charts/LTVPurchaseTrendSparkle.vue",
+                  "type": ".vue",
+                  "size": 2029
+                },
+                {
+                  "name": "LtvSegmentDonut.vue",
+                  "path": "customer/charts/LtvSegmentDonut.vue",
+                  "type": ".vue",
+                  "size": 2090
+                },
+                {
+                  "name": "PurchaseCount.vue",
+                  "path": "customer/charts/PurchaseCount.vue",
+                  "type": ".vue",
+                  "size": 1453
+                },
+                {
+                  "name": "RFMDonutChart.vue",
+                  "path": "customer/charts/RFMDonutChart.vue",
+                  "type": ".vue",
+                  "size": 1400
+                },
+                {
+                  "name": "RfmLtvScatter.vue",
+                  "path": "customer/charts/RfmLtvScatter.vue",
+                  "type": ".vue",
+                  "size": 1104
+                }
+              ],
+              "directories": [],
+              "total": 7
+            },
+            {
+              "name": "customer-list",
+              "path": "customer/customer-list",
+              "files": [
+                {
+                  "name": "DataTableHeaderActions.vue",
+                  "path": "customer/customer-list/DataTableHeaderActions.vue",
+                  "type": ".vue",
+                  "size": 2613
+                },
+                {
+                  "name": "DataTableRowActions.vue",
+                  "path": "customer/customer-list/DataTableRowActions.vue",
+                  "type": ".vue",
+                  "size": 3706
+                },
+                {
+                  "name": "columns.ts",
+                  "path": "customer/customer-list/columns.ts",
+                  "type": ".ts",
+                  "size": 8655
+                },
+                {
+                  "name": "data.ts",
+                  "path": "customer/customer-list/data.ts",
+                  "type": ".ts",
+                  "size": 112
+                },
+                {
+                  "name": "field-config.ts",
+                  "path": "customer/customer-list/field-config.ts",
+                  "type": ".ts",
+                  "size": 359
+                }
+              ],
+              "directories": [],
+              "total": 5
+            },
+            {
+              "name": "user-order-list",
+              "path": "customer/user-order-list",
+              "files": [
+                {
+                  "name": "DataTableRowActions.vue",
+                  "path": "customer/user-order-list/DataTableRowActions.vue",
+                  "type": ".vue",
+                  "size": 1851
+                },
+                {
+                  "name": "columns.ts",
+                  "path": "customer/user-order-list/columns.ts",
+                  "type": ".ts",
+                  "size": 2785
+                }
+              ],
+              "directories": [],
+              "total": 2
+            }
+          ],
+          "total": 16
+        },
+        {
+          "name": "dashboard",
+          "path": "dashboard",
+          "files": [
+            {
+              "name": "BusinessHealthDashboard.vue",
+              "path": "dashboard/BusinessHealthDashboard.vue",
+              "type": ".vue",
+              "size": 1914
+            },
+            {
+              "name": "BusinessHealthDashboard_Simplified.vue",
+              "path": "dashboard/BusinessHealthDashboard_Simplified.vue",
+              "type": ".vue",
+              "size": 2082
+            },
+            {
+              "name": "BusinessHealthIndicators.vue",
+              "path": "dashboard/BusinessHealthIndicators.vue",
+              "type": ".vue",
+              "size": 4012
+            },
+            {
+              "name": "DashboardHeader.vue",
+              "path": "dashboard/DashboardHeader.vue",
+              "type": ".vue",
+              "size": 3665
+            }
+          ],
+          "directories": [],
+          "total": 4
+        },
+        {
+          "name": "data-table",
+          "path": "data-table",
+          "files": [
+            {
+              "name": "DataTable.vue",
+              "path": "data-table/DataTable.vue",
+              "type": ".vue",
+              "size": 7184
+            },
+            {
+              "name": "DataTableToolbar.vue",
+              "path": "data-table/DataTableToolbar.vue",
+              "type": ".vue",
+              "size": 2894
+            }
+          ],
+          "directories": [],
+          "total": 2
+        },
+        {
+          "name": "data-table-async",
+          "path": "data-table-async",
+          "files": [
+            {
+              "name": "DataTable.vue",
+              "path": "data-table-async/DataTable.vue",
+              "type": ".vue",
+              "size": 7210
+            },
+            {
+              "name": "DataTableToolbar.vue",
+              "path": "data-table-async/DataTableToolbar.vue",
+              "type": ".vue",
+              "size": 2628
+            }
+          ],
+          "directories": [],
+          "total": 2
+        },
+        {
+          "name": "data-table-common",
+          "path": "data-table-common",
+          "files": [
+            {
+              "name": "DataTableColumnHeader.vue",
+              "path": "data-table-common/DataTableColumnHeader.vue",
+              "type": ".vue",
+              "size": 2091
+            },
+            {
+              "name": "DataTableFacetedFilter.vue",
+              "path": "data-table-common/DataTableFacetedFilter.vue",
+              "type": ".vue",
+              "size": 4426
+            },
+            {
+              "name": "DataTableHeaderCheckbox.vue",
+              "path": "data-table-common/DataTableHeaderCheckbox.vue",
+              "type": ".vue",
+              "size": 2407
+            },
+            {
+              "name": "DataTablePagination.vue",
+              "path": "data-table-common/DataTablePagination.vue",
+              "type": ".vue",
+              "size": 3700
+            },
+            {
+              "name": "DataTableRowCheckbox.vue",
+              "path": "data-table-common/DataTableRowCheckbox.vue",
+              "type": ".vue",
+              "size": 2364
+            },
+            {
+              "name": "DataTableViewOptions.vue",
+              "path": "data-table-common/DataTableViewOptions.vue",
+              "type": ".vue",
+              "size": 1572
+            },
+            {
+              "name": "columnFormat.ts",
+              "path": "data-table-common/columnFormat.ts",
+              "type": ".ts",
+              "size": 628
+            }
+          ],
+          "directories": [],
+          "total": 7
+        },
+        {
+          "name": "data-table-editable",
+          "path": "data-table-editable",
+          "files": [
+            {
+              "name": "DataTable.vue",
+              "path": "data-table-editable/DataTable.vue",
+              "type": ".vue",
+              "size": 4484
+            }
+          ],
+          "directories": [],
+          "total": 1
+        },
+        {
+          "name": "dev-tools",
+          "path": "dev-tools",
+          "files": [
+            {
+              "name": "CampaignColorTest.vue",
+              "path": "dev-tools/CampaignColorTest.vue",
+              "type": ".vue",
+              "size": 3526
+            },
+            {
+              "name": "DevFloatingWidget.vue",
+              "path": "dev-tools/DevFloatingWidget.vue",
+              "type": ".vue",
+              "size": 44862
+            },
+            {
+              "name": "ThemeTester.vue",
+              "path": "dev-tools/ThemeTester.vue",
+              "type": ".vue",
+              "size": 72034
+            }
+          ],
+          "directories": [],
+          "total": 3
+        },
+        {
+          "name": "forms",
+          "path": "forms",
+          "files": [
+            {
+              "name": "ChannelCheckboxes.vue",
+              "path": "forms/ChannelCheckboxes.vue",
+              "type": ".vue",
+              "size": 1857
+            },
+            {
+              "name": "DynamicForm.vue",
+              "path": "forms/DynamicForm.vue",
+              "type": ".vue",
+              "size": 29916
+            },
+            {
+              "name": "FormSheet.vue",
+              "path": "forms/FormSheet.vue",
+              "type": ".vue",
+              "size": 2809
+            }
+          ],
+          "directories": [
+            {
+              "name": "fields",
+              "path": "forms/fields",
+              "files": [
+                {
+                  "name": "SKUInput.vue",
+                  "path": "forms/fields/SKUInput.vue",
+                  "type": ".vue",
+                  "size": 11976
+                }
+              ],
+              "directories": [],
+              "total": 1
+            }
+          ],
+          "total": 4
+        },
+        {
+          "name": "holiday",
+          "path": "holiday",
+          "files": [
+            {
+              "name": "HolidayCalendar.vue",
+              "path": "holiday/HolidayCalendar.vue",
+              "type": ".vue",
+              "size": 3949
+            },
+            {
+              "name": "HolidayList.vue",
+              "path": "holiday/HolidayList.vue",
+              "type": ".vue",
+              "size": 3759
+            },
+            {
+              "name": "field-config.ts",
+              "path": "holiday/field-config.ts",
+              "type": ".ts",
+              "size": 5458
+            }
+          ],
+          "directories": [
+            {
+              "name": "holiday-list",
+              "path": "holiday/holiday-list",
+              "files": [
+                {
+                  "name": "DataTableHeaderActions.vue",
+                  "path": "holiday/holiday-list/DataTableHeaderActions.vue",
+                  "type": ".vue",
+                  "size": 1089
+                },
+                {
+                  "name": "DataTableRowActions.vue",
+                  "path": "holiday/holiday-list/DataTableRowActions.vue",
+                  "type": ".vue",
+                  "size": 1733
+                },
+                {
+                  "name": "columns.ts",
+                  "path": "holiday/holiday-list/columns.ts",
+                  "type": ".ts",
+                  "size": 5840
+                }
+              ],
+              "directories": [],
+              "total": 3
+            }
+          ],
+          "total": 6
+        },
+        {
+          "name": "insights",
+          "path": "insights",
+          "files": [],
+          "directories": [
+            {
+              "name": "health",
+              "path": "insights/health",
+              "files": [
+                {
+                  "name": "HealthComparisonChart.vue",
+                  "path": "insights/health/HealthComparisonChart.vue",
+                  "type": ".vue",
+                  "size": 1392
+                }
+              ],
+              "directories": [],
+              "total": 1
+            }
+          ],
+          "total": 1
+        },
+        {
+          "name": "inventory",
+          "path": "inventory",
+          "files": [
+            {
+              "name": "InventoryAdjustmentDialog.vue",
+              "path": "inventory/InventoryAdjustmentDialog.vue",
+              "type": ".vue",
+              "size": 3652
+            },
+            {
+              "name": "InventoryAdjustmentForm.vue",
+              "path": "inventory/InventoryAdjustmentForm.vue",
+              "type": ".vue",
+              "size": 9910
+            },
+            {
+              "name": "StockInFormSheet.vue",
+              "path": "inventory/StockInFormSheet.vue",
+              "type": ".vue",
+              "size": 9258
+            },
+            {
+              "name": "StockStatusIndicator.vue",
+              "path": "inventory/StockStatusIndicator.vue",
+              "type": ".vue",
+              "size": 1966
+            }
+          ],
+          "directories": [],
+          "total": 4
+        },
+        {
+          "name": "layouts",
+          "path": "layouts",
+          "files": [
+            {
+              "name": "AgentUser.vue",
+              "path": "layouts/AgentUser.vue",
+              "type": ".vue",
+              "size": 4294
+            },
+            {
+              "name": "AppSidebar.vue",
+              "path": "layouts/AppSidebar.vue",
+              "type": ".vue",
+              "size": 9766
+            },
+            {
+              "name": "BannerUser.vue",
+              "path": "layouts/BannerUser.vue",
+              "type": ".vue",
+              "size": 3219
+            },
+            {
+              "name": "NavMain.vue",
+              "path": "layouts/NavMain.vue",
+              "type": ".vue",
+              "size": 2040
+            },
+            {
+              "name": "NavUser.vue",
+              "path": "layouts/NavUser.vue",
+              "type": ".vue",
+              "size": 4912
+            },
+            {
+              "name": "RightSidebar.vue",
+              "path": "layouts/RightSidebar.vue",
+              "type": ".vue",
+              "size": 3214
+            },
+            {
+              "name": "TeamSwitcher.vue",
+              "path": "layouts/TeamSwitcher.vue",
+              "type": ".vue",
+              "size": 2859
+            }
+          ],
+          "directories": [],
+          "total": 7
+        },
+        {
+          "name": "market",
+          "path": "market",
+          "files": [],
+          "directories": [
+            {
+              "name": "charts",
+              "path": "market/charts",
+              "files": [
+                {
+                  "name": "CampaignTimeline.vue",
+                  "path": "market/charts/CampaignTimeline.vue",
+                  "type": ".vue",
+                  "size": 2670
+                },
+                {
+                  "name": "RevenueCampaignStacked.vue",
+                  "path": "market/charts/RevenueCampaignStacked.vue",
+                  "type": ".vue",
+                  "size": 2522
+                }
+              ],
+              "directories": [],
+              "total": 2
+            }
+          ],
+          "total": 2
+        },
+        {
+          "name": "notify",
+          "path": "notify",
+          "files": [
+            {
+              "name": "EventCalendar.vue",
+              "path": "notify/EventCalendar.vue",
+              "type": ".vue",
+              "size": 8130
+            },
+            {
+              "name": "GroupNotificationCard.vue",
+              "path": "notify/GroupNotificationCard.vue",
+              "type": ".vue",
+              "size": 9950
+            },
+            {
+              "name": "Notification.vue",
+              "path": "notify/Notification.vue",
+              "type": ".vue",
+              "size": 5230
+            },
+            {
+              "name": "NotificationBadge.vue",
+              "path": "notify/NotificationBadge.vue",
+              "type": ".vue",
+              "size": 17818
+            },
+            {
+              "name": "NotificationCard.vue",
+              "path": "notify/NotificationCard.vue",
+              "type": ".vue",
+              "size": 17420
+            },
+            {
+              "name": "NotificationList.vue",
+              "path": "notify/NotificationList.vue",
+              "type": ".vue",
+              "size": 21436
+            },
+            {
+              "name": "NotificationMonitoringDashboard.vue",
+              "path": "notify/NotificationMonitoringDashboard.vue",
+              "type": ".vue",
+              "size": 17485
+            },
+            {
+              "name": "NotificationSettings.vue",
+              "path": "notify/NotificationSettings.vue",
+              "type": ".vue",
+              "size": 16536
+            },
+            {
+              "name": "NotificationTemplateAdmin.vue",
+              "path": "notify/NotificationTemplateAdmin.vue",
+              "type": ".vue",
+              "size": 8416
+            },
+            {
+              "name": "NotificationTemplateList.vue",
+              "path": "notify/NotificationTemplateList.vue",
+              "type": ".vue",
+              "size": 3903
+            },
+            {
+              "name": "NotificationTypeSelect.vue",
+              "path": "notify/NotificationTypeSelect.vue",
+              "type": ".vue",
+              "size": 6428
+            },
+            {
+              "name": "notificationTemplates.ts",
+              "path": "notify/notificationTemplates.ts",
+              "type": ".ts",
+              "size": 4900
+            },
+            {
+              "name": "notifyConfig.ts",
+              "path": "notify/notifyConfig.ts",
+              "type": ".ts",
+              "size": 6634
+            }
+          ],
+          "directories": [
+            {
+              "name": "template-form",
+              "path": "notify/template-form",
+              "files": [
+                {
+                  "name": "form-config.ts",
+                  "path": "notify/template-form/form-config.ts",
+                  "type": ".ts",
+                  "size": 5289
+                }
+              ],
+              "directories": [],
+              "total": 1
+            },
+            {
+              "name": "template-list",
+              "path": "notify/template-list",
+              "files": [
+                {
+                  "name": "DataTableHeaderActions.vue",
+                  "path": "notify/template-list/DataTableHeaderActions.vue",
+                  "type": ".vue",
+                  "size": 1465
+                },
+                {
+                  "name": "DataTableRowActions.vue",
+                  "path": "notify/template-list/DataTableRowActions.vue",
+                  "type": ".vue",
+                  "size": 1684
+                },
+                {
+                  "name": "columns.ts",
+                  "path": "notify/template-list/columns.ts",
+                  "type": ".ts",
+                  "size": 5751
+                },
+                {
+                  "name": "field-config.ts",
+                  "path": "notify/template-list/field-config.ts",
+                  "type": ".ts",
+                  "size": 721
+                }
+              ],
+              "directories": [],
+              "total": 4
+            }
+          ],
+          "total": 18
+        },
+        {
+          "name": "order",
+          "path": "order",
+          "files": [
+            {
+              "name": "BatchStatusTransitionDialog.vue",
+              "path": "order/BatchStatusTransitionDialog.vue",
+              "type": ".vue",
+              "size": 9659
+            },
+            {
+              "name": "ItemList.vue",
+              "path": "order/ItemList.vue",
+              "type": ".vue",
+              "size": 769
+            },
+            {
+              "name": "OrderItemForm.vue",
+              "path": "order/OrderItemForm.vue",
+              "type": ".vue",
+              "size": 9196
+            },
+            {
+              "name": "OrderList.vue",
+              "path": "order/OrderList.vue",
+              "type": ".vue",
+              "size": 9413
+            },
+            {
+              "name": "OrderStatusTransitionDialog.vue",
+              "path": "order/OrderStatusTransitionDialog.vue",
+              "type": ".vue",
+              "size": 8367
+            }
+          ],
+          "directories": [
+            {
+              "name": "__tests__",
+              "path": "order/__tests__",
+              "files": [],
+              "directories": [],
+              "total": 0
+            },
+            {
+              "name": "charts",
+              "path": "order/charts",
+              "files": [
+                {
+                  "name": "AmountHistogram.vue",
+                  "path": "order/charts/AmountHistogram.vue",
+                  "type": ".vue",
+                  "size": 2009
+                },
+                {
+                  "name": "CustomerPurchaseStacked.vue",
+                  "path": "order/charts/CustomerPurchaseStacked.vue",
+                  "type": ".vue",
+                  "size": 2375
+                },
+                {
+                  "name": "OrderCustomerStacked.vue",
+                  "path": "order/charts/OrderCustomerStacked.vue",
+                  "type": ".vue",
+                  "size": 2854
+                },
+                {
+                  "name": "OrderHourlyBar.vue",
+                  "path": "order/charts/OrderHourlyBar.vue",
+                  "type": ".vue",
+                  "size": 1917
+                },
+                {
+                  "name": "OrderStatusDistribution.vue",
+                  "path": "order/charts/OrderStatusDistribution.vue",
+                  "type": ".vue",
+                  "size": 2252
+                },
+                {
+                  "name": "OrderWeekendDiffTrend.vue",
+                  "path": "order/charts/OrderWeekendDiffTrend.vue",
+                  "type": ".vue",
+                  "size": 2658
+                },
+                {
+                  "name": "RevenueHourScatter.vue",
+                  "path": "order/charts/RevenueHourScatter.vue",
+                  "type": ".vue",
+                  "size": 2758
+                },
+                {
+                  "name": "RevenueWeekScatter.vue",
+                  "path": "order/charts/RevenueWeekScatter.vue",
+                  "type": ".vue",
+                  "size": 1996
+                },
+                {
+                  "name": "TopProductTrend.vue",
+                  "path": "order/charts/TopProductTrend.vue",
+                  "type": ".vue",
+                  "size": 1999
+                }
+              ],
+              "directories": [],
+              "total": 9
+            },
+            {
+              "name": "item-list",
+              "path": "order/item-list",
+              "files": [
+                {
+                  "name": "columns.ts",
+                  "path": "order/item-list/columns.ts",
+                  "type": ".ts",
+                  "size": 5217
+                }
+              ],
+              "directories": [],
+              "total": 1
+            },
+            {
+              "name": "order-list",
+              "path": "order/order-list",
+              "files": [
+                {
+                  "name": "DataTableHeaderActions.vue",
+                  "path": "order/order-list/DataTableHeaderActions.vue",
+                  "type": ".vue",
+                  "size": 5376
+                },
+                {
+                  "name": "DataTableRowActions.vue",
+                  "path": "order/order-list/DataTableRowActions.vue",
+                  "type": ".vue",
+                  "size": 7761
+                },
+                {
+                  "name": "columns.ts",
+                  "path": "order/order-list/columns.ts",
+                  "type": ".ts",
+                  "size": 6550
+                },
+                {
+                  "name": "field-config.ts",
+                  "path": "order/order-list/field-config.ts",
+                  "type": ".ts",
+                  "size": 2332
+                }
+              ],
+              "directories": [],
+              "total": 4
+            }
+          ],
+          "total": 19
+        },
+        {
+          "name": "product",
+          "path": "product",
+          "files": [
+            {
+              "name": "CategoryList.vue",
+              "path": "product/CategoryList.vue",
+              "type": ".vue",
+              "size": 9827
+            },
+            {
+              "name": "InventoryList.vue",
+              "path": "product/InventoryList.vue",
+              "type": ".vue",
+              "size": 1397
+            },
+            {
+              "name": "InventoryManagementDropdown.vue",
+              "path": "product/InventoryManagementDropdown.vue",
+              "type": ".vue",
+              "size": 16570
+            },
+            {
+              "name": "InventoryOperationHistory.vue",
+              "path": "product/InventoryOperationHistory.vue",
+              "type": ".vue",
+              "size": 13014
+            },
+            {
+              "name": "ProductList.vue",
+              "path": "product/ProductList.vue",
+              "type": ".vue",
+              "size": 11315
+            },
+            {
+              "name": "ProductStockList.vue",
+              "path": "product/ProductStockList.vue",
+              "type": ".vue",
+              "size": 11926
+            }
+          ],
+          "directories": [
+            {
+              "name": "category-list",
+              "path": "product/category-list",
+              "files": [
+                {
+                  "name": "DataTableHeaderActions.vue",
+                  "path": "product/category-list/DataTableHeaderActions.vue",
+                  "type": ".vue",
+                  "size": 1254
+                },
+                {
+                  "name": "DataTableRowActions.vue",
+                  "path": "product/category-list/DataTableRowActions.vue",
+                  "type": ".vue",
+                  "size": 1727
+                },
+                {
+                  "name": "columns.ts",
+                  "path": "product/category-list/columns.ts",
+                  "type": ".ts",
+                  "size": 2837
+                },
+                {
+                  "name": "data.ts",
+                  "path": "product/category-list/data.ts",
+                  "type": ".ts",
+                  "size": 112
+                }
+              ],
+              "directories": [],
+              "total": 4
+            },
+            {
+              "name": "inventory-list",
+              "path": "product/inventory-list",
+              "files": [
+                {
+                  "name": "columns.ts",
+                  "path": "product/inventory-list/columns.ts",
+                  "type": ".ts",
+                  "size": 5437
+                },
+                {
+                  "name": "data.ts",
+                  "path": "product/inventory-list/data.ts",
+                  "type": ".ts",
+                  "size": 636
+                }
+              ],
+              "directories": [],
+              "total": 2
+            },
+            {
+              "name": "product-list",
+              "path": "product/product-list",
+              "files": [
+                {
+                  "name": "DataTableHeaderActions.vue",
+                  "path": "product/product-list/DataTableHeaderActions.vue",
+                  "type": ".vue",
+                  "size": 2613
+                },
+                {
+                  "name": "DataTableRowActions.vue",
+                  "path": "product/product-list/DataTableRowActions.vue",
+                  "type": ".vue",
+                  "size": 3393
+                },
+                {
+                  "name": "columns.ts",
+                  "path": "product/product-list/columns.ts",
+                  "type": ".ts",
+                  "size": 8027
+                },
+                {
+                  "name": "field-config.ts",
+                  "path": "product/product-list/field-config.ts",
+                  "type": ".ts",
+                  "size": 4710
+                }
+              ],
+              "directories": [],
+              "total": 4
+            },
+            {
+              "name": "product-stock-list",
+              "path": "product/product-stock-list",
+              "files": [
+                {
+                  "name": "DataTableHeaderActions.vue",
+                  "path": "product/product-stock-list/DataTableHeaderActions.vue",
+                  "type": ".vue",
+                  "size": 2613
+                },
+                {
+                  "name": "DataTableRowActions.vue",
+                  "path": "product/product-stock-list/DataTableRowActions.vue",
+                  "type": ".vue",
+                  "size": 3260
+                },
+                {
+                  "name": "columns.ts",
+                  "path": "product/product-stock-list/columns.ts",
+                  "type": ".ts",
+                  "size": 6906
+                },
+                {
+                  "name": "field-config.ts",
+                  "path": "product/product-stock-list/field-config.ts",
+                  "type": ".ts",
+                  "size": 3280
+                }
+              ],
+              "directories": [],
+              "total": 4
+            }
+          ],
+          "total": 20
+        },
+        {
+          "name": "role",
+          "path": "role",
+          "files": [
+            {
+              "name": "RoleBadges.vue",
+              "path": "role/RoleBadges.vue",
+              "type": ".vue",
+              "size": 620
+            },
+            {
+              "name": "RoleSelector.vue",
+              "path": "role/RoleSelector.vue",
+              "type": ".vue",
+              "size": 1647
+            },
+            {
+              "name": "RoleUserList.vue",
+              "path": "role/RoleUserList.vue",
+              "type": ".vue",
+              "size": 7906
+            }
+          ],
+          "directories": [
+            {
+              "name": "role-users-list",
+              "path": "role/role-users-list",
+              "files": [
+                {
+                  "name": "DataTableHeaderActions.vue",
+                  "path": "role/role-users-list/DataTableHeaderActions.vue",
+                  "type": ".vue",
+                  "size": 3133
+                },
+                {
+                  "name": "DataTableRowActions.vue",
+                  "path": "role/role-users-list/DataTableRowActions.vue",
+                  "type": ".vue",
+                  "size": 3753
+                },
+                {
+                  "name": "columns.ts",
+                  "path": "role/role-users-list/columns.ts",
+                  "type": ".ts",
+                  "size": 5557
+                }
+              ],
+              "directories": [],
+              "total": 3
+            }
+          ],
+          "total": 6
+        },
+        {
+          "name": "settings",
+          "path": "settings",
+          "files": [
+            {
+              "name": "PasswordEditModal.vue",
+              "path": "settings/PasswordEditModal.vue",
+              "type": ".vue",
+              "size": 4437
+            },
+            {
+              "name": "PasswordStrength.vue",
+              "path": "settings/PasswordStrength.vue",
+              "type": ".vue",
+              "size": 2972
+            },
+            {
+              "name": "ProfileSettingsSection.vue",
+              "path": "settings/ProfileSettingsSection.vue",
+              "type": ".vue",
+              "size": 3279
+            },
+            {
+              "name": "SecuritySettingsSection.vue",
+              "path": "settings/SecuritySettingsSection.vue",
+              "type": ".vue",
+              "size": 5377
+            }
+          ],
+          "directories": [],
+          "total": 4
+        },
+        {
+          "name": "support",
+          "path": "support",
+          "files": [
+            {
+              "name": "ChatRoom.vue",
+              "path": "support/ChatRoom.vue",
+              "type": ".vue",
+              "size": 11588
+            },
+            {
+              "name": "ConversationList.vue",
+              "path": "support/ConversationList.vue",
+              "type": ".vue",
+              "size": 3740
+            },
+            {
+              "name": "ConversationTitle.vue",
+              "path": "support/ConversationTitle.vue",
+              "type": ".vue",
+              "size": 1910
+            },
+            {
+              "name": "HistoryConversations.vue",
+              "path": "support/HistoryConversations.vue",
+              "type": ".vue",
+              "size": 3275
+            },
+            {
+              "name": "TicketList.vue",
+              "path": "support/TicketList.vue",
+              "type": ".vue",
+              "size": 9356
+            }
+          ],
+          "directories": [
+            {
+              "name": "charts",
+              "path": "support/charts",
+              "files": [
+                {
+                  "name": "AgentPerformanceTable.vue",
+                  "path": "support/charts/AgentPerformanceTable.vue",
+                  "type": ".vue",
+                  "size": 6954
+                },
+                {
+                  "name": "ConversationVolumeTrendChart.vue",
+                  "path": "support/charts/ConversationVolumeTrendChart.vue",
+                  "type": ".vue",
+                  "size": 2791
+                },
+                {
+                  "name": "ConversationWeekHeatmap.vue",
+                  "path": "support/charts/ConversationWeekHeatmap.vue",
+                  "type": ".vue",
+                  "size": 3956
+                },
+                {
+                  "name": "DailyConversationTrend.vue",
+                  "path": "support/charts/DailyConversationTrend.vue",
+                  "type": ".vue",
+                  "size": 2407
+                },
+                {
+                  "name": "HourlyConversationTrend.vue",
+                  "path": "support/charts/HourlyConversationTrend.vue",
+                  "type": ".vue",
+                  "size": 2586
+                },
+                {
+                  "name": "HourlyEfficiencyBarChart.vue",
+                  "path": "support/charts/HourlyEfficiencyBarChart.vue",
+                  "type": ".vue",
+                  "size": 4542
+                },
+                {
+                  "name": "ResponseTimePercentiles.vue",
+                  "path": "support/charts/ResponseTimePercentiles.vue",
+                  "type": ".vue",
+                  "size": 2655
+                },
+                {
+                  "name": "ResponseTimeTrendChart.vue",
+                  "path": "support/charts/ResponseTimeTrendChart.vue",
+                  "type": ".vue",
+                  "size": 3077
+                },
+                {
+                  "name": "StatusDistributionDonut.vue",
+                  "path": "support/charts/StatusDistributionDonut.vue",
+                  "type": ".vue",
+                  "size": 2842
+                }
+              ],
+              "directories": [],
+              "total": 9
+            },
+            {
+              "name": "ticket-list",
+              "path": "support/ticket-list",
+              "files": [
+                {
+                  "name": "DataTableHeaderActions.vue",
+                  "path": "support/ticket-list/DataTableHeaderActions.vue",
+                  "type": ".vue",
+                  "size": 1686
+                },
+                {
+                  "name": "DataTableRowActions.vue",
+                  "path": "support/ticket-list/DataTableRowActions.vue",
+                  "type": ".vue",
+                  "size": 3742
+                },
+                {
+                  "name": "columns.ts",
+                  "path": "support/ticket-list/columns.ts",
+                  "type": ".ts",
+                  "size": 8962
+                },
+                {
+                  "name": "field-config.ts",
+                  "path": "support/ticket-list/field-config.ts",
+                  "type": ".ts",
+                  "size": 603
+                }
+              ],
+              "directories": [],
+              "total": 4
+            }
+          ],
+          "total": 18
+        },
+        {
+          "name": "ui",
+          "path": "ui",
+          "files": [
+            {
+              "name": "ConfidenceProgressBar.vue",
+              "path": "ui/ConfidenceProgressBar.vue",
+              "type": ".vue",
+              "size": 2010
+            },
+            {
+              "name": "CustomerAnalyticsSkeleton.vue",
+              "path": "ui/CustomerAnalyticsSkeleton.vue",
+              "type": ".vue",
+              "size": 8933
+            },
+            {
+              "name": "RiskLevelIndicator.vue",
+              "path": "ui/RiskLevelIndicator.vue",
+              "type": ".vue",
+              "size": 1461
+            },
+            {
+              "name": "StructuredTooltipContent.vue",
+              "path": "ui/StructuredTooltipContent.vue",
+              "type": ".vue",
+              "size": 5883
+            },
+            {
+              "name": "TrendArrow.vue",
+              "path": "ui/TrendArrow.vue",
+              "type": ".vue",
+              "size": 2345
+            }
+          ],
+          "directories": [
+            {
+              "name": "alert",
+              "path": "ui/alert",
+              "files": [
+                {
+                  "name": "Alert.vue",
+                  "path": "ui/alert/Alert.vue",
+                  "type": ".vue",
+                  "size": 418
+                },
+                {
+                  "name": "AlertDescription.vue",
+                  "path": "ui/alert/AlertDescription.vue",
+                  "type": ".vue",
+                  "size": 429
+                },
+                {
+                  "name": "AlertTitle.vue",
+                  "path": "ui/alert/AlertTitle.vue",
+                  "type": ".vue",
+                  "size": 388
+                },
+                {
+                  "name": "index.ts",
+                  "path": "ui/alert/index.ts",
+                  "type": ".ts",
+                  "size": 867
+                }
+              ],
+              "directories": [],
+              "total": 4
+            },
+            {
+              "name": "alert-dialog",
+              "path": "ui/alert-dialog",
+              "files": [
+                {
+                  "name": "AlertDialog.vue",
+                  "path": "ui/alert-dialog/AlertDialog.vue",
+                  "type": ".vue",
+                  "size": 423
+                },
+                {
+                  "name": "AlertDialogAction.vue",
+                  "path": "ui/alert-dialog/AlertDialogAction.vue",
+                  "type": ".vue",
+                  "size": 658
+                },
+                {
+                  "name": "AlertDialogCancel.vue",
+                  "path": "ui/alert-dialog/AlertDialogCancel.vue",
+                  "type": ".vue",
+                  "size": 657
+                },
+                {
+                  "name": "AlertDialogContent.vue",
+                  "path": "ui/alert-dialog/AlertDialogContent.vue",
+                  "type": ".vue",
+                  "size": 1498
+                },
+                {
+                  "name": "AlertDialogDescription.vue",
+                  "path": "ui/alert-dialog/AlertDialogDescription.vue",
+                  "type": ".vue",
+                  "size": 637
+                },
+                {
+                  "name": "AlertDialogFooter.vue",
+                  "path": "ui/alert-dialog/AlertDialogFooter.vue",
+                  "type": ".vue",
+                  "size": 366
+                },
+                {
+                  "name": "AlertDialogHeader.vue",
+                  "path": "ui/alert-dialog/AlertDialogHeader.vue",
+                  "type": ".vue",
+                  "size": 344
+                },
+                {
+                  "name": "AlertDialogTitle.vue",
+                  "path": "ui/alert-dialog/AlertDialogTitle.vue",
+                  "type": ".vue",
+                  "size": 588
+                },
+                {
+                  "name": "AlertDialogTrigger.vue",
+                  "path": "ui/alert-dialog/AlertDialogTrigger.vue",
+                  "type": ".vue",
+                  "size": 296
+                },
+                {
+                  "name": "index.ts",
+                  "path": "ui/alert-dialog/index.ts",
+                  "type": ".ts",
+                  "size": 639
+                }
+              ],
+              "directories": [],
+              "total": 10
+            },
+            {
+              "name": "avatar",
+              "path": "ui/avatar",
+              "files": [
+                {
+                  "name": "Avatar.vue",
+                  "path": "ui/avatar/Avatar.vue",
+                  "type": ".vue",
+                  "size": 433
+                },
+                {
+                  "name": "AvatarFallback.vue",
+                  "path": "ui/avatar/AvatarFallback.vue",
+                  "type": ".vue",
+                  "size": 655
+                },
+                {
+                  "name": "AvatarImage.vue",
+                  "path": "ui/avatar/AvatarImage.vue",
+                  "type": ".vue",
+                  "size": 325
+                },
+                {
+                  "name": "index.ts",
+                  "path": "ui/avatar/index.ts",
+                  "type": ".ts",
+                  "size": 173
+                }
+              ],
+              "directories": [],
+              "total": 4
+            },
+            {
+              "name": "badge",
+              "path": "ui/badge",
+              "files": [
+                {
+                  "name": "Badge.vue",
+                  "path": "ui/badge/Badge.vue",
+                  "type": ".vue",
+                  "size": 652
+                },
+                {
+                  "name": "index.ts",
+                  "path": "ui/badge/index.ts",
+                  "type": ".ts",
+                  "size": 1412
+                }
+              ],
+              "directories": [],
+              "total": 2
+            },
+            {
+              "name": "breadcrumb",
+              "path": "ui/breadcrumb",
+              "files": [
+                {
+                  "name": "Breadcrumb.vue",
+                  "path": "ui/breadcrumb/Breadcrumb.vue",
+                  "type": ".vue",
+                  "size": 267
+                },
+                {
+                  "name": "BreadcrumbEllipsis.vue",
+                  "path": "ui/breadcrumb/BreadcrumbEllipsis.vue",
+                  "type": ".vue",
+                  "size": 525
+                },
+                {
+                  "name": "BreadcrumbItem.vue",
+                  "path": "ui/breadcrumb/BreadcrumbItem.vue",
+                  "type": ".vue",
+                  "size": 326
+                },
+                {
+                  "name": "BreadcrumbLink.vue",
+                  "path": "ui/breadcrumb/BreadcrumbLink.vue",
+                  "type": ".vue",
+                  "size": 497
+                },
+                {
+                  "name": "BreadcrumbList.vue",
+                  "path": "ui/breadcrumb/BreadcrumbList.vue",
+                  "type": ".vue",
+                  "size": 419
+                },
+                {
+                  "name": "BreadcrumbPage.vue",
+                  "path": "ui/breadcrumb/BreadcrumbPage.vue",
+                  "type": ".vue",
+                  "size": 390
+                },
+                {
+                  "name": "BreadcrumbSeparator.vue",
+                  "path": "ui/breadcrumb/BreadcrumbSeparator.vue",
+                  "type": ".vue",
+                  "size": 442
+                },
+                {
+                  "name": "index.ts",
+                  "path": "ui/breadcrumb/index.ts",
+                  "type": ".ts",
+                  "size": 465
+                }
+              ],
+              "directories": [],
+              "total": 8
+            },
+            {
+              "name": "button",
+              "path": "ui/button",
+              "files": [
+                {
+                  "name": "Button.vue",
+                  "path": "ui/button/Button.vue",
+                  "type": ".vue",
+                  "size": 631
+                },
+                {
+                  "name": "index.ts",
+                  "path": "ui/button/index.ts",
+                  "type": ".ts",
+                  "size": 1730
+                }
+              ],
+              "directories": [],
+              "total": 2
+            },
+            {
+              "name": "calendar",
+              "path": "ui/calendar",
+              "files": [
+                {
+                  "name": "Calendar.vue",
+                  "path": "ui/calendar/Calendar.vue",
+                  "type": ".vue",
+                  "size": 2049
+                },
+                {
+                  "name": "CalendarCell.vue",
+                  "path": "ui/calendar/CalendarCell.vue",
+                  "type": ".vue",
+                  "size": 775
+                },
+                {
+                  "name": "CalendarCellTrigger.vue",
+                  "path": "ui/calendar/CalendarCellTrigger.vue",
+                  "type": ".vue",
+                  "size": 1579
+                },
+                {
+                  "name": "CalendarGrid.vue",
+                  "path": "ui/calendar/CalendarGrid.vue",
+                  "type": ".vue",
+                  "size": 627
+                },
+                {
+                  "name": "CalendarGridBody.vue",
+                  "path": "ui/calendar/CalendarGridBody.vue",
+                  "type": ".vue",
+                  "size": 284
+                },
+                {
+                  "name": "CalendarGridHead.vue",
+                  "path": "ui/calendar/CalendarGridHead.vue",
+                  "type": ".vue",
+                  "size": 368
+                },
+                {
+                  "name": "CalendarGridRow.vue",
+                  "path": "ui/calendar/CalendarGridRow.vue",
+                  "type": ".vue",
+                  "size": 625
+                },
+                {
+                  "name": "CalendarHeadCell.vue",
+                  "path": "ui/calendar/CalendarHeadCell.vue",
+                  "type": ".vue",
+                  "size": 726
+                },
+                {
+                  "name": "CalendarHeader.vue",
+                  "path": "ui/calendar/CalendarHeader.vue",
+                  "type": ".vue",
+                  "size": 679
+                },
+                {
+                  "name": "CalendarHeading.vue",
+                  "path": "ui/calendar/CalendarHeading.vue",
+                  "type": ".vue",
+                  "size": 791
+                },
+                {
+                  "name": "CalendarNextButton.vue",
+                  "path": "ui/calendar/CalendarNextButton.vue",
+                  "type": ".vue",
+                  "size": 920
+                },
+                {
+                  "name": "CalendarPrevButton.vue",
+                  "path": "ui/calendar/CalendarPrevButton.vue",
+                  "type": ".vue",
+                  "size": 917
+                },
+                {
+                  "name": "index.ts",
+                  "path": "ui/calendar/index.ts",
+                  "type": ".ts",
+                  "size": 802
+                }
+              ],
+              "directories": [],
+              "total": 13
+            },
+            {
+              "name": "card",
+              "path": "ui/card",
+              "files": [
+                {
+                  "name": "Card.vue",
+                  "path": "ui/card/Card.vue",
+                  "type": ".vue",
+                  "size": 403
+                },
+                {
+                  "name": "CardAction.vue",
+                  "path": "ui/card/CardAction.vue",
+                  "type": ".vue",
+                  "size": 391
+                },
+                {
+                  "name": "CardContent.vue",
+                  "path": "ui/card/CardContent.vue",
+                  "type": ".vue",
+                  "size": 286
+                },
+                {
+                  "name": "CardDescription.vue",
+                  "path": "ui/card/CardDescription.vue",
+                  "type": ".vue",
+                  "size": 322
+                },
+                {
+                  "name": "CardFooter.vue",
+                  "path": "ui/card/CardFooter.vue",
+                  "type": ".vue",
+                  "size": 331
+                },
+                {
+                  "name": "CardHeader.vue",
+                  "path": "ui/card/CardHeader.vue",
+                  "type": ".vue",
+                  "size": 483
+                },
+                {
+                  "name": "CardTitle.vue",
+                  "path": "ui/card/CardTitle.vue",
+                  "type": ".vue",
+                  "size": 315
+                },
+                {
+                  "name": "index.ts",
+                  "path": "ui/card/index.ts",
+                  "type": ".ts",
+                  "size": 397
+                }
+              ],
+              "directories": [],
+              "total": 8
+            },
+            {
+              "name": "checkbox",
+              "path": "ui/checkbox",
+              "files": [
+                {
+                  "name": "Checkbox.vue",
+                  "path": "ui/checkbox/Checkbox.vue",
+                  "type": ".vue",
+                  "size": 1457
+                },
+                {
+                  "name": "index.ts",
+                  "path": "ui/checkbox/index.ts",
+                  "type": ".ts",
+                  "size": 53
+                }
+              ],
+              "directories": [],
+              "total": 2
+            },
+            {
+              "name": "collapsible",
+              "path": "ui/collapsible",
+              "files": [
+                {
+                  "name": "Collapsible.vue",
+                  "path": "ui/collapsible/Collapsible.vue",
+                  "type": ".vue",
+                  "size": 480
+                },
+                {
+                  "name": "CollapsibleContent.vue",
+                  "path": "ui/collapsible/CollapsibleContent.vue",
+                  "type": ".vue",
+                  "size": 295
+                },
+                {
+                  "name": "CollapsibleTrigger.vue",
+                  "path": "ui/collapsible/CollapsibleTrigger.vue",
+                  "type": ".vue",
+                  "size": 295
+                },
+                {
+                  "name": "index.ts",
+                  "path": "ui/collapsible/index.ts",
+                  "type": ".ts",
+                  "size": 205
+                }
+              ],
+              "directories": [],
+              "total": 4
+            },
+            {
+              "name": "combobox",
+              "path": "ui/combobox",
+              "files": [
+                {
+                  "name": "Combobox.vue",
+                  "path": "ui/combobox/Combobox.vue",
+                  "type": ".vue",
+                  "size": 414
+                },
+                {
+                  "name": "ComboboxAnchor.vue",
+                  "path": "ui/combobox/ComboboxAnchor.vue",
+                  "type": ".vue",
+                  "size": 631
+                },
+                {
+                  "name": "ComboboxEmpty.vue",
+                  "path": "ui/combobox/ComboboxEmpty.vue",
+                  "type": ".vue",
+                  "size": 577
+                },
+                {
+                  "name": "ComboboxGroup.vue",
+                  "path": "ui/combobox/ComboboxGroup.vue",
+                  "type": ".vue",
+                  "size": 785
+                },
+                {
+                  "name": "ComboboxInput.vue",
+                  "path": "ui/combobox/ComboboxInput.vue",
+                  "type": ".vue",
+                  "size": 1181
+                },
+                {
+                  "name": "ComboboxItem.vue",
+                  "path": "ui/combobox/ComboboxItem.vue",
+                  "type": ".vue",
+                  "size": 1113
+                },
+                {
+                  "name": "ComboboxItemIndicator.vue",
+                  "path": "ui/combobox/ComboboxItemIndicator.vue",
+                  "type": ".vue",
+                  "size": 672
+                },
+                {
+                  "name": "ComboboxList.vue",
+                  "path": "ui/combobox/ComboboxList.vue",
+                  "type": ".vue",
+                  "size": 1410
+                },
+                {
+                  "name": "ComboboxSeparator.vue",
+                  "path": "ui/combobox/ComboboxSeparator.vue",
+                  "type": ".vue",
+                  "size": 597
+                },
+                {
+                  "name": "ComboboxTrigger.vue",
+                  "path": "ui/combobox/ComboboxTrigger.vue",
+                  "type": ".vue",
+                  "size": 645
+                },
+                {
+                  "name": "ComboboxViewport.vue",
+                  "path": "ui/combobox/ComboboxViewport.vue",
+                  "type": ".vue",
+                  "size": 730
+                },
+                {
+                  "name": "index.ts",
+                  "path": "ui/combobox/index.ts",
+                  "type": ".ts",
+                  "size": 707
+                }
+              ],
+              "directories": [],
+              "total": 12
+            },
+            {
+              "name": "command",
+              "path": "ui/command",
+              "files": [
+                {
+                  "name": "Command.vue",
+                  "path": "ui/command/Command.vue",
+                  "type": ".vue",
+                  "size": 2474
+                },
+                {
+                  "name": "CommandDialog.vue",
+                  "path": "ui/command/CommandDialog.vue",
+                  "type": ".vue",
+                  "size": 970
+                },
+                {
+                  "name": "CommandEmpty.vue",
+                  "path": "ui/command/CommandEmpty.vue",
+                  "type": ".vue",
+                  "size": 760
+                },
+                {
+                  "name": "CommandGroup.vue",
+                  "path": "ui/command/CommandGroup.vue",
+                  "type": ".vue",
+                  "size": 1303
+                },
+                {
+                  "name": "CommandInput.vue",
+                  "path": "ui/command/CommandInput.vue",
+                  "type": ".vue",
+                  "size": 1197
+                },
+                {
+                  "name": "CommandItem.vue",
+                  "path": "ui/command/CommandItem.vue",
+                  "type": ".vue",
+                  "size": 2473
+                },
+                {
+                  "name": "CommandList.vue",
+                  "path": "ui/command/CommandList.vue",
+                  "type": ".vue",
+                  "size": 778
+                },
+                {
+                  "name": "CommandSeparator.vue",
+                  "path": "ui/command/CommandSeparator.vue",
+                  "type": ".vue",
+                  "size": 576
+                },
+                {
+                  "name": "CommandShortcut.vue",
+                  "path": "ui/command/CommandShortcut.vue",
+                  "type": ".vue",
+                  "size": 364
+                },
+                {
+                  "name": "index.ts",
+                  "path": "ui/command/index.ts",
+                  "type": ".ts",
+                  "size": 1017
+                }
+              ],
+              "directories": [],
+              "total": 10
+            },
+            {
+              "name": "date-picker",
+              "path": "ui/date-picker",
+              "files": [
+                {
+                  "name": "DateRangePicker.vue",
+                  "path": "ui/date-picker/DateRangePicker.vue",
+                  "type": ".vue",
+                  "size": 14493
+                },
+                {
+                  "name": "index.ts",
+                  "path": "ui/date-picker/index.ts",
+                  "type": ".ts",
+                  "size": 164
+                }
+              ],
+              "directories": [],
+              "total": 2
+            },
+            {
+              "name": "dialog",
+              "path": "ui/dialog",
+              "files": [
+                {
+                  "name": "Dialog.vue",
+                  "path": "ui/dialog/Dialog.vue",
+                  "type": ".vue",
+                  "size": 398
+                },
+                {
+                  "name": "DialogClose.vue",
+                  "path": "ui/dialog/DialogClose.vue",
+                  "type": ".vue",
+                  "size": 253
+                },
+                {
+                  "name": "DialogContent.vue",
+                  "path": "ui/dialog/DialogContent.vue",
+                  "type": ".vue",
+                  "size": 1782
+                },
+                {
+                  "name": "DialogDescription.vue",
+                  "path": "ui/dialog/DialogDescription.vue",
+                  "type": ".vue",
+                  "size": 681
+                },
+                {
+                  "name": "DialogFooter.vue",
+                  "path": "ui/dialog/DialogFooter.vue",
+                  "type": ".vue",
+                  "size": 358
+                },
+                {
+                  "name": "DialogHeader.vue",
+                  "path": "ui/dialog/DialogHeader.vue",
+                  "type": ".vue",
+                  "size": 338
+                },
+                {
+                  "name": "DialogOverlay.vue",
+                  "path": "ui/dialog/DialogOverlay.vue",
+                  "type": ".vue",
+                  "size": 735
+                },
+                {
+                  "name": "DialogScrollContent.vue",
+                  "path": "ui/dialog/DialogScrollContent.vue",
+                  "type": ".vue",
+                  "size": 1891
+                },
+                {
+                  "name": "DialogTitle.vue",
+                  "path": "ui/dialog/DialogTitle.vue",
+                  "type": ".vue",
+                  "size": 643
+                },
+                {
+                  "name": "DialogTrigger.vue",
+                  "path": "ui/dialog/DialogTrigger.vue",
+                  "type": ".vue",
+                  "size": 265
+                },
+                {
+                  "name": "index.ts",
+                  "path": "ui/dialog/index.ts",
+                  "type": ".ts",
+                  "size": 624
+                }
+              ],
+              "directories": [],
+              "total": 11
+            },
+            {
+              "name": "dropdown-menu",
+              "path": "ui/dropdown-menu",
+              "files": [
+                {
+                  "name": "DropdownMenu.vue",
+                  "path": "ui/dropdown-menu/DropdownMenu.vue",
+                  "type": ".vue",
+                  "size": 447
+                },
+                {
+                  "name": "DropdownMenuCheckboxItem.vue",
+                  "path": "ui/dropdown-menu/DropdownMenuCheckboxItem.vue",
+                  "type": ".vue",
+                  "size": 1428
+                },
+                {
+                  "name": "DropdownMenuContent.vue",
+                  "path": "ui/dropdown-menu/DropdownMenuContent.vue",
+                  "type": ".vue",
+                  "size": 1496
+                },
+                {
+                  "name": "DropdownMenuGroup.vue",
+                  "path": "ui/dropdown-menu/DropdownMenuGroup.vue",
+                  "type": ".vue",
+                  "size": 290
+                },
+                {
+                  "name": "DropdownMenuItem.vue",
+                  "path": "ui/dropdown-menu/DropdownMenuItem.vue",
+                  "type": ".vue",
+                  "size": 1526
+                },
+                {
+                  "name": "DropdownMenuLabel.vue",
+                  "path": "ui/dropdown-menu/DropdownMenuLabel.vue",
+                  "type": ".vue",
+                  "size": 760
+                },
+                {
+                  "name": "DropdownMenuRadioGroup.vue",
+                  "path": "ui/dropdown-menu/DropdownMenuRadioGroup.vue",
+                  "type": ".vue",
+                  "size": 512
+                },
+                {
+                  "name": "DropdownMenuRadioItem.vue",
+                  "path": "ui/dropdown-menu/DropdownMenuRadioItem.vue",
+                  "type": ".vue",
+                  "size": 1420
+                },
+                {
+                  "name": "DropdownMenuSeparator.vue",
+                  "path": "ui/dropdown-menu/DropdownMenuSeparator.vue",
+                  "type": ".vue",
+                  "size": 589
+                },
+                {
+                  "name": "DropdownMenuShortcut.vue",
+                  "path": "ui/dropdown-menu/DropdownMenuShortcut.vue",
+                  "type": ".vue",
+                  "size": 370
+                },
+                {
+                  "name": "DropdownMenuSub.vue",
+                  "path": "ui/dropdown-menu/DropdownMenuSub.vue",
+                  "type": ".vue",
+                  "size": 444
+                },
+                {
+                  "name": "DropdownMenuSubContent.vue",
+                  "path": "ui/dropdown-menu/DropdownMenuSubContent.vue",
+                  "type": ".vue",
+                  "size": 1313
+                },
+                {
+                  "name": "DropdownMenuSubTrigger.vue",
+                  "path": "ui/dropdown-menu/DropdownMenuSubTrigger.vue",
+                  "type": ".vue",
+                  "size": 1048
+                },
+                {
+                  "name": "DropdownMenuTrigger.vue",
+                  "path": "ui/dropdown-menu/DropdownMenuTrigger.vue",
+                  "type": ".vue",
+                  "size": 393
+                },
+                {
+                  "name": "index.ts",
+                  "path": "ui/dropdown-menu/index.ts",
+                  "type": ".ts",
+                  "size": 1098
+                }
+              ],
+              "directories": [],
+              "total": 15
+            },
+            {
+              "name": "form",
+              "path": "ui/form",
+              "files": [
+                {
+                  "name": "FormControl.vue",
+                  "path": "ui/form/FormControl.vue",
+                  "type": ".vue",
+                  "size": 439
+                },
+                {
+                  "name": "FormDescription.vue",
+                  "path": "ui/form/FormDescription.vue",
+                  "type": ".vue",
+                  "size": 442
+                },
+                {
+                  "name": "FormItem.vue",
+                  "path": "ui/form/FormItem.vue",
+                  "type": ".vue",
+                  "size": 445
+                },
+                {
+                  "name": "FormLabel.vue",
+                  "path": "ui/form/FormLabel.vue",
+                  "type": ".vue",
+                  "size": 579
+                },
+                {
+                  "name": "FormMessage.vue",
+                  "path": "ui/form/FormMessage.vue",
+                  "type": ".vue",
+                  "size": 524
+                },
+                {
+                  "name": "index.ts",
+                  "path": "ui/form/index.ts",
+                  "type": ".ts",
+                  "size": 444
+                },
+                {
+                  "name": "injectionKeys.ts",
+                  "path": "ui/form/injectionKeys.ts",
+                  "type": ".ts",
+                  "size": 113
+                },
+                {
+                  "name": "useFormField.ts",
+                  "path": "ui/form/useFormField.ts",
+                  "type": ".ts",
+                  "size": 868
+                }
+              ],
+              "directories": [],
+              "total": 8
+            },
+            {
+              "name": "input",
+              "path": "ui/input",
+              "files": [
+                {
+                  "name": "Input.vue",
+                  "path": "ui/input/Input.vue",
+                  "type": ".vue",
+                  "size": 1293
+                },
+                {
+                  "name": "InputMinimal.vue",
+                  "path": "ui/input/InputMinimal.vue",
+                  "type": ".vue",
+                  "size": 1256
+                },
+                {
+                  "name": "index.ts",
+                  "path": "ui/input/index.ts",
+                  "type": ".ts",
+                  "size": 108
+                }
+              ],
+              "directories": [],
+              "total": 3
+            },
+            {
+              "name": "label",
+              "path": "ui/label",
+              "files": [
+                {
+                  "name": "Label.vue",
+                  "path": "ui/label/Label.vue",
+                  "type": ".vue",
+                  "size": 743
+                },
+                {
+                  "name": "index.ts",
+                  "path": "ui/label/index.ts",
+                  "type": ".ts",
+                  "size": 47
+                }
+              ],
+              "directories": [],
+              "total": 2
+            },
+            {
+              "name": "module-badge",
+              "path": "ui/module-badge",
+              "files": [
+                {
+                  "name": "ModuleBadge.vue",
+                  "path": "ui/module-badge/ModuleBadge.vue",
+                  "type": ".vue",
+                  "size": 3422
+                },
+                {
+                  "name": "index.ts",
+                  "path": "ui/module-badge/index.ts",
+                  "type": ".ts",
+                  "size": 110
+                }
+              ],
+              "directories": [],
+              "total": 2
+            },
+            {
+              "name": "number-field",
+              "path": "ui/number-field",
+              "files": [
+                {
+                  "name": "NumberField.vue",
+                  "path": "ui/number-field/NumberField.vue",
+                  "type": ".vue",
+                  "size": 685
+                },
+                {
+                  "name": "NumberFieldContent.vue",
+                  "path": "ui/number-field/NumberFieldContent.vue",
+                  "type": ".vue",
+                  "size": 419
+                },
+                {
+                  "name": "NumberFieldDecrement.vue",
+                  "path": "ui/number-field/NumberFieldDecrement.vue",
+                  "type": ".vue",
+                  "size": 857
+                },
+                {
+                  "name": "NumberFieldIncrement.vue",
+                  "path": "ui/number-field/NumberFieldIncrement.vue",
+                  "type": ".vue",
+                  "size": 856
+                },
+                {
+                  "name": "NumberFieldInput.vue",
+                  "path": "ui/number-field/NumberFieldInput.vue",
+                  "type": ".vue",
+                  "size": 626
+                },
+                {
+                  "name": "index.ts",
+                  "path": "ui/number-field/index.ts",
+                  "type": ".ts",
+                  "size": 355
+                }
+              ],
+              "directories": [],
+              "total": 6
+            },
+            {
+              "name": "popover",
+              "path": "ui/popover",
+              "files": [
+                {
+                  "name": "Popover.vue",
+                  "path": "ui/popover/Popover.vue",
+                  "type": ".vue",
+                  "size": 417
+                },
+                {
+                  "name": "PopoverAnchor.vue",
+                  "path": "ui/popover/PopoverAnchor.vue",
+                  "type": ".vue",
+                  "size": 290
+                },
+                {
+                  "name": "PopoverContent.vue",
+                  "path": "ui/popover/PopoverContent.vue",
+                  "type": ".vue",
+                  "size": 1435
+                },
+                {
+                  "name": "PopoverTrigger.vue",
+                  "path": "ui/popover/PopoverTrigger.vue",
+                  "type": ".vue",
+                  "size": 271
+                },
+                {
+                  "name": "index.ts",
+                  "path": "ui/popover/index.ts",
+                  "type": ".ts",
+                  "size": 244
+                }
+              ],
+              "directories": [],
+              "total": 5
+            },
+            {
+              "name": "radio-group",
+              "path": "ui/radio-group",
+              "files": [
+                {
+                  "name": "RadioGroup.vue",
+                  "path": "ui/radio-group/RadioGroup.vue",
+                  "type": ".vue",
+                  "size": 704
+                },
+                {
+                  "name": "RadioGroupItem.vue",
+                  "path": "ui/radio-group/RadioGroupItem.vue",
+                  "type": ".vue",
+                  "size": 1374
+                },
+                {
+                  "name": "index.ts",
+                  "path": "ui/radio-group/index.ts",
+                  "type": ".ts",
+                  "size": 122
+                }
+              ],
+              "directories": [],
+              "total": 3
+            },
+            {
+              "name": "range-calendar",
+              "path": "ui/range-calendar",
+              "files": [
+                {
+                  "name": "RangeCalendar.vue",
+                  "path": "ui/range-calendar/RangeCalendar.vue",
+                  "type": ".vue",
+                  "size": 2246
+                },
+                {
+                  "name": "RangeCalendarCell.vue",
+                  "path": "ui/range-calendar/RangeCalendarCell.vue",
+                  "type": ".vue",
+                  "size": 982
+                },
+                {
+                  "name": "RangeCalendarCellTrigger.vue",
+                  "path": "ui/range-calendar/RangeCalendarCellTrigger.vue",
+                  "type": ".vue",
+                  "size": 1913
+                },
+                {
+                  "name": "RangeCalendarGrid.vue",
+                  "path": "ui/range-calendar/RangeCalendarGrid.vue",
+                  "type": ".vue",
+                  "size": 665
+                },
+                {
+                  "name": "RangeCalendarGridBody.vue",
+                  "path": "ui/range-calendar/RangeCalendarGridBody.vue",
+                  "type": ".vue",
+                  "size": 315
+                },
+                {
+                  "name": "RangeCalendarGridHead.vue",
+                  "path": "ui/range-calendar/RangeCalendarGridHead.vue",
+                  "type": ".vue",
+                  "size": 315
+                },
+                {
+                  "name": "RangeCalendarGridRow.vue",
+                  "path": "ui/range-calendar/RangeCalendarGridRow.vue",
+                  "type": ".vue",
+                  "size": 656
+                },
+                {
+                  "name": "RangeCalendarHeadCell.vue",
+                  "path": "ui/range-calendar/RangeCalendarHeadCell.vue",
+                  "type": ".vue",
+                  "size": 757
+                },
+                {
+                  "name": "RangeCalendarHeader.vue",
+                  "path": "ui/range-calendar/RangeCalendarHeader.vue",
+                  "type": ".vue",
+                  "size": 710
+                },
+                {
+                  "name": "RangeCalendarHeading.vue",
+                  "path": "ui/range-calendar/RangeCalendarHeading.vue",
+                  "type": ".vue",
+                  "size": 822
+                },
+                {
+                  "name": "RangeCalendarNextButton.vue",
+                  "path": "ui/range-calendar/RangeCalendarNextButton.vue",
+                  "type": ".vue",
+                  "size": 958
+                },
+                {
+                  "name": "RangeCalendarPrevButton.vue",
+                  "path": "ui/range-calendar/RangeCalendarPrevButton.vue",
+                  "type": ".vue",
+                  "size": 955
+                },
+                {
+                  "name": "index.ts",
+                  "path": "ui/range-calendar/index.ts",
+                  "type": ".ts",
+                  "size": 922
+                }
+              ],
+              "directories": [],
+              "total": 13
+            },
+            {
+              "name": "scroll-area",
+              "path": "ui/scroll-area",
+              "files": [
+                {
+                  "name": "ScrollArea.vue",
+                  "path": "ui/scroll-area/ScrollArea.vue",
+                  "type": ".vue",
+                  "size": 926
+                },
+                {
+                  "name": "ScrollBar.vue",
+                  "path": "ui/scroll-area/ScrollBar.vue",
+                  "type": ".vue",
+                  "size": 1025
+                },
+                {
+                  "name": "index.ts",
+                  "path": "ui/scroll-area/index.ts",
+                  "type": ".ts",
+                  "size": 112
+                }
+              ],
+              "directories": [],
+              "total": 3
+            },
+            {
+              "name": "select",
+              "path": "ui/select",
+              "files": [
+                {
+                  "name": "Select.vue",
+                  "path": "ui/select/Select.vue",
+                  "type": ".vue",
+                  "size": 409
+                },
+                {
+                  "name": "SelectContent.vue",
+                  "path": "ui/select/SelectContent.vue",
+                  "type": ".vue",
+                  "size": 2043
+                },
+                {
+                  "name": "SelectGroup.vue",
+                  "path": "ui/select/SelectGroup.vue",
+                  "type": ".vue",
+                  "size": 253
+                },
+                {
+                  "name": "SelectItem.vue",
+                  "path": "ui/select/SelectItem.vue",
+                  "type": ".vue",
+                  "size": 1379
+                },
+                {
+                  "name": "SelectItemText.vue",
+                  "path": "ui/select/SelectItemText.vue",
+                  "type": ".vue",
+                  "size": 272
+                },
+                {
+                  "name": "SelectLabel.vue",
+                  "path": "ui/select/SelectLabel.vue",
+                  "type": ".vue",
+                  "size": 422
+                },
+                {
+                  "name": "SelectScrollDownButton.vue",
+                  "path": "ui/select/SelectScrollDownButton.vue",
+                  "type": ".vue",
+                  "size": 841
+                },
+                {
+                  "name": "SelectScrollUpButton.vue",
+                  "path": "ui/select/SelectScrollUpButton.vue",
+                  "type": ".vue",
+                  "size": 825
+                },
+                {
+                  "name": "SelectSeparator.vue",
+                  "path": "ui/select/SelectSeparator.vue",
+                  "type": ".vue",
+                  "size": 572
+                },
+                {
+                  "name": "SelectTrigger.vue",
+                  "path": "ui/select/SelectTrigger.vue",
+                  "type": ".vue",
+                  "size": 1724
+                },
+                {
+                  "name": "SelectValue.vue",
+                  "path": "ui/select/SelectValue.vue",
+                  "type": ".vue",
+                  "size": 253
+                },
+                {
+                  "name": "index.ts",
+                  "path": "ui/select/index.ts",
+                  "type": ".ts",
+                  "size": 699
+                }
+              ],
+              "directories": [],
+              "total": 12
+            },
+            {
+              "name": "separator",
+              "path": "ui/separator",
+              "files": [
+                {
+                  "name": "Separator.vue",
+                  "path": "ui/separator/Separator.vue",
+                  "type": ".vue",
+                  "size": 1017
+                },
+                {
+                  "name": "index.ts",
+                  "path": "ui/separator/index.ts",
+                  "type": ".ts",
+                  "size": 55
+                }
+              ],
+              "directories": [],
+              "total": 2
+            },
+            {
+              "name": "sheet",
+              "path": "ui/sheet",
+              "files": [
+                {
+                  "name": "Sheet.vue",
+                  "path": "ui/sheet/Sheet.vue",
+                  "type": ".vue",
+                  "size": 397
+                },
+                {
+                  "name": "SheetClose.vue",
+                  "path": "ui/sheet/SheetClose.vue",
+                  "type": ".vue",
+                  "size": 252
+                },
+                {
+                  "name": "SheetContent.vue",
+                  "path": "ui/sheet/SheetContent.vue",
+                  "type": ".vue",
+                  "size": 2346
+                },
+                {
+                  "name": "SheetDescription.vue",
+                  "path": "ui/sheet/SheetDescription.vue",
+                  "type": ".vue",
+                  "size": 600
+                },
+                {
+                  "name": "SheetFooter.vue",
+                  "path": "ui/sheet/SheetFooter.vue",
+                  "type": ".vue",
+                  "size": 322
+                },
+                {
+                  "name": "SheetHeader.vue",
+                  "path": "ui/sheet/SheetHeader.vue",
+                  "type": ".vue",
+                  "size": 316
+                },
+                {
+                  "name": "SheetOverlay.vue",
+                  "path": "ui/sheet/SheetOverlay.vue",
+                  "type": ".vue",
+                  "size": 734
+                },
+                {
+                  "name": "SheetTitle.vue",
+                  "path": "ui/sheet/SheetTitle.vue",
+                  "type": ".vue",
+                  "size": 564
+                },
+                {
+                  "name": "SheetTrigger.vue",
+                  "path": "ui/sheet/SheetTrigger.vue",
+                  "type": ".vue",
+                  "size": 264
+                },
+                {
+                  "name": "index.ts",
+                  "path": "ui/sheet/index.ts",
+                  "type": ".ts",
+                  "size": 470
+                }
+              ],
+              "directories": [],
+              "total": 10
+            },
+            {
+              "name": "sidebar",
+              "path": "ui/sidebar",
+              "files": [
+                {
+                  "name": "Sidebar.vue",
+                  "path": "ui/sidebar/Sidebar.vue",
+                  "type": ".vue",
+                  "size": 3565
+                },
+                {
+                  "name": "SidebarContent.vue",
+                  "path": "ui/sidebar/SidebarContent.vue",
+                  "type": ".vue",
+                  "size": 454
+                },
+                {
+                  "name": "SidebarFooter.vue",
+                  "path": "ui/sidebar/SidebarFooter.vue",
+                  "type": ".vue",
+                  "size": 344
+                },
+                {
+                  "name": "SidebarGroup.vue",
+                  "path": "ui/sidebar/SidebarGroup.vue",
+                  "type": ".vue",
+                  "size": 360
+                },
+                {
+                  "name": "SidebarGroupAction.vue",
+                  "path": "ui/sidebar/SidebarGroupAction.vue",
+                  "type": ".vue",
+                  "size": 913
+                },
+                {
+                  "name": "SidebarGroupContent.vue",
+                  "path": "ui/sidebar/SidebarGroupContent.vue",
+                  "type": ".vue",
+                  "size": 349
+                },
+                {
+                  "name": "SidebarGroupLabel.vue",
+                  "path": "ui/sidebar/SidebarGroupLabel.vue",
+                  "type": ".vue",
+                  "size": 843
+                },
+                {
+                  "name": "SidebarHeader.vue",
+                  "path": "ui/sidebar/SidebarHeader.vue",
+                  "type": ".vue",
+                  "size": 344
+                },
+                {
+                  "name": "SidebarInput.vue",
+                  "path": "ui/sidebar/SidebarInput.vue",
+                  "type": ".vue",
+                  "size": 405
+                },
+                {
+                  "name": "SidebarInset.vue",
+                  "path": "ui/sidebar/SidebarInset.vue",
+                  "type": ".vue",
+                  "size": 602
+                },
+                {
+                  "name": "SidebarMenu.vue",
+                  "path": "ui/sidebar/SidebarMenu.vue",
+                  "type": ".vue",
+                  "size": 349
+                },
+                {
+                  "name": "SidebarMenuAction.vue",
+                  "path": "ui/sidebar/SidebarMenuAction.vue",
+                  "type": ".vue",
+                  "size": 1399
+                },
+                {
+                  "name": "SidebarMenuBadge.vue",
+                  "path": "ui/sidebar/SidebarMenuBadge.vue",
+                  "type": ".vue",
+                  "size": 868
+                },
+                {
+                  "name": "SidebarMenuButton.vue",
+                  "path": "ui/sidebar/SidebarMenuButton.vue",
+                  "type": ".vue",
+                  "size": 1336
+                },
+                {
+                  "name": "SidebarMenuButtonChild.vue",
+                  "path": "ui/sidebar/SidebarMenuButtonChild.vue",
+                  "type": ".vue",
+                  "size": 903
+                },
+                {
+                  "name": "SidebarMenuItem.vue",
+                  "path": "ui/sidebar/SidebarMenuItem.vue",
+                  "type": ".vue",
+                  "size": 349
+                },
+                {
+                  "name": "SidebarMenuSkeleton.vue",
+                  "path": "ui/sidebar/SidebarMenuSkeleton.vue",
+                  "type": ".vue",
+                  "size": 806
+                },
+                {
+                  "name": "SidebarMenuSub.vue",
+                  "path": "ui/sidebar/SidebarMenuSub.vue",
+                  "type": ".vue",
+                  "size": 504
+                },
+                {
+                  "name": "SidebarMenuSubButton.vue",
+                  "path": "ui/sidebar/SidebarMenuSubButton.vue",
+                  "type": ".vue",
+                  "size": 1408
+                },
+                {
+                  "name": "SidebarMenuSubItem.vue",
+                  "path": "ui/sidebar/SidebarMenuSubItem.vue",
+                  "type": ".vue",
+                  "size": 361
+                },
+                {
+                  "name": "SidebarProvider.vue",
+                  "path": "ui/sidebar/SidebarProvider.vue",
+                  "type": ".vue",
+                  "size": 2383
+                },
+                {
+                  "name": "SidebarRail.vue",
+                  "path": "ui/sidebar/SidebarRail.vue",
+                  "type": ".vue",
+                  "size": 1296
+                },
+                {
+                  "name": "SidebarSeparator.vue",
+                  "path": "ui/sidebar/SidebarSeparator.vue",
+                  "type": ".vue",
+                  "size": 422
+                },
+                {
+                  "name": "SidebarTrigger.vue",
+                  "path": "ui/sidebar/SidebarTrigger.vue",
+                  "type": ".vue",
+                  "size": 621
+                },
+                {
+                  "name": "index.ts",
+                  "path": "ui/sidebar/index.ts",
+                  "type": ".ts",
+                  "size": 3436
+                },
+                {
+                  "name": "utils.ts",
+                  "path": "ui/sidebar/utils.ts",
+                  "type": ".ts",
+                  "size": 666
+                }
+              ],
+              "directories": [],
+              "total": 26
+            },
+            {
+              "name": "skeleton",
+              "path": "ui/skeleton",
+              "files": [
+                {
+                  "name": "Skeleton.vue",
+                  "path": "ui/skeleton/Skeleton.vue",
+                  "type": ".vue",
+                  "size": 345
+                },
+                {
+                  "name": "index.ts",
+                  "path": "ui/skeleton/index.ts",
+                  "type": ".ts",
+                  "size": 53
+                }
+              ],
+              "directories": [],
+              "total": 2
+            },
+            {
+              "name": "sonner",
+              "path": "ui/sonner",
+              "files": [
+                {
+                  "name": "Sonner.vue",
+                  "path": "ui/sonner/Sonner.vue",
+                  "type": ".vue",
+                  "size": 382
+                },
+                {
+                  "name": "index.ts",
+                  "path": "ui/sonner/index.ts",
+                  "type": ".ts",
+                  "size": 50
+                }
+              ],
+              "directories": [],
+              "total": 2
+            },
+            {
+              "name": "status-badge",
+              "path": "ui/status-badge",
+              "files": [
+                {
+                  "name": "StatusBadge.vue",
+                  "path": "ui/status-badge/StatusBadge.vue",
+                  "type": ".vue",
+                  "size": 2084
+                },
+                {
+                  "name": "index.ts",
+                  "path": "ui/status-badge/index.ts",
+                  "type": ".ts",
+                  "size": 58
+                }
+              ],
+              "directories": [],
+              "total": 2
+            },
+            {
+              "name": "switch",
+              "path": "ui/switch",
+              "files": [
+                {
+                  "name": "Switch.vue",
+                  "path": "ui/switch/Switch.vue",
+                  "type": ".vue",
+                  "size": 1486
+                },
+                {
+                  "name": "index.ts",
+                  "path": "ui/switch/index.ts",
+                  "type": ".ts",
+                  "size": 49
+                }
+              ],
+              "directories": [],
+              "total": 2
+            },
+            {
+              "name": "table",
+              "path": "ui/table",
+              "files": [
+                {
+                  "name": "Table.vue",
+                  "path": "ui/table/Table.vue",
+                  "type": ".vue",
+                  "size": 414
+                },
+                {
+                  "name": "TableBody.vue",
+                  "path": "ui/table/TableBody.vue",
+                  "type": ".vue",
+                  "size": 321
+                },
+                {
+                  "name": "TableCaption.vue",
+                  "path": "ui/table/TableCaption.vue",
+                  "type": ".vue",
+                  "size": 336
+                },
+                {
+                  "name": "TableCell.vue",
+                  "path": "ui/table/TableCell.vue",
+                  "type": ".vue",
+                  "size": 428
+                },
+                {
+                  "name": "TableEmpty.vue",
+                  "path": "ui/table/TableEmpty.vue",
+                  "type": ".vue",
+                  "size": 786
+                },
+                {
+                  "name": "TableFooter.vue",
+                  "path": "ui/table/TableFooter.vue",
+                  "type": ".vue",
+                  "size": 364
+                },
+                {
+                  "name": "TableHead.vue",
+                  "path": "ui/table/TableHead.vue",
+                  "type": ".vue",
+                  "size": 478
+                },
+                {
+                  "name": "TableHeader.vue",
+                  "path": "ui/table/TableHeader.vue",
+                  "type": ".vue",
+                  "size": 301
+                },
+                {
+                  "name": "TableRow.vue",
+                  "path": "ui/table/TableRow.vue",
+                  "type": ".vue",
+                  "size": 400
+                },
+                {
+                  "name": "index.ts",
+                  "path": "ui/table/index.ts",
+                  "type": ".ts",
+                  "size": 501
+                },
+                {
+                  "name": "utils.ts",
+                  "path": "ui/table/utils.ts",
+                  "type": ".ts",
+                  "size": 288
+                }
+              ],
+              "directories": [],
+              "total": 11
+            },
+            {
+              "name": "tabs",
+              "path": "ui/tabs",
+              "files": [
+                {
+                  "name": "Tabs.vue",
+                  "path": "ui/tabs/Tabs.vue",
+                  "type": ".vue",
+                  "size": 670
+                },
+                {
+                  "name": "TabsContent.vue",
+                  "path": "ui/tabs/TabsContent.vue",
+                  "type": ".vue",
+                  "size": 535
+                },
+                {
+                  "name": "TabsList.vue",
+                  "path": "ui/tabs/TabsList.vue",
+                  "type": ".vue",
+                  "size": 630
+                },
+                {
+                  "name": "TabsTrigger.vue",
+                  "path": "ui/tabs/TabsTrigger.vue",
+                  "type": ".vue",
+                  "size": 1297
+                },
+                {
+                  "name": "index.ts",
+                  "path": "ui/tabs/index.ts",
+                  "type": ".ts",
+                  "size": 216
+                }
+              ],
+              "directories": [],
+              "total": 5
+            },
+            {
+              "name": "textarea",
+              "path": "ui/textarea",
+              "files": [
+                {
+                  "name": "Textarea.vue",
+                  "path": "ui/textarea/Textarea.vue",
+                  "type": ".vue",
+                  "size": 1100
+                },
+                {
+                  "name": "index.ts",
+                  "path": "ui/textarea/index.ts",
+                  "type": ".ts",
+                  "size": 53
+                }
+              ],
+              "directories": [],
+              "total": 2
+            },
+            {
+              "name": "tooltip",
+              "path": "ui/tooltip",
+              "files": [
+                {
+                  "name": "Tooltip.vue",
+                  "path": "ui/tooltip/Tooltip.vue",
+                  "type": ".vue",
+                  "size": 406
+                },
+                {
+                  "name": "TooltipContent.vue",
+                  "path": "ui/tooltip/TooltipContent.vue",
+                  "type": ".vue",
+                  "size": 1444
+                },
+                {
+                  "name": "TooltipProvider.vue",
+                  "path": "ui/tooltip/TooltipProvider.vue",
+                  "type": ".vue",
+                  "size": 287
+                },
+                {
+                  "name": "TooltipTrigger.vue",
+                  "path": "ui/tooltip/TooltipTrigger.vue",
+                  "type": ".vue",
+                  "size": 271
+                },
+                {
+                  "name": "index.ts",
+                  "path": "ui/tooltip/index.ts",
+                  "type": ".ts",
+                  "size": 248
+                }
+              ],
+              "directories": [],
+              "total": 5
+            }
+          ],
+          "total": 238
+        }
+      ],
+      "total": 476
+    },
+    "views": {
+      "files": [
+        {
+          "name": "404.vue",
+          "path": "404.vue",
+          "type": ".vue",
+          "size": 2019
+        },
+        {
+          "name": "AIProviderView.vue",
+          "path": "AIProviderView.vue",
+          "type": ".vue",
+          "size": 679
+        },
+        {
+          "name": "CampaignCalendarView.vue",
+          "path": "CampaignCalendarView.vue",
+          "type": ".vue",
+          "size": 17557
+        },
+        {
+          "name": "CampaignView.vue",
+          "path": "CampaignView.vue",
+          "type": ".vue",
+          "size": 10184
+        },
+        {
+          "name": "CategoryView.vue",
+          "path": "CategoryView.vue",
+          "type": ".vue",
+          "size": 614
+        },
+        {
+          "name": "CustomerDetailView.vue",
+          "path": "CustomerDetailView.vue",
+          "type": ".vue",
+          "size": 6335
+        },
+        {
+          "name": "CustomersView.vue",
+          "path": "CustomersView.vue",
+          "type": ".vue",
+          "size": 3976
+        },
+        {
+          "name": "GroupNotificationView.vue",
+          "path": "GroupNotificationView.vue",
+          "type": ".vue",
+          "size": 30799
+        },
+        {
+          "name": "HolidayCalendarView.vue",
+          "path": "HolidayCalendarView.vue",
+          "type": ".vue",
+          "size": 12724
+        },
+        {
+          "name": "HolidayView.vue",
+          "path": "HolidayView.vue",
+          "type": ".vue",
+          "size": 14683
+        },
+        {
+          "name": "HomeView.vue",
+          "path": "HomeView.vue",
+          "type": ".vue",
+          "size": 111
+        },
+        {
+          "name": "InventoriesView.vue",
+          "path": "InventoriesView.vue",
+          "type": ".vue",
+          "size": 4973
+        },
+        {
+          "name": "InventoryDetailView.vue",
+          "path": "InventoryDetailView.vue",
+          "type": ".vue",
+          "size": 9373
+        },
+        {
+          "name": "NotificationManageView.vue",
+          "path": "NotificationManageView.vue",
+          "type": ".vue",
+          "size": 271
+        },
+        {
+          "name": "NotificationView.vue",
+          "path": "NotificationView.vue",
+          "type": ".vue",
+          "size": 5036
+        },
+        {
+          "name": "OrderDetailView.vue",
+          "path": "OrderDetailView.vue",
+          "type": ".vue",
+          "size": 12796
+        },
+        {
+          "name": "OrdersView.vue",
+          "path": "OrdersView.vue",
+          "type": ".vue",
+          "size": 8577
+        },
+        {
+          "name": "ProductDetailView.vue",
+          "path": "ProductDetailView.vue",
+          "type": ".vue",
+          "size": 15677
+        },
+        {
+          "name": "ProductsView.vue",
+          "path": "ProductsView.vue",
+          "type": ".vue",
+          "size": 6999
+        },
+        {
+          "name": "RolePermissionsView.vue",
+          "path": "RolePermissionsView.vue",
+          "type": ".vue",
+          "size": 12262
+        },
+        {
+          "name": "RoleUsersView.vue",
+          "path": "RoleUsersView.vue",
+          "type": ".vue",
+          "size": 386
+        },
+        {
+          "name": "RolesView.vue",
+          "path": "RolesView.vue",
+          "type": ".vue",
+          "size": 7665
+        },
+        {
+          "name": "SettingsView.vue",
+          "path": "SettingsView.vue",
+          "type": ".vue",
+          "size": 3743
+        },
+        {
+          "name": "SupportManageView.vue",
+          "path": "SupportManageView.vue",
+          "type": ".vue",
+          "size": 22111
+        },
+        {
+          "name": "SupportTicketsView.vue",
+          "path": "SupportTicketsView.vue",
+          "type": ".vue",
+          "size": 16806
+        },
+        {
+          "name": "SupportView.vue",
+          "path": "SupportView.vue",
+          "type": ".vue",
+          "size": 2672
+        }
+      ],
+      "directories": [
+        {
+          "name": "analytics",
+          "path": "analytics",
+          "files": [
+            {
+              "name": "CampaignAnalyticsView.vue",
+              "path": "analytics/CampaignAnalyticsView.vue",
+              "type": ".vue",
+              "size": 49860
+            },
+            {
+              "name": "CustomerAnalyticsView.vue",
+              "path": "analytics/CustomerAnalyticsView.vue",
+              "type": ".vue",
+              "size": 96746
+            },
+            {
+              "name": "OrderAnalyticsView.vue",
+              "path": "analytics/OrderAnalyticsView.vue",
+              "type": ".vue",
+              "size": 16229
+            },
+            {
+              "name": "ProductAnalyticsView.vue",
+              "path": "analytics/ProductAnalyticsView.vue",
+              "type": ".vue",
+              "size": 14011
+            },
+            {
+              "name": "SupportAnalyticsView.vue",
+              "path": "analytics/SupportAnalyticsView.vue",
+              "type": ".vue",
+              "size": 49415
+            }
+          ],
+          "directories": [],
+          "total": 5
+        },
+        {
+          "name": "auth",
+          "path": "auth",
+          "files": [
+            {
+              "name": "ForgotPassword.vue",
+              "path": "auth/ForgotPassword.vue",
+              "type": ".vue",
+              "size": 4089
+            },
+            {
+              "name": "LoginView.vue",
+              "path": "auth/LoginView.vue",
+              "type": ".vue",
+              "size": 2396
+            },
+            {
+              "name": "RegisterView.vue",
+              "path": "auth/RegisterView.vue",
+              "type": ".vue",
+              "size": 1748
+            },
+            {
+              "name": "ResetPassword.vue",
+              "path": "auth/ResetPassword.vue",
+              "type": ".vue",
+              "size": 9152
+            },
+            {
+              "name": "UnauthorizedView.vue",
+              "path": "auth/UnauthorizedView.vue",
+              "type": ".vue",
+              "size": 8092
+            }
+          ],
+          "directories": [],
+          "total": 5
+        },
+        {
+          "name": "dashboard",
+          "path": "dashboard",
+          "files": [
+            {
+              "name": "DashboardCustomer.vue",
+              "path": "dashboard/DashboardCustomer.vue",
+              "type": ".vue",
+              "size": 9429
+            },
+            {
+              "name": "DashboardCustomerValue.vue",
+              "path": "dashboard/DashboardCustomerValue.vue",
+              "type": ".vue",
+              "size": 24296
+            },
+            {
+              "name": "DashboardExecutiveHealth.vue",
+              "path": "dashboard/DashboardExecutiveHealth.vue",
+              "type": ".vue",
+              "size": 39354
+            },
+            {
+              "name": "DashboardOperationalExcellence.vue",
+              "path": "dashboard/DashboardOperationalExcellence.vue",
+              "type": ".vue",
+              "size": 23348
+            },
+            {
+              "name": "DashboardOrder.vue",
+              "path": "dashboard/DashboardOrder.vue",
+              "type": ".vue",
+              "size": 9305
+            },
+            {
+              "name": "DashboardOverview.vue",
+              "path": "dashboard/DashboardOverview.vue",
+              "type": ".vue",
+              "size": 22379
+            },
+            {
+              "name": "DashboardRevenue.vue",
+              "path": "dashboard/DashboardRevenue.vue",
+              "type": ".vue",
+              "size": 7156
+            },
+            {
+              "name": "DashboardRiskCenter.vue",
+              "path": "dashboard/DashboardRiskCenter.vue",
+              "type": ".vue",
+              "size": 38968
+            },
+            {
+              "name": "DashboardSupport.vue",
+              "path": "dashboard/DashboardSupport.vue",
+              "type": ".vue",
+              "size": 10173
+            }
+          ],
+          "directories": [],
+          "total": 9
+        }
+      ],
+      "total": 45
+    },
+    "composables": {
+      "files": [
+        {
+          "name": "useAIAlertEnhancement.ts",
+          "path": "useAIAlertEnhancement.ts",
+          "type": ".ts",
+          "size": 10764
+        },
+        {
+          "name": "useAIEnhancedAlerts.ts",
+          "path": "useAIEnhancedAlerts.ts",
+          "type": ".ts",
+          "size": 6790
+        },
+        {
+          "name": "useAIPromptTemplate.ts",
+          "path": "useAIPromptTemplate.ts",
+          "type": ".ts",
+          "size": 9501
+        },
+        {
+          "name": "useAIService.ts",
+          "path": "useAIService.ts",
+          "type": ".ts",
+          "size": 10357
+        },
+        {
+          "name": "useAIUsageMetrics.ts",
+          "path": "useAIUsageMetrics.ts",
+          "type": ".ts",
+          "size": 14396
+        },
+        {
+          "name": "useAgent.ts",
+          "path": "useAgent.ts",
+          "type": ".ts",
+          "size": 7687
+        },
+        {
+          "name": "useAnalyticsState.ts",
+          "path": "useAnalyticsState.ts",
+          "type": ".ts",
+          "size": 9976
+        },
+        {
+          "name": "useApiResource.ts",
+          "path": "useApiResource.ts",
+          "type": ".ts",
+          "size": 4928
+        },
+        {
+          "name": "useAuth.ts",
+          "path": "useAuth.ts",
+          "type": ".ts",
+          "size": 25991
+        },
+        {
+          "name": "useAuthForm.ts",
+          "path": "useAuthForm.ts",
+          "type": ".ts",
+          "size": 1174
+        },
+        {
+          "name": "useCampaign.ts",
+          "path": "useCampaign.ts",
+          "type": ".ts",
+          "size": 7582
+        },
+        {
+          "name": "useCampaignTypes.ts",
+          "path": "useCampaignTypes.ts",
+          "type": ".ts",
+          "size": 8194
+        },
+        {
+          "name": "useChartDataValidation.ts",
+          "path": "useChartDataValidation.ts",
+          "type": ".ts",
+          "size": 8729
+        },
+        {
+          "name": "useChartExport.ts",
+          "path": "useChartExport.ts",
+          "type": ".ts",
+          "size": 6438
+        },
+        {
+          "name": "useChartState.ts",
+          "path": "useChartState.ts",
+          "type": ".ts",
+          "size": 8136
+        },
+        {
+          "name": "useConfirmAction.ts",
+          "path": "useConfirmAction.ts",
+          "type": ".ts",
+          "size": 3601
+        },
+        {
+          "name": "useConversation.ts",
+          "path": "useConversation.ts",
+          "type": ".ts",
+          "size": 18690
+        },
+        {
+          "name": "useCustomer.ts",
+          "path": "useCustomer.ts",
+          "type": ".ts",
+          "size": 4872
+        },
+        {
+          "name": "useCustomerAnalyticsLoading.ts",
+          "path": "useCustomerAnalyticsLoading.ts",
+          "type": ".ts",
+          "size": 6737
+        },
+        {
+          "name": "useCustomerEdit.ts",
+          "path": "useCustomerEdit.ts",
+          "type": ".ts",
+          "size": 1880
+        },
+        {
+          "name": "useDashboardRefresh.ts",
+          "path": "useDashboardRefresh.ts",
+          "type": ".ts",
+          "size": 4370
+        },
+        {
+          "name": "useDashboardTooltips.ts",
+          "path": "useDashboardTooltips.ts",
+          "type": ".ts",
+          "size": 24783
+        },
+        {
+          "name": "useEdgeFunctionExport.ts",
+          "path": "useEdgeFunctionExport.ts",
+          "type": ".ts",
+          "size": 2693
+        },
+        {
+          "name": "useHoliday.ts",
+          "path": "useHoliday.ts",
+          "type": ".ts",
+          "size": 19626
+        },
+        {
+          "name": "useImageUrl.ts",
+          "path": "useImageUrl.ts",
+          "type": ".ts",
+          "size": 1412
+        },
+        {
+          "name": "useInventoryRealtime.ts",
+          "path": "useInventoryRealtime.ts",
+          "type": ".ts",
+          "size": 6217
+        },
+        {
+          "name": "useMessagesRealtime.ts",
+          "path": "useMessagesRealtime.ts",
+          "type": ".ts",
+          "size": 9126
+        },
+        {
+          "name": "useNotification.ts",
+          "path": "useNotification.ts",
+          "type": ".ts",
+          "size": 36393
+        },
+        {
+          "name": "useNotificationTemplates.ts",
+          "path": "useNotificationTemplates.ts",
+          "type": ".ts",
+          "size": 5762
+        },
+        {
+          "name": "useOrder.ts",
+          "path": "useOrder.ts",
+          "type": ".ts",
+          "size": 17984
+        },
+        {
+          "name": "useOrderEdit.ts",
+          "path": "useOrderEdit.ts",
+          "type": ".ts",
+          "size": 4034
+        },
+        {
+          "name": "usePasswordEdit.ts",
+          "path": "usePasswordEdit.ts",
+          "type": ".ts",
+          "size": 3836
+        },
+        {
+          "name": "usePasswordVisibility.ts",
+          "path": "usePasswordVisibility.ts",
+          "type": ".ts",
+          "size": 477
+        },
+        {
+          "name": "usePermission.ts",
+          "path": "usePermission.ts",
+          "type": ".ts",
+          "size": 17040
+        },
+        {
+          "name": "useProduct.ts",
+          "path": "useProduct.ts",
+          "type": ".ts",
+          "size": 31712
+        },
+        {
+          "name": "useProfileEdit.ts",
+          "path": "useProfileEdit.ts",
+          "type": ".ts",
+          "size": 1453
+        },
+        {
+          "name": "useRealtimeAlerts.ts",
+          "path": "useRealtimeAlerts.ts",
+          "type": ".ts",
+          "size": 6449
+        },
+        {
+          "name": "useRealtimeErrorTracking.ts",
+          "path": "useRealtimeErrorTracking.ts",
+          "type": ".ts",
+          "size": 5745
+        },
+        {
+          "name": "useRole.ts",
+          "path": "useRole.ts",
+          "type": ".ts",
+          "size": 4879
+        },
+        {
+          "name": "useSKU.ts",
+          "path": "useSKU.ts",
+          "type": ".ts",
+          "size": 9031
+        },
+        {
+          "name": "useSupportTicketsRealtime.ts",
+          "path": "useSupportTicketsRealtime.ts",
+          "type": ".ts",
+          "size": 10038
+        },
+        {
+          "name": "useTheme.ts",
+          "path": "useTheme.ts",
+          "type": ".ts",
+          "size": 23741
+        },
+        {
+          "name": "useUnsavedChanges.ts",
+          "path": "useUnsavedChanges.ts",
+          "type": ".ts",
+          "size": 1656
+        },
+        {
+          "name": "useUser.ts",
+          "path": "useUser.ts",
+          "type": ".ts",
+          "size": 6387
+        },
+        {
+          "name": "useXLSXExport.ts",
+          "path": "useXLSXExport.ts",
+          "type": ".ts",
+          "size": 6658
+        }
+      ],
+      "directories": [
+        {
+          "name": "analytics",
+          "path": "analytics",
+          "files": [
+            {
+              "name": "useAnalyticsCommon.ts",
+              "path": "analytics/useAnalyticsCommon.ts",
+              "type": ".ts",
+              "size": 11407
+            },
+            {
+              "name": "useAnalyticsExport.ts",
+              "path": "analytics/useAnalyticsExport.ts",
+              "type": ".ts",
+              "size": 9377
+            },
+            {
+              "name": "useBasicForecasting.ts",
+              "path": "analytics/useBasicForecasting.ts",
+              "type": ".ts",
+              "size": 12788
+            },
+            {
+              "name": "useCampaignAnalytics.ts",
+              "path": "analytics/useCampaignAnalytics.ts",
+              "type": ".ts",
+              "size": 20896
+            },
+            {
+              "name": "useCustomerAnalyticsBasic.ts",
+              "path": "analytics/useCustomerAnalyticsBasic.ts",
+              "type": ".ts",
+              "size": 16521
+            },
+            {
+              "name": "useCustomerAnalyticsTooltips.ts",
+              "path": "analytics/useCustomerAnalyticsTooltips.ts",
+              "type": ".ts",
+              "size": 24558
+            },
+            {
+              "name": "useOrderAnalyticsBasic.ts",
+              "path": "analytics/useOrderAnalyticsBasic.ts",
+              "type": ".ts",
+              "size": 13075
+            },
+            {
+              "name": "useProductAnalytics.ts",
+              "path": "analytics/useProductAnalytics.ts",
+              "type": ".ts",
+              "size": 30733
+            },
+            {
+              "name": "useProductAnalyticsTooltips.ts",
+              "path": "analytics/useProductAnalyticsTooltips.ts",
+              "type": ".ts",
+              "size": 25643
+            },
+            {
+              "name": "useProfitabilityAnalysis.ts",
+              "path": "analytics/useProfitabilityAnalysis.ts",
+              "type": ".ts",
+              "size": 8314
+            },
+            {
+              "name": "useSupportAnalytics.ts",
+              "path": "analytics/useSupportAnalytics.ts",
+              "type": ".ts",
+              "size": 16652
+            },
+            {
+              "name": "useSupportAnalyticsTooltips.ts",
+              "path": "analytics/useSupportAnalyticsTooltips.ts",
+              "type": ".ts",
+              "size": 10559
+            }
+          ],
+          "directories": [],
+          "total": 12
+        },
+        {
+          "name": "charts",
+          "path": "charts",
+          "files": [
+            {
+              "name": "useChartTheme.ts",
+              "path": "charts/useChartTheme.ts",
+              "type": ".ts",
+              "size": 7733
+            }
+          ],
+          "directories": [],
+          "total": 1
+        },
+        {
+          "name": "data-table-actions",
+          "path": "data-table-actions",
+          "files": [
+            {
+              "name": "index.ts",
+              "path": "data-table-actions/index.ts",
+              "type": ".ts",
+              "size": 496
+            },
+            {
+              "name": "useCustomerActions.ts",
+              "path": "data-table-actions/useCustomerActions.ts",
+              "type": ".ts",
+              "size": 7305
+            },
+            {
+              "name": "useDataTableActions.ts",
+              "path": "data-table-actions/useDataTableActions.ts",
+              "type": ".ts",
+              "size": 8708
+            },
+            {
+              "name": "useInventoryActions.ts",
+              "path": "data-table-actions/useInventoryActions.ts",
+              "type": ".ts",
+              "size": 7897
+            },
+            {
+              "name": "useNotificationActions.ts",
+              "path": "data-table-actions/useNotificationActions.ts",
+              "type": ".ts",
+              "size": 5716
+            },
+            {
+              "name": "useOrderActions.ts",
+              "path": "data-table-actions/useOrderActions.ts",
+              "type": ".ts",
+              "size": 10098
+            },
+            {
+              "name": "useProductActions.ts",
+              "path": "data-table-actions/useProductActions.ts",
+              "type": ".ts",
+              "size": 8183
+            },
+            {
+              "name": "useRoleUserActions.ts",
+              "path": "data-table-actions/useRoleUserActions.ts",
+              "type": ".ts",
+              "size": 11467
+            },
+            {
+              "name": "useTicketActions.ts",
+              "path": "data-table-actions/useTicketActions.ts",
+              "type": ".ts",
+              "size": 2329
+            }
+          ],
+          "directories": [],
+          "total": 9
+        },
+        {
+          "name": "queries",
+          "path": "queries",
+          "files": [
+            {
+              "name": "useBusinessHealthAnalyticsQueries.ts",
+              "path": "queries/useBusinessHealthAnalyticsQueries.ts",
+              "type": ".ts",
+              "size": 6874
+            },
+            {
+              "name": "useBusinessHealthQueries.ts",
+              "path": "queries/useBusinessHealthQueries.ts",
+              "type": ".ts",
+              "size": 21760
+            },
+            {
+              "name": "useCampaignAnalyticsQueries.ts",
+              "path": "queries/useCampaignAnalyticsQueries.ts",
+              "type": ".ts",
+              "size": 8187
+            },
+            {
+              "name": "useChartQuery.ts",
+              "path": "queries/useChartQuery.ts",
+              "type": ".ts",
+              "size": 1567
+            },
+            {
+              "name": "useCustomerQueries.ts",
+              "path": "queries/useCustomerQueries.ts",
+              "type": ".ts",
+              "size": 9957
+            },
+            {
+              "name": "useCustomerSegmentationQueries.ts",
+              "path": "queries/useCustomerSegmentationQueries.ts",
+              "type": ".ts",
+              "size": 9778
+            },
+            {
+              "name": "useDashboardQueries.ts",
+              "path": "queries/useDashboardQueries.ts",
+              "type": ".ts",
+              "size": 14405
+            },
+            {
+              "name": "useOrderQueries.ts",
+              "path": "queries/useOrderQueries.ts",
+              "type": ".ts",
+              "size": 19285
+            },
+            {
+              "name": "useProductAnalyticsQueries.ts",
+              "path": "queries/useProductAnalyticsQueries.ts",
+              "type": ".ts",
+              "size": 4064
+            },
+            {
+              "name": "useRevenueQueries.ts",
+              "path": "queries/useRevenueQueries.ts",
+              "type": ".ts",
+              "size": 12183
+            },
+            {
+              "name": "useRoleUsersQuery.ts",
+              "path": "queries/useRoleUsersQuery.ts",
+              "type": ".ts",
+              "size": 1914
+            },
+            {
+              "name": "useSupportAnalyticsQueries.ts",
+              "path": "queries/useSupportAnalyticsQueries.ts",
+              "type": ".ts",
+              "size": 12210
+            },
+            {
+              "name": "useSupportQueries.ts",
+              "path": "queries/useSupportQueries.ts",
+              "type": ".ts",
+              "size": 7645
+            }
+          ],
+          "directories": [],
+          "total": 13
+        }
+      ],
+      "total": 80
+    }
+  },
+  "summary": {
+    "total_files": 601,
+    "categories": 3
+  }
+}

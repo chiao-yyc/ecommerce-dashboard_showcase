@@ -1,0 +1,463 @@
+// Material Design 3 Mixins - 官方標準實現
+// 基於 Google Material Design 3 (Material You) 規範
+// 參考：https://m3.material.io/
+
+// ==========================================================================
+// Elevation System - 高度陰影系統 (MD3 Official)
+// ==========================================================================
+
+// MD3 官方高度陰影定義
+@mixin material-elevation-0 {
+  box-shadow: none;
+}
+
+@mixin material-elevation-1 {
+  box-shadow: 
+    0px 1px 2px rgba(0, 0, 0, 0.3),
+    0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+}
+
+@mixin material-elevation-2 {
+  box-shadow: 
+    0px 1px 2px rgba(0, 0, 0, 0.3),
+    0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+}
+
+@mixin material-elevation-3 {
+  box-shadow: 
+    0px 4px 8px 3px rgba(0, 0, 0, 0.15),
+    0px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+@mixin material-elevation-4 {
+  box-shadow: 
+    0px 6px 10px 4px rgba(0, 0, 0, 0.15),
+    0px 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+@mixin material-elevation-5 {
+  box-shadow: 
+    0px 8px 12px 6px rgba(0, 0, 0, 0.15),
+    0px 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+// ==========================================================================
+// State Layers - 狀態層系統 (MD3 Interaction States)
+// ==========================================================================
+
+// 懸停狀態層
+@mixin material-state-hover($color: currentColor, $opacity: 0.08) {
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $color;
+    opacity: 0;
+    border-radius: inherit;
+    transition: opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+  }
+  
+  &:hover::before {
+    opacity: $opacity;
+  }
+}
+
+// 聚焦狀態層
+@mixin material-state-focus($color: currentColor, $opacity: 0.12) {
+  &:focus::before {
+    opacity: $opacity;
+  }
+}
+
+// 按壓狀態層
+@mixin material-state-pressed($color: currentColor, $opacity: 0.12) {
+  &:active::before {
+    opacity: $opacity;
+  }
+}
+
+// 完整狀態層（包含所有互動狀態）
+@mixin material-state-layer($color: currentColor, $hover-opacity: 0.08, $focus-opacity: 0.12, $pressed-opacity: 0.12) {
+  @include material-state-hover($color, $hover-opacity);
+  @include material-state-focus($color, $focus-opacity);
+  @include material-state-pressed($color, $pressed-opacity);
+}
+
+// ==========================================================================
+// Shape System - 形狀系統 (MD3 Shape Scale)
+// ==========================================================================
+
+@mixin material-shape-none {
+  border-radius: 0;
+}
+
+@mixin material-shape-extra-small {
+  border-radius: 4px;
+}
+
+@mixin material-shape-small {
+  border-radius: 8px;
+}
+
+@mixin material-shape-medium {
+  border-radius: 12px;
+}
+
+@mixin material-shape-large {
+  border-radius: 16px;
+}
+
+@mixin material-shape-extra-large {
+  border-radius: 20px;
+}
+
+@mixin material-shape-full {
+  border-radius: 50%;
+}
+
+// ==========================================================================
+// Typography Scale - 字體系統 (MD3 Type Scale)
+// ==========================================================================
+
+@mixin material-display-large {
+  font-family: var(--md-sys-typescale-display-large-font-family-name, 'Roboto');
+  font-weight: var(--md-sys-typescale-display-large-font-weight, 500);
+  font-size: var(--md-sys-typescale-display-large-font-size, 32px);
+  line-height: var(--md-sys-typescale-display-large-line-height, 40px);
+  letter-spacing: var(--md-sys-typescale-display-large-tracking, -0.25px);
+}
+
+@mixin material-display-medium {
+  font-family: var(--md-sys-typescale-display-medium-font-family-name, 'Roboto');
+  font-weight: var(--md-sys-typescale-display-medium-font-weight, 400);
+  font-size: var(--md-sys-typescale-display-medium-font-size, 28px);
+  line-height: var(--md-sys-typescale-display-medium-line-height, 36px);
+  letter-spacing: var(--md-sys-typescale-display-medium-tracking, 0px);
+}
+
+@mixin material-headline-large {
+  font-family: var(--md-sys-typescale-headline-large-font-family-name, 'Roboto');
+  font-weight: var(--md-sys-typescale-headline-large-font-weight, 400);
+  font-size: var(--md-sys-typescale-headline-large-font-size, 24px);
+  line-height: var(--md-sys-typescale-headline-large-line-height, 32px);
+  letter-spacing: var(--md-sys-typescale-headline-large-tracking, 0px);
+}
+
+@mixin material-headline-medium {
+  font-family: var(--md-sys-typescale-headline-medium-font-family-name, 'Roboto');
+  font-weight: var(--md-sys-typescale-headline-medium-font-weight, 400);
+  font-size: var(--md-sys-typescale-headline-medium-font-size, 20px);
+  line-height: var(--md-sys-typescale-headline-medium-line-height, 28px);
+  letter-spacing: var(--md-sys-typescale-headline-medium-tracking, 0px);
+}
+
+@mixin material-title-large {
+  font-family: var(--md-sys-typescale-title-large-font-family-name, 'Roboto');
+  font-weight: var(--md-sys-typescale-title-large-font-weight, 500);
+  font-size: var(--md-sys-typescale-title-large-font-size, 18px);
+  line-height: var(--md-sys-typescale-title-large-line-height, 24px);
+  letter-spacing: var(--md-sys-typescale-title-large-tracking, 0px);
+}
+
+@mixin material-body-large {
+  font-family: var(--md-sys-typescale-body-large-font-family-name, 'Roboto');
+  font-weight: var(--md-sys-typescale-body-large-font-weight, 400);
+  font-size: var(--md-sys-typescale-body-large-font-size, 16px);
+  line-height: var(--md-sys-typescale-body-large-line-height, 24px);
+  letter-spacing: var(--md-sys-typescale-body-large-tracking, 0.5px);
+}
+
+@mixin material-body-medium {
+  font-family: var(--md-sys-typescale-body-medium-font-family-name, 'Roboto');
+  font-weight: var(--md-sys-typescale-body-medium-font-weight, 400);
+  font-size: var(--md-sys-typescale-body-medium-font-size, 14px);
+  line-height: var(--md-sys-typescale-body-medium-line-height, 20px);
+  letter-spacing: var(--md-sys-typescale-body-medium-tracking, 0.25px);
+}
+
+@mixin material-label-large {
+  font-family: var(--md-sys-typescale-label-large-font-family-name, 'Roboto');
+  font-weight: var(--md-sys-typescale-label-large-font-weight, 500);
+  font-size: var(--md-sys-typescale-label-large-font-size, 14px);
+  line-height: var(--md-sys-typescale-label-large-line-height, 20px);
+  letter-spacing: var(--md-sys-typescale-label-large-tracking, 0.1px);
+}
+
+// ==========================================================================
+// Component Mixins - 組件混入 (MD3 Components)
+// ==========================================================================
+
+// Filled Button (MD3 標準) - 按官方規範實現
+@mixin material-filled-button {
+  @include material-shape-extra-large;
+  @include material-elevation-0;
+  @include material-state-layer(hsl(var(--primary)));
+  @include material-label-large;
+  
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  min-width: 88px;
+  padding: 0 24px;
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &:hover {
+    @include material-elevation-1;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  }
+  
+  &:active {
+    @include material-elevation-0;
+  }
+  
+  &:disabled {
+    background-color: rgba(0, 0, 0, 0.12);
+    color: rgba(0, 0, 0, 0.38);
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+// Outlined Button (MD3 標準) - 按官方規範實現  
+@mixin material-outlined-button {
+  @include material-shape-extra-large;
+  @include material-elevation-0;
+  @include material-state-layer(hsl(var(--primary)));
+  @include material-label-large;
+  
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  min-width: 88px;
+  padding: 0 24px;
+  background-color: transparent;
+  color: hsl(var(--primary));
+  border: 1px solid hsl(var(--border));
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &:hover {
+    background-color: hsl(var(--primary) / 0.08);
+  }
+  
+  &:disabled {
+    border-color: rgba(0, 0, 0, 0.12);
+    color: rgba(0, 0, 0, 0.38);
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+// Text Button (MD3 標準) - 按官方規範實現
+@mixin material-text-button {
+  @include material-shape-extra-large;
+  @include material-elevation-0;
+  @include material-state-layer(hsl(var(--primary)));
+  @include material-label-large;
+  
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  min-width: 88px;
+  padding: 0 12px;
+  background-color: transparent;
+  color: hsl(var(--primary));
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &:hover {
+    background-color: hsl(var(--primary) / 0.08);
+  }
+  
+  &:disabled {
+    color: rgba(0, 0, 0, 0.38);
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+// Filled Card (MD3 標準) - 使用主題 CSS 變數
+@mixin material-filled-card {
+  @include material-shape-medium;
+  @include material-elevation-1;
+  @include material-state-layer(hsl(var(--primary)), 0.05);
+  
+  background-color: hsl(var(--card));
+  color: hsl(var(--card-foreground));
+  padding: 16px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &:hover {
+    @include material-elevation-2;
+  }
+}
+
+// Elevated Card (MD3 標準) - 使用主題 CSS 變數
+@mixin material-elevated-card {
+  @include material-shape-medium;
+  @include material-elevation-1;
+  @include material-state-layer(hsl(var(--primary)), 0.05);
+  
+  background-color: hsl(var(--card));
+  color: hsl(var(--card-foreground));
+  padding: 16px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &:hover {
+    @include material-elevation-2;
+  }
+}
+
+// Outlined Card (MD3 標準) - 使用主題 CSS 變數
+@mixin material-outlined-card {
+  @include material-shape-medium;
+  @include material-elevation-0;
+  @include material-state-layer(hsl(var(--primary)), 0.05);
+  
+  background-color: hsl(var(--card));
+  color: hsl(var(--card-foreground));
+  border: 1px solid hsl(var(--border));
+  padding: 16px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+// Text Field Filled (MD3 標準)
+@mixin material-filled-text-field {
+  @include material-shape-extra-small;
+  @include material-body-large;
+  @include material-state-layer(var(--md-filled-text-field-input-text-color, currentColor), 0.04);
+  
+  position: relative;
+  background-color: hsl(var(--muted));
+  border: none;
+  border-bottom: 1px solid hsl(var(--primary));
+  border-radius: 4px 4px 0 0;
+  color: hsl(var(--foreground));
+  padding: 16px;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &:focus {
+    outline: none;
+    border-bottom-width: 2px;
+    border-bottom-color: hsl(var(--primary));
+  }
+  
+  &:disabled {
+    background-color: hsl(var(--muted) / 0.5);
+    color: hsl(var(--muted-foreground));
+    border-bottom-color: hsl(var(--muted-foreground));
+  }
+}
+
+// ==========================================================================
+// Adaptive Color System - 自適應配色系統
+// ==========================================================================
+
+// Material Classic 經典配色 - 使用主題 CSS 變數
+@mixin material-classic-primary {
+  color: hsl(var(--primary));
+  transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@mixin material-classic-secondary {
+  color: hsl(var(--secondary));
+  transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@mixin material-classic-surface {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+// Material You 個人化配色 - 使用主題 CSS 變數
+@mixin material-you-primary {
+  color: hsl(var(--primary));
+  transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@mixin material-you-secondary {
+  color: hsl(var(--secondary));
+  transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@mixin material-you-surface {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+// Material Enterprise 企業級配色 - 使用主題 CSS 變數
+@mixin material-enterprise-primary {
+  color: hsl(var(--primary));
+  transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@mixin material-enterprise-secondary {
+  color: hsl(var(--secondary));
+  transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@mixin material-enterprise-surface {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+// ==========================================================================
+// Motion System - 動作系統 (MD3 Motion Tokens)
+// ==========================================================================
+
+@mixin material-motion-emphasized {
+  transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+  transition-duration: 500ms;
+}
+
+@mixin material-motion-standard {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+@mixin material-motion-decelerate {
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 250ms;
+}
+
+@mixin material-motion-accelerate {
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  transition-duration: 200ms;
+}
+
+// ==========================================================================
+// Dark Theme Support - 深色模式支援
+// ==========================================================================
+
+@mixin material-dark-surface {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+@mixin material-dark-primary {
+  color: hsl(var(--primary));
+}
+
+@mixin material-dark-secondary {
+  color: hsl(var(--secondary));
+}

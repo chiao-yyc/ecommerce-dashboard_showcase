@@ -1,0 +1,225 @@
+// Glassmorphism Effects
+// 玻璃液態效果的完整實現
+
+// 匯入玻璃 mixins
+@use '../mixins/glass-mixins' as glass;
+
+// 基礎玻璃效果類別
+.glass-effect {
+  @include glass.glass-card();
+}
+
+// 不同程度的玻璃效果
+.glass-light {
+  @include glass.glass-base();
+  @include glass.glass-opacity-subtle;
+}
+
+.glass-medium {
+  @include glass.glass-base();
+  @include glass.glass-opacity-light;
+}
+
+.glass-heavy {
+  @include glass.glass-base();
+  @include glass.glass-opacity-medium;
+}
+
+// 有色玻璃效果 - 使用新的透明度等級系統
+.glass-blue {
+  @include glass.glass-base();
+  @include glass.glass-opacity-light;
+  background: rgba(65, 105, 225, 0.15) !important; // Royal Blue
+}
+
+.glass-purple {
+  @include glass.glass-base();
+  @include glass.glass-opacity-light;
+  background: rgba(138, 43, 226, 0.15) !important; // Blue Violet
+}
+
+.glass-green {
+  @include glass.glass-base();
+  @include glass.glass-opacity-light;
+  background: rgba(34, 139, 34, 0.15) !important; // Forest Green
+}
+
+.glass-pink {
+  @include glass.glass-base();
+  @include glass.glass-opacity-light;
+  background: rgba(219, 112, 147, 0.15) !important; // Pale Violet Red
+}
+
+.glass-orange {
+  @include glass.glass-base();
+  @include glass.glass-opacity-light;
+  background: rgba(255, 140, 0, 0.15) !important; // Dark Orange
+}
+
+// 玻璃容器效果 (適用於卡片、對話框等)
+.glass-container {
+  @include glass.glass-card();
+  padding: 1.5rem;
+  margin: 0.5rem;
+}
+
+.glass-panel {
+  @include glass.glass-base();
+  @include glass.glass-opacity-light;
+  padding: 2rem;
+  border-radius: calc(var(--radius) + 4px);
+}
+
+// 玻璃導航效果
+.glass-navbar {
+  @include glass.glass-navigation();
+}
+
+// 玻璃側邊欄效果  
+.glass-sidebar {
+  @include glass.glass-sidebar();
+}
+
+// 浮動玻璃效果 (適用於彈出框、工具提示)
+.glass-floating {
+  @include glass.glass-modal();
+  transform: translateY(0);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &:hover {
+    transform: translateY(-4px);
+    
+    box-shadow: 
+      0 25px 90px rgba(0, 0, 0, 0.25),
+      0 12px 50px rgba(0, 0, 0, 0.18),
+      0 4px 16px rgba(0, 0, 0, 0.12),
+      inset 0 2px 0 rgba(255, 255, 255, 0.6);
+  }
+}
+
+// 玻璃按鈕變體
+.glass-button {
+  @include glass.glass-button();
+}
+
+.glass-button-primary {
+  @include glass.glass-button();
+  color: hsl(var(--primary));
+}
+
+.glass-button-secondary {
+  @include glass.glass-button();
+  color: hsl(var(--secondary));
+}
+
+// 玻璃輸入框變體
+.glass-input {
+  @include glass.glass-input();
+}
+
+// 玻璃表格效果
+.glass-table {
+  @include glass.glass-base();
+  @include glass.glass-opacity-subtle;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  
+  th, td {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: inherit;
+  }
+  
+  th {
+    @include glass.glass-opacity-light;
+  }
+  
+  tr:hover {
+    @include glass.glass-opacity-subtle;
+  }
+}
+
+// 玻璃模態效果
+.glass-modal {
+  @include glass.glass-modal();
+}
+
+// 動畫玻璃效果
+.glass-animated {
+  @include glass.glass-card();
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &:hover {
+    backdrop-filter: blur(15px) saturate(2.2);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.25);
+  }
+}
+
+// 脈動玻璃效果
+.glass-pulse {
+  @include glass.glass-card();
+  animation: glassPulse 3s ease-in-out infinite;
+  
+  @keyframes glassPulse {
+    0%, 100% {
+      backdrop-filter: blur(10px) saturate(1.8);
+      background: rgba(255, 255, 255, 0.1);
+    }
+    50% {
+      backdrop-filter: blur(15px) saturate(2.2);
+      background: rgba(255, 255, 255, 0.15);
+    }
+  }
+}
+
+// 毛玻璃文字效果
+.glass-text {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  padding: 0.5rem 1rem;
+  border-radius: calc(var(--radius) / 2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+// 響應式玻璃效果調整
+@media (max-width: 768px) {
+  .glass-effect,
+  .glass-container,
+  .glass-panel,
+  .glass-floating {
+    backdrop-filter: blur(8px) saturate(1.5);
+  }
+}
+
+// 性能優化：關閉動畫偏好設定
+@media (prefers-reduced-motion: reduce) {
+  .glass-floating,
+  .glass-animated,
+  .glass-pulse {
+    animation: none;
+    transition: none;
+  }
+  
+  .glass-floating:hover {
+    transform: none;
+  }
+}
+
+// 高對比度模式支援
+@media (prefers-contrast: high) {
+  .glass-effect,
+  .glass-container,
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+  }
+  
+  .dark .glass-effect,
+  .dark .glass-container, 
+  .dark .glass-panel {
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+  }
+}

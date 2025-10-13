@@ -1,0 +1,962 @@
+// Modern Theme Effects - SCSS Main Entry Point
+// 現代主題效果系統的主要入口點
+
+// ==========================================================================
+// Mixins Import - 混入導入
+// ==========================================================================
+
+// 玻璃效果混入
+@use 'mixins/glass-mixins' as glass;
+
+// 漸變效果混入
+@use 'mixins/gradient-mixins' as gradient;
+
+// 霓虹效果混入
+@use 'mixins/neon-mixins' as neon;
+
+// Material Design 混入
+@use 'mixins/material-mixins' as material;
+
+// Fluent Design 混入
+@use 'mixins/fluent-mixins' as fluent;
+
+// ==========================================================================
+// Effects Import - 效果導入
+// ==========================================================================
+
+// 玻璃液態效果
+@use 'effects/glassmorphism';
+
+// 噪點紋理效果
+@use 'effects/noise-texture' as noise;
+
+
+// 霓虹發光效果
+@use 'effects/neon-glow';
+
+// ==========================================================================
+// Theme-Specific Styles - 主題特定樣式
+// ==========================================================================
+
+// 當 body 有特定主題類別時才啟用對應效果
+
+// 玻璃主題 - 現代毛玻璃效果系統
+.theme-glassmorphism {
+  // 語義化狀態顏色定義
+  --success: 142 70% 49%;        // 綠色
+  --success-foreground: 355 85% 97%;
+  --warning: 43 74% 60%;         // 橙黃色  
+  --warning-foreground: 21 90% 4%;
+  --info: 221 83% 53%;           // 藍色
+  --info-foreground: 355 85% 97%;
+  
+  // 全域背景 - 使用 CSS 變數統一管理（直接使用變數，不用 hsl()）
+  background: var(--background);
+  min-height: 100vh;
+  position: relative;
+  
+  // 背景微紋理增強層次感
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+  }
+  
+  // ==============================================
+  // 組件級玻璃效果應用
+  // ==============================================
+  
+  // 卡片系統 - 中等層次感
+  .card,
+  [data-slot="card"],
+  .bg-card {
+    @include glass.glass-card();
+  }
+  
+  // 按鈕系統 - 輕量互動（只對primary和destructive按鈕套用玻璃效果）
+  [data-slot="button"][class*="bg-primary"],
+  [data-slot="button"][class*="bg-destructive"],
+  .button-default,
+  .button-destructive {
+    @include glass.glass-button();
+  }
+  
+  // 輸入系統 - 柔和互動
+  .input,
+  input:not([type="checkbox"]):not([type="radio"]),
+  textarea,
+  select {
+    @include glass.glass-input();
+  }
+  
+  // 導航系統 - 強層次感
+  .sidebar,
+  .navigation-sidebar,
+  nav:not([data-slot="breadcrumb"],[data-slot="tab-navigation"]) {
+    @include glass.glass-sidebar();
+  }
+  
+  // 彈窗系統 - 最強層次感
+  .modal,
+  .dialog,
+  .popover,
+  [data-slot="modal"] {
+    @include glass.glass-modal();
+  }
+  
+  // 頂部導航 - 輕量清透
+  .navbar,
+  .header,
+  .app-header {
+    @include glass.glass-navigation();
+  }
+  
+  // ==============================================
+  // 特殊元素優化
+  // ==============================================
+  
+  // 表格優化
+  .table,
+  table {
+    @include glass.glass-base(12px, 150%);
+    @include glass.glass-opacity-subtle;
+    
+    thead {
+      @include glass.glass-opacity-light;
+    }
+    
+    tbody tr:hover {
+      @include glass.glass-opacity-light;
+    }
+  }
+  
+  // 下拉選單
+  .dropdown-content,
+  .select-content,
+  .combobox-content {
+    @include glass.glass-base(16px, 170%);
+    @include glass.glass-opacity-medium;
+    
+    box-shadow: 
+      0 8px 40px rgba(0, 0, 0, 0.15),
+      0 2px 12px rgba(0, 0, 0, 0.10),
+      inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  }
+  
+  // 標籤頁
+  .tabs-list,
+  [role="tablist"] {
+    @include glass.glass-navigation();
+  }
+}
+
+// ==========================================================================
+// Interactive Effects - 互動效果
+// ==========================================================================
+
+// 玻璃效果優化類別 - 提供額外的互動增強
+.glass-effects-enabled {
+  // 全域玻璃效果啟用時的優化
+  * {
+    // 確保玻璃效果順暢運作
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+}
+
+// 玻璃互動增強類別
+.glass-interactive {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  
+  &:hover {
+    @include glass.glass-base(22px, 200%);
+    @include glass.glass-opacity-medium;
+    transform: translateY(-3px) scale(1.01);
+    
+    box-shadow: 
+      0 12px 48px rgba(0, 0, 0, 0.15),
+      0 4px 16px rgba(0, 0, 0, 0.10),
+      inset 0 2px 0 rgba(255, 255, 255, 0.5);
+  }
+  
+  &:active {
+    transform: translateY(-1px) scale(0.99);
+    @include glass.glass-opacity-light;
+  }
+}
+
+// 玻璃優化性能類別
+.glass-optimized {
+  // GPU 加速優化
+  .card,
+  .button,
+  .modal,
+  [data-slot="card"],
+  [data-slot="button"],
+  [data-slot="modal"] {
+    transform: translateZ(0);
+    will-change: backdrop-filter, transform, opacity;
+  }
+}
+
+// 懸停時的霓虹效果增強
+.neon-interactive:hover {
+  @include neon.neon-glow(0, 255, 255, 1.5);
+  transform: scale(1.02);
+}
+
+
+// ==========================================================================
+// Utility Classes - 工具類別
+// ==========================================================================
+
+// 快速效果啟用類別
+.enable-glass {
+  @include glass.glass-card();
+}
+
+.enable-neon {
+  @include neon.neon-glow(0, 255, 255);
+}
+
+
+
+// 效果組合類別
+.glass-neon {
+  @include glass.glass-card();
+  @include neon.neon-glow(0, 255, 255, 0.5);
+}
+
+
+
+// ==========================================================================
+// Theme Transition Animations - 主題切換動畫
+// ==========================================================================
+
+// 主題切換時的平滑過渡
+.theme-transitioning {
+  * {
+    transition: 
+      background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+}
+
+// ==========================================================================
+// Animation Controls - 動畫控制
+// ==========================================================================
+
+// 暫停所有動畫
+.pause-animations,
+.pause-animations * {
+  animation-play-state: paused !important;
+}
+
+// 加速動畫（用於預覽）
+.fast-animations {
+  .morphing-gradient,
+  .rainbow-gradient {
+    animation-duration: 2s !important;
+  }
+}
+
+// 慢速動畫（用於展示）
+.slow-animations {
+  .morphing-gradient,
+  .rainbow-gradient {
+    animation-duration: 20s !important;
+  }
+}
+
+// ==========================================================================
+// Responsive Adjustments - 響應式調整
+// ==========================================================================
+
+@media (max-width: 768px) {
+  .theme-glassmorphism,
+  .theme-synthwave-glow {
+    // 在小螢幕上降低效果強度以提升性能
+    .glass-effect,
+    .neon-glow {
+      filter: brightness(0.9);
+    }
+    
+    // 減少動畫複雜度
+    .morphing-gradient {
+      animation-duration: 12s;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  // 在極小螢幕上進一步簡化
+  .theme-glassmorphism {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    
+    .glass-effect {
+      backdrop-filter: blur(5px);
+    }
+  }
+  
+}
+
+// ==========================================================================
+// Accessibility - 無障礙支援
+// ==========================================================================
+
+@media (prefers-reduced-motion: reduce) {
+  // 停用所有動畫
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  // 保持視覺效果但移除動畫
+  .morphing-gradient,
+  .rainbow-gradient {
+    background-size: 100% 100% !important;
+  }
+}
+
+@media (prefers-contrast: high) {
+  // 高對比度模式調整
+  .theme-glassmorphism {
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.3);
+      border: 2px solid rgba(255, 255, 255, 0.5);
+    }
+  }
+  
+  .theme-synthwave-glow {
+    background: black;
+    
+    .neon-glow {
+      box-shadow: 0 0 5px currentColor;
+      border: 2px solid currentColor;
+    }
+  }
+}
+
+// ==========================================================================
+// Dark Mode Adjustments - 暗色模式調整
+// ==========================================================================
+
+.dark {
+  .theme-glassmorphism {
+    // 暗色模式背景 - 使用 CSS 變數統一管理
+    background: hsl(var(--background));
+    
+    // 暗色模式微紋理
+    &::before {
+      background-image: 
+        radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+    }
+    
+    // 暗色模式下所有玻璃元素自動適配
+    // (透過 mixin 中的 .dark & 選擇器自動處理)
+  }
+
+  // 僅在 Synthwave Glow 主題的深色模式下套用光暈效果
+  .theme-synthwave-glow,
+  .synthwave-active {
+
+    // 為卡片添加霓虹效果
+    .card,
+    [data-slot="card"] {
+      // Corresponds to the primary token in dark mode
+      @include neon.neon-glow(255, 0, 150, 0.8);
+    }
+    
+    // 為按鈕添加霓虹效果
+    .button,
+    [data-slot="button"] {
+      // 主按鈕使用 primary 顏色
+      &[data-variant="default"] {
+         // Corresponds to the primary token in dark mode
+         @include neon.neon-button(255, 0, 150);
+      }
+      // 破壞性按鈕使用 destructive 顏色
+      &[data-variant="destructive"] {
+        // Corresponds to the destructive token in dark mode
+        @include neon.neon-button(255, 40, 60);
+      }
+      // 次要按鈕使用 secondary 顏色
+      &[data-variant="secondary"] {
+        // Corresponds to the secondary token in dark mode
+        @include neon.neon-button(0, 255, 255);
+      }
+    }
+    
+    // 為輸入框添加霓虹效果
+    .input,
+    input,
+    textarea {
+      @extend .neon-input;
+    }
+  }
+}
+
+// ==========================================
+// 🎨 霓虹配色方案切換區域
+// ==========================================
+// 使用說明：
+// 1. 預設啟用「方案一：優雅專業風」
+// 2. 要測試其他方案，請：
+//    - 將目前啟用的方案用 /* */ 註解包圍
+//    - 將想要測試的方案移除註解 /* */
+// 3. 儲存檔案後 HMR 會立即顯示效果
+
+// ==========================================
+// 🎨 方案一：優雅專業風 (目前啟用)
+// 特色：深紫+淡粉、商務藍、專業優雅
+// ==========================================
+.neon-enabled {
+  // 卡片：紫色光暈
+  .card,
+  [data-slot="card"] {
+    @include neon.adaptive-neon-purple();
+  }
+  
+  // 主要按鈕：商務專業藍色
+  .button,
+  [data-slot="button"] {
+    @include neon.adaptive-neon-button-blue();
+  }
+  
+  // 標題文字：優雅深紫 + 淡粉光暈
+  h1, h2, h3, h4, h5, h6 {
+    @include neon.elegant-purple-text();
+  }
+  
+  // 次要按鈕：溫暖酒紅配色
+  [data-variant="secondary"] {
+    @include neon.adaptive-neon-button-red();
+  }
+  
+  // 重要提示文字：溫暖珊瑚配色
+  .text-destructive,
+  .text-warning,
+  [data-variant="destructive"] {
+    @include neon.warm-coral-text();
+  }
+  
+  // 成功狀態：清新薄荷配色
+  .text-success,
+  [data-variant="success"] {
+    @include neon.fresh-mint-text();
+  }
+  
+  // 科技感元素：靛青電光配色
+  .text-primary,
+  [data-variant="primary"] {
+    @include neon.tech-indigo-text();
+  }
+  
+  // 輸入框：森林綠 + 薄荷光暈
+  .input,
+  input,
+  textarea {
+    @include neon.fresh-mint-text();
+    
+    // 聚焦時使用漸層光暈增強效果
+    &:focus {
+      @include neon.gradient-warm-text();
+    }
+  }
+  
+  // 商務專業文字：用於數據展示等
+  .text-muted,
+  .text-secondary {
+    @include neon.professional-blue-text();
+  }
+  
+  // 特殊強調元素：多層漸層光暈
+  .highlight,
+  .featured,
+  .emphasis {
+    @include neon.gradient-warm-text();
+  }
+}
+
+// ==========================================
+// 🎨 方案二：溫暖對比風 (註解掉)
+// 特色：酒紅+珊瑚、森林綠+薄荷、溫暖親和
+// ==========================================
+/*
+.neon-enabled {
+  // 卡片：溫暖酒紅光暈
+  .card,
+  [data-slot="card"] {
+    @include neon.adaptive-neon-glow(150, 45, 65, 255, 120, 120, 0.6);
+  }
+  
+  // 主要按鈕：森林綠 + 薄荷光暈
+  .button,
+  [data-slot="button"] {
+    @include neon.warm-scheme-button();
+  }
+  
+  // 標題文字：酒紅 + 珊瑚光暈
+  h1, h2, h3, h4, h5, h6 {
+    @include neon.warm-scheme-title();
+  }
+  
+  // 次要按鈕：深橙配色
+  [data-variant="secondary"] {
+    @include neon.adaptive-neon-button(180, 90, 30, 255, 150, 80);
+  }
+  
+  // 重要提示文字：深橙 + 蜜桃光暈
+  .text-destructive,
+  .text-warning,
+  [data-variant="destructive"] {
+    @include neon.warm-scheme-warning();
+  }
+  
+  // 成功狀態：森林綠 + 薄荷光暈
+  .text-success,
+  [data-variant="success"] {
+    @include neon.warm-scheme-success();
+  }
+  
+  // 科技感元素：使用酒紅變體
+  .text-primary,
+  [data-variant="primary"] {
+    @include neon.warm-scheme-title();
+  }
+  
+  // 輸入框：森林綠 + 薄荷光暈
+  .input,
+  input,
+  textarea {
+    @include neon.warm-scheme-success();
+    
+    // 聚焦時使用酒紅強調
+    &:focus {
+      @include neon.warm-scheme-title();
+    }
+  }
+  
+  // 商務專業文字：深橙配色
+  .text-muted,
+  .text-secondary {
+    @include neon.warm-scheme-warning();
+  }
+  
+  // 特殊強調元素：酒紅漸層效果
+  .highlight,
+  .featured,
+  .emphasis {
+    @include neon.warm-scheme-title();
+  }
+}
+*/
+
+// ==========================================
+// 🎨 方案三：現代科技風 (註解掉)
+// 特色：靛青+電光藍、科技感、未來炫酷
+// ==========================================
+/*
+.neon-enabled {
+  // 卡片：靛青科技光暈
+  .card,
+  [data-slot="card"] {
+    @include neon.adaptive-neon-glow(75, 90, 140, 150, 180, 255, 0.6);
+  }
+  
+  // 主要按鈕：靛青 + 科技藍光暈
+  .button,
+  [data-slot="button"] {
+    @include neon.tech-scheme-button();
+  }
+  
+  // 標題文字：靛青 + 電光藍光暈
+  h1, h2, h3, h4, h5, h6 {
+    @include neon.tech-scheme-title();
+  }
+  
+  // 次要按鈕：深橙科技對比
+  [data-variant="secondary"] {
+    @include neon.adaptive-neon-button(180, 90, 30, 255, 150, 80);
+  }
+  
+  // 重要提示文字：深橙 + 蜜桃光暈
+  .text-destructive,
+  .text-warning,
+  [data-variant="destructive"] {
+    @include neon.tech-scheme-warning();
+  }
+  
+  // 成功狀態：科技綠 + 螢光綠光暈
+  .text-success,
+  [data-variant="success"] {
+    @include neon.tech-scheme-success();
+  }
+  
+  // 科技感元素：靛青電光配色
+  .text-primary,
+  [data-variant="primary"] {
+    @include neon.tech-scheme-title();
+  }
+  
+  // 輸入框：科技綠配色
+  .input,
+  input,
+  textarea {
+    @include neon.tech-scheme-success();
+    
+    // 聚焦時使用靛青強調
+    &:focus {
+      @include neon.tech-scheme-title();
+    }
+  }
+  
+  // 商務專業文字：靛青專業配色
+  .text-muted,
+  .text-secondary {
+    @include neon.tech-scheme-professional();
+  }
+  
+  // 特殊強調元素：靛青電光效果
+  .highlight,
+  .featured,
+  .emphasis {
+    @include neon.tech-scheme-title();
+  }
+}
+*/
+
+// ==========================================================================
+// 💼 FLUENT DESIGN 主題系統
+// 基於 Microsoft Fluent Design System 規範
+// ==========================================================================
+
+// Fluent 主題保持簡潔，不使用複雜效果
+.theme-fluent {
+  // Fluent Design 語義化狀態顏色
+  --success: 107 75% 41%;        // Fluent Green
+  --success-foreground: 0 0% 100%;
+  --warning: 35 100% 50%;        // Fluent Orange
+  --warning-foreground: 0 0% 0%;
+  --info: 206 100% 50%;          // Fluent Blue
+  --info-foreground: 0 0% 100%;
+  
+  min-height: 100vh;
+  font-family: var(--font-family);
+}
+
+// ==========================================================================
+// 📐 MATERIAL DESIGN 3 主題系統
+// 基於 Google Material Design 3 (Material You) 官方規範
+// ==========================================================================
+
+// Material 主題專用全域背景和基礎設置
+.theme-material {
+  // Material Design 3 語義化狀態顏色
+  --success: 122 39% 49%;        // Material Green
+  --success-foreground: 0 0% 100%;
+  --warning: 36 100% 58%;        // Material Amber
+  --warning-foreground: 0 0% 0%;
+  --info: 210 100% 56%;          // Material Blue
+  --info-foreground: 0 0% 100%;
+  
+  @include material.material-classic-surface();
+  min-height: 100vh;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+// ==========================================
+// 📱 Material Design 配色方案切換區域
+// ==========================================
+// 使用說明：
+// 1. 預設啟用「方案一：Material Classic」
+// 2. 要測試其他方案，請：
+//    - 將目前啟用的方案用 /* */ 註解包圍
+//    - 將想要測試的方案移除註解 /* */
+// 3. 儲存檔案後 HMR 會立即顯示效果
+
+// ==========================================
+// 📱 方案一：Material Classic (目前啟用)
+// 特色：Google 標準配色、專業穩重、企業級應用
+// ==========================================
+.material-active {
+  // 卡片：Material 標準卡片樣式
+  .card,
+  [data-slot="card"] {
+    @include material.material-filled-card();
+    @include material.material-shape-medium();
+    @include material.material-elevation-1();
+    
+    &:hover {
+      @include material.material-elevation-2();
+    }
+  }
+  
+  // 按鈕：Material 3 標準按鈕系統
+  .button:not(.header-icon-button),
+  [data-slot="button"]:not(.header-icon-button) {
+    // 主要按鈕 (Filled Button)
+    &[data-variant="default"],
+    &:not([data-variant]) {
+      @include material.material-filled-button();
+    }
+    
+    // 次要按鈕 (Outlined Button)
+    &[data-variant="secondary"] {
+      @include material.material-outlined-button();
+    }
+    
+    // 文字按鈕 (Text Button)  
+    &[data-variant="ghost"] {
+      @include material.material-text-button();
+    }
+    
+    // 破壞性按鈕
+    &[data-variant="destructive"] {
+      @include material.material-filled-button();
+      background-color: hsl(var(--destructive)) !important;
+      color: hsl(var(--destructive-foreground)) !important;
+      
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+  
+  // 輸入框：Material 3 Filled Text Field
+  .input,
+  input,
+  textarea {
+    @include material.material-filled-text-field();
+    @include material.material-classic-surface();
+  }
+  
+  // 標題：適合管理後台的字體大小
+  h1 {
+    @include material.material-headline-large();
+    @include material.material-classic-primary();
+    font-weight: 600;
+  }
+  
+  h2 {
+    @include material.material-headline-medium();
+    @include material.material-classic-primary();
+    font-weight: 500;
+  }
+  
+  h3 {
+    @include material.material-title-large();
+    @include material.material-classic-primary();
+    font-weight: 500;
+  }
+  
+  h4, h5, h6 {
+    @include material.material-body-large();
+    @include material.material-classic-primary();
+    font-weight: 500;
+  }
+  
+  // 本文：保持原始大小不強制套用
+  // p, span, div {
+  //   @include material.material-body-large();
+  // }
+  
+  // 標籤文字：Material Label
+  label {
+    @include material.material-label-large();
+    @include material.material-classic-secondary();
+  }
+  
+  // 導航欄：Material 3 Navigation
+  .sidebar,
+  nav:not([data-slot="breadcrumb"],[data-slot="tab-navigation"]) {
+    @include material.material-filled-card();
+    @include material.material-elevation-0();
+    background-color: var(--md-sys-color-surface-variant, oklch(0.94 0.002 250));
+  }
+  
+  // 狀態指示
+  .text-success,
+  [data-variant="success"] {
+    color: var(--md-sys-color-primary, oklch(0.7 0.25 150));
+  }
+  
+  .text-warning,
+  [data-variant="warning"] {
+    color: var(--md-sys-color-warning, oklch(0.75 0.2 80));
+  }
+  
+  .text-destructive,
+  [data-variant="destructive"] {
+    color: var(--md-sys-color-error, oklch(0.65 0.25 15));
+  }
+}
+
+// ==========================================
+// 🎨 方案二：Material You (註解掉)
+// 特色：動態配色、個人化色彩、Material You 標準
+// ==========================================
+/*
+.material-active {
+  // 卡片：Material You 動態配色
+  .card,
+  [data-slot="card"] {
+    @include material.material-elevated-card();
+    @include material.material-shape-large();
+    @include material.material-elevation-2();
+    
+    &:hover {
+      @include material.material-elevation-3();
+    }
+  }
+  
+  // 按鈕：Material You 按鈕系統
+  .button:not(.header-icon-button),
+  [data-slot="button"]:not(.header-icon-button) {
+    &[data-variant="default"],
+    &:not([data-variant]) {
+      @include material.material-filled-button();
+      @include material.material-you-primary();
+      background: linear-gradient(135deg, var(--md-sys-color-primary-dynamic, #6750a4), var(--md-sys-color-secondary-dynamic, #625b71));
+    }
+    
+    &[data-variant="secondary"] {
+      @include material.material-outlined-button();
+      @include material.material-you-secondary();
+      border: 2px solid var(--md-sys-color-outline-variant, #cac4d0);
+    }
+    
+    &[data-variant="ghost"] {
+      @include material.material-text-button();
+      @include material.material-you-primary();
+    }
+  }
+  
+  // 輸入框：Material You 個人化輸入框
+  .input,
+  input,
+  textarea {
+    @include material.material-filled-text-field();
+    @include material.material-you-surface();
+    border-bottom-color: var(--md-sys-color-primary-dynamic, #6750a4);
+  }
+  
+  // 標題：Material You 動態色彩
+  h1, h2, h3, h4, h5, h6 {
+    @include material.material-you-primary();
+    background: linear-gradient(45deg, 
+      var(--md-sys-color-primary-dynamic, #6750a4), 
+      var(--md-sys-color-secondary-dynamic, #625b71)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  // 導航：Material You 表面
+  .sidebar,
+  nav {
+    @include material.material-you-surface();
+    @include material.material-elevation-1();
+    backdrop-filter: blur(20px);
+  }
+}
+*/
+
+// ==========================================
+// 🏢 方案三：Material Enterprise (註解掉)
+// 特色：企業級配色、專業導向、高對比度
+// ==========================================
+/*
+.material-active {
+  // 卡片：企業級卡片設計
+  .card,
+  [data-slot="card"] {
+    @include material.material-outlined-card();
+    @include material.material-shape-small();
+    @include material.material-elevation-1();
+    border: 1px solid var(--md-sys-color-outline-enterprise, #e0e0e0);
+    
+    &:hover {
+      @include material.material-elevation-2();
+      border-color: var(--md-sys-color-primary-enterprise, #1565c0);
+    }
+  }
+  
+  // 按鈕：企業級按鈕系統
+  .button:not(.header-icon-button),
+  [data-slot="button"]:not(.header-icon-button) {
+    &[data-variant="default"],
+    &:not([data-variant]) {
+      @include material.material-filled-button();
+      @include material.material-enterprise-primary();
+      background-color: var(--md-sys-color-primary-enterprise, #1565c0);
+      
+      &:hover {
+        background-color: var(--md-sys-color-primary-enterprise-hover, #1976d2);
+      }
+    }
+    
+    &[data-variant="secondary"] {
+      @include material.material-outlined-button();
+      @include material.material-enterprise-secondary();
+      border-color: var(--md-sys-color-secondary-enterprise, #455a64);
+    }
+  }
+  
+  // 輸入框：企業級輸入框
+  .input,
+  input,
+  textarea {
+    @include material.material-filled-text-field();
+    @include material.material-enterprise-surface();
+    background-color: var(--md-sys-color-surface-enterprise, #ffffff);
+    border: 1px solid var(--md-sys-color-outline-enterprise, #e0e0e0);
+  }
+  
+  // 標題：企業級標題樣式
+  h1, h2, h3, h4, h5, h6 {
+    @include material.material-enterprise-primary();
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  
+  // 導航：企業級導航
+  .sidebar,
+  nav:not([data-slot="breadcrumb"],[data-slot="tab-navigation"]) {
+    @include material.material-enterprise-surface();
+    @include material.material-elevation-0();
+    border-right: 1px solid var(--md-sys-color-outline-enterprise, #e0e0e0);
+  }
+  
+  // 數據表格：企業級表格樣式
+  table {
+    @include material.material-enterprise-surface();
+    border: 1px solid var(--md-sys-color-outline-enterprise, #e0e0e0);
+    
+    th {
+      @include material.material-enterprise-primary();
+      @include material.material-label-large();
+      background-color: var(--md-sys-color-surface-variant-enterprise, #f5f5f5);
+    }
+    
+    td {
+      @include material.material-enterprise-surface();
+      border-bottom: 1px solid var(--md-sys-color-outline-variant-enterprise, #f0f0f0);
+    }
+  }
+}
+*/

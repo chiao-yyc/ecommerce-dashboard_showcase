@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.app.json",
+  "exclude": [
+    "src/**/__tests__/*",
+    "src/**/*.spec.ts",
+    "src/**/*.test.ts",
+    "node_modules",
+    "dist"
+  ],
+  "compilerOptions": {
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "dist/types"
+  }
+}

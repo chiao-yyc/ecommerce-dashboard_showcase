@@ -1,0 +1,143 @@
+@startuml
+' -------- Entity Helper -------
+!define pk(x) <b>x</b>
+
+' -------- Core ---------------
+entity users {
+  pk(id) uuid
+  email        text
+  full_name    text
+  avatar_url   text
+  created_at   timestamptz
+}
+
+entity roles {
+  pk(id) serial
+  name        text
+  description text
+}
+
+entity user_roles {
+  pk(user_id) uuid
+  pk(role_id) int
+}
+
+entity customers {
+  pk(id) uuid
+  name         text
+  email        text
+  phone        text
+  registered_at timestamptz
+  status       text
+}
+
+' -------- Catalog -------------
+entity categories {
+  pk(id) serial
+  name         text
+  description  text
+  translations jsonb
+}
+
+entity products {
+  pk(id) uuid
+  name           text
+  price          numeric
+  stock_warning_threshold int
+  category_id    int
+  image_url      text
+  translations   jsonb
+  created_at     timestamptz
+}
+
+' -------- Inventory -----------
+entity inventories {
+  pk(id) uuid
+  product_id  uuid
+  sku         text
+  stock       int
+  updated_at  timestamptz
+}
+
+entity inventory_logs {
+  pk(id) uuid
+  inventory_id uuid
+  change       int
+  type         text
+  reference    text
+  created_by   uuid
+  created_at   timestamptz
+}
+
+entity inventory_adjustments {
+  pk(id) uuid
+  inventory_id    uuid
+  adjust_type     text
+  quantity_before int
+  quantity_after  int
+  reason          text
+  created_by      uuid
+  created_at      timestamptz
+}
+
+' -------- Orders --------------
+entity orders {
+  pk(id) uuid
+  customer_id  uuid
+  user_id      uuid
+  status       text
+  total_amount numeric
+  created_at   timestamptz
+}
+
+entity order_items {
+  pk(id) serial
+  order_id   uuid
+  product_id uuid
+  quantity   int
+  unit_price numeric
+}
+
+' -------- RFM -----------------
+entity customer_orders {
+  pk(id) uuid
+  customer_id uuid
+  order_date  timestamptz
+  amount      numeric
+  status      text
+}
+
+entity rfm_scores {
+  pk(id) serial
+  customer_id   uuid
+  recency_days  int
+  frequency     int
+  monetary      numeric
+  r_score int
+  f_score int
+  m_score int
+  rfm_segment  varchar(10)
+  rfm_label    text
+  calculated_at timestamptz
+}
+
+entity rfm_segments {
+  pk(id) serial
+  rfm_pattern varchar(10)
+  label       text
+  description text
+  priority    int
+}
+
+' -------- Customer Service ----
+entity conversations {
+  pk(id) uuid
+  user_id    uuid
+  status     text
+  created_at timestamptz
+}
+
+entity messages {
+  pk(id) uuid
+  conversation_id uuid
+  sender_id  uuid
