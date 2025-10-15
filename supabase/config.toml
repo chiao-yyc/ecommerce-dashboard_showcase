@@ -63,7 +63,6 @@ enabled = true
 # 📁 檔案結構：
 # - seed-core.sql：生產環境核心預設資料 (系統運作必需)
 # - seed-test.sql：開發測試用資料 (基於核心資料的測試資料)
-# - seed.sql：整合檔案 (向後相容，包含所有資料)
 #
 # 🔧 環境配置建議：
 #
@@ -72,10 +71,6 @@ enabled = true
 #
 # Development (開發環境)：
 sql_paths = ["./seed-core.sql"]
-# sql_paths = ["./seed-core.sql", "./seed-test.sql", "./generate-payment-records.sql", "./generate-cancelled-orders.sql", "./fix-delivery-timestamps.sql"]
-#
-# Legacy (向後相容)：
-# sql_paths = ["./seed.sql"]
 
 [realtime]
 enabled = true

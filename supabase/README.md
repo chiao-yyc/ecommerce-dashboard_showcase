@@ -94,6 +94,7 @@ npm run test
 需要先啟動 Supabase 本地環境：
 ```bash
 supabase start
+# cd admin-platform
 npm run test:e2e
 ```
 
@@ -159,6 +160,12 @@ open http://localhost:54323
 ```
 
 預設登入資訊會顯示在終端輸出中。
+
+### Q: 如何使用 inbucket 測試？
+```bash
+# 啟動後訪問
+open http://localhost:54324
+```
 
 ### Q: 本地開發和生產環境的區別？
 

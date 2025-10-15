@@ -10,16 +10,16 @@
 
 ## 🚀 Live Demo
 
-**線上展示**: [https://ecadmin.yachiaoyang.dev/](https://ecadmin.yachiaoyang.dev) *(部署中)*
+**線上展示**: [https://ecadmin.yachiaoyang.dev/](https://ecadmin.yachiaoyang.dev)
 
 ### 測試帳號
 
 | 角色 | 帳號 | 密碼 | 權限說明 |
 |------|------|------|----------|
-| 超級管理員 | super@demo.com | demo1234 | 完整系統權限、角色管理、用戶管理 |
-| 管理員 | admin@demo.com | demo1234 | 系統管理、數據查看、報表匯出 |
-| 業務經理 | manager@demo.com | demo1234 | 訂單管理、客戶分析、活動管理 |
-| 客服人員 | support@demo.com | demo1234 | 工單處理、通知查看、客戶溝通 |
+| 超級管理員 | super@demo.com | demo123 | 完整系統權限、角色管理、用戶管理 |
+| 管理員 | admin@demo.com | demo123 | 系統管理、數據查看、報表匯出 |
+| 業務經理 | manager@demo.com | demo123 | 訂單管理、客戶分析、活動管理 |
+| 客服人員 | support@demo.com | demo123 | 工單處理、通知查看、客戶溝通 |
 
 > 建議先用超級管理員帳號體驗完整功能，再切換其他角色查看權限控制效果
 
@@ -27,11 +27,11 @@
 
 ## 完整技術文件
 
-**文件站點**: [技術文件中心](./docs/index.md) *(VitePress 技術文件，部署中)*
+**文件站點**: [技術文件中心](https://ecdocs.yachiaoyang.dev)
 
-> 包含 40+ 篇技術文件，涵蓋系統架構、API 規格、部署指南、開發筆記等。建議重點閱讀：
+> 包含 40+ 篇技術文件，涵蓋系統架構、API 規格、部署指南、開發筆記等。
 
-### 推薦閱讀路徑
+### 重點閱讀路徑
 
 **系統架構**
 - [系統架構總覽](./docs/02-development/architecture/architecture.md) - 四層架構設計

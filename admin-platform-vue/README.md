@@ -8,13 +8,13 @@
 
 ## 🛠️ 技術棧
 
-- **框架**: Vue 3.5 (Composition API + `<script setup>`)
+- **框架**: Vue 3 (Composition API + `<script setup>`)
 - **語言**: TypeScript 5.x (嚴格模式)
-- **建置工具**: Vite 6.0
+- **建置工具**: Vite
 - **狀態管理**: Pinia + Vue Query
-- **UI 組件**: Radix Vue (Headless UI) + Tailwind CSS 3.x
-- **圖表**: Unovis (響應式資料視覺化)
-- **測試**: Vitest + Vue Test Utils (471 測試全部通過)
+- **UI 組件**: ShadCN + Tailwind CSS 3.x
+- **圖表**: Unovis
+- **測試**: Vitest + Vue Test Utils
 
 ---
 
@@ -110,12 +110,3 @@ const result = await orderService.getAll({ status: 'pending' })
 - [Supabase 後端](../supabase/README.md) - 後端開發快速開始
 - [技術文件中心](../docs/index.md) - VitePress 完整文件
 
----
-
-## 🔗 相關資源
-
-- [Vue 3 官方文檔](https://vuejs.org/)
-- [Vite 官方文檔](https://vitejs.dev/)
-- [TypeScript 官方文檔](https://www.typescriptlang.org/)
-- [Vitest 測試框架](https://vitest.dev/)
-- [Radix Vue 組件庫](https://www.radix-vue.com/)

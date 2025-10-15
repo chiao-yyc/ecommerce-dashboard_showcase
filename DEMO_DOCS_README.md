@@ -87,24 +87,6 @@ docs/
    - `04-api-reference/supabase-reference.md` - Supabase API 整合
    - `02-architecture/api-design.md` - API 架構設計
 
-## 🔄 如何切換分支查看
-
-### 查看精簡版文件 (當前分支)
-
-```bash
-git checkout docs-demo
-cd docs
-npm run docs:dev
-```
-
-### 查看完整版文件
-
-```bash
-git checkout main
-cd docs
-npm run docs:dev
-```
-
 ## 📝 文件精簡原則
 
 在創建這個精簡版時，我們遵循以下原則：
@@ -114,20 +96,6 @@ npm run docs:dev
 3. **突出技術亮點** - RLS、Realtime、TypeScript、測試策略
 4. **包含問題解決案例** - Realtime 連線問題的完整分析與修復
 5. **移除開發細節** - 開發筆記、歷史記錄、實驗性功能
-
-## 💡 為什麼需要兩個版本？
-
-### Main 分支 (完整版)
-
-- **用途**: 開發團隊日常使用、技術深度研究
-- **特點**: 包含所有技術細節、開發筆記、API 自動生成文件、歷史決策記錄
-- **適合**: 團隊協作、長期維護、技術傳承
-
-### docs-demo 分支 (展示版)
-
-- **用途**: 面試展示、技術評審、快速了解
-- **特點**: 聚焦核心功能、突出技術亮點、精簡易讀
-- **適合**: 30-40 分鐘的技術面試、對外展示
 
 ## 🚀 啟動文件網站
 
@@ -146,12 +114,4 @@ npm run docs:build
 npm run docs:preview
 ```
 
-訪問: http://localhost:8080
-
-## 📧 聯繫方式
-
-如有問題或建議，請聯繫專案維護者。
-
----
-
-> **Note**: 這個分支會定期從 main 分支同步核心文件的更新，但保持精簡的結構。
+local visit: http://localhost:8080

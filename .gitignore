@@ -251,3 +251,6 @@ error.log
 # 內部規劃文件
 demo_plan.md
 CLAUDE.local.md
+
+# demo 例外
+CLOUD_DEPLOYMENT_CHECKLIST.md
