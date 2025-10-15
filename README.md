@@ -1,4 +1,4 @@
-# 🏪 E-commerce Admin Platform
+# E-commerce Admin Platform
 
 > 企業級電商管理後台系統 - 整合訂單管理、客戶分析、智能通知、活動歸因的全方位解決方案
 
@@ -25,30 +25,30 @@
 
 ---
 
-## 📚 完整技術文件
+## 完整技術文件
 
 **文件站點**: [技術文件中心](./docs/index.md) *(VitePress 技術文件，部署中)*
 
-> 📖 包含 40+ 篇技術文件，涵蓋系統架構、API 規格、部署指南、開發筆記等。建議重點閱讀：
+> 包含 40+ 篇技術文件，涵蓋系統架構、API 規格、部署指南、開發筆記等。建議重點閱讀：
 
 ### 推薦閱讀路徑
 
-**🏗️ 系統架構**
+**系統架構**
 - [系統架構總覽](./docs/02-development/architecture/architecture.md) - 四層架構設計
 - [資料庫設計](./docs/02-development/architecture/database-design.md) - ER 圖與 52 張表結構
 - [ServiceFactory 依賴注入](./docs/02-development/architecture/service-factory.md) - 企業級 API 服務層
 
-**💼 核心業務模塊**
+**核心業務模塊**
 - [通知系統完整指南](./docs/02-development/modules/notification/notification-system-complete-guide.md) - PostgreSQL 觸發器 + Realtime
 - [Campaign 歸因分析](./docs/02-development/modules/campaign/attribution-analysis.md) - 三層歸因權重計算
 - [Analytics 分析系統](./docs/02-development/modules/analytics/overview.md) - 四大分析模塊架構
 
-**🔧 API 參考**
+**API 參考**
 - [User API](./docs/02-development/api/user-api.md) - 47 項權限 + 12 個角色組
 - [Order API](./docs/02-development/api/order-api.md) - 訂單狀態機設計
 - [Customer API](./docs/02-development/api/customer-api.md) - RFM 分群邏輯詳解
 
-**🚀 部署與運維**
+**部署與維運**
 - [完整部署指南](./docs/03-operations/deployment/DEPLOYMENT.md) - Docker/Vercel/Netlify 三種方案
 - [RLS 安全審計](./docs/RLS_AUDIT_SUMMARY.md) - 140 條 RLS 政策，85/100 分安全評級
 
@@ -77,7 +77,7 @@
 
 ---
 
-## 🛠️ 技術棧
+## 技術棧
 
 ### 前端核心
 
@@ -119,7 +119,7 @@
 
 ---
 
-## 🏗️ 系統架構
+## 系統架構
 
 ### 整體架構圖
 
@@ -210,7 +210,7 @@ useCampaignAnalyticsQueries (Vue Query 快取)
 | **Router Session 最佳化** | 初始化耗時 3 秒阻塞首頁 | 懶載入 + 快取策略 + 非同步計算 | 3 秒 → 500ms (83% 改善) | [效能最佳化詳解](./docs/04-guides/dev-notes/ROUTER_SESSION_PERFORMANCE_OPTIMIZATION.md) |
 | **ServiceFactory 架構** | 服務層直接耦合 Supabase | 依賴注入 + 單例管理 + Mock 支援 | 鬆耦合、可測試、環境隔離 | [架構設計詳解](./docs/04-guides/dev-notes/SERVICE_FACTORY_ARCHITECTURE.md) |
 
-> 💡 **深入了解**: 每個挑戰都有完整的技術文件，包含問題分析、解決方案、實作細節與測試驗證。
+> **深入了解**: 每個挑戰都有完整的技術文件，包含問題分析、解決方案、實作細節與測試驗證。
 
 ---
 
@@ -224,11 +224,11 @@ useCampaignAnalyticsQueries (Vue Query 快取)
 | **RFM 客戶分群** | Recency/Frequency/Monetary 評估 | 11 個客戶分群 + 流失預警 | [Customer API](./docs/02-development/api/customer-api.md) |
 | **即時資料訂閱** | Supabase Realtime 多模組監控 | 錯誤追蹤 + 權重分級 + 自動備援 | [Realtime 架構](./docs/02-development/architecture/realtime-architecture.md) |
 
-> 📖 **詳細說明**: 每個模組都有完整的架構設計文件、API 規格、使用範例與最佳實踐。
+> **詳細說明**: 每個模組都有完整的架構設計文件、API 規格、使用範例與最佳實踐。
 
 ---
 
-## 🗄️ 資料庫與後端
+## 資料庫與後端
 
 ### 資料庫設計亮點
 
@@ -246,18 +246,18 @@ useCampaignAnalyticsQueries (Vue Query 快取)
 | **RLS 安全策略** | 行級權限控制 + SECURITY DEFINER | `20251002300000_add_rls_to_analytics...sql` | [RLS 審計報告](./docs/RLS_AUDIT_SUMMARY.md) |
 | **業務健康度引擎** | 7 維度評分 + 850 行 TypeScript | `business-health-analytics/index.ts` | [Edge Functions 指南](./docs/02-development/architecture/edge-functions.md) |
 
-> 📖 **完整文件**: 所有 Migration 與 Edge Functions 的詳細說明請參考 [資料庫設計文件](./docs/02-development/architecture/database-design.md) 與 [API 參考](./docs/02-development/api/)。
+> **完整文件**: 所有 Migration 與 Edge Functions 的詳細說明請參考 [資料庫設計文件](./docs/02-development/architecture/database-design.md) 與 [API 參考](./docs/02-development/api/)。
 
 ---
 
-## 🛠️ 開發環境與工具鏈
+## 開發環境與工具鏈
 
 > **📌 說明**：此為展示專案，以下內容展示完整系統的開發工具鏈設計與工作流程。
 
 **前端工具鏈**: Vite + TypeScript + Vitest (471 測試通過) + ESLint + Husky
 **後端工具鏈**: Docker Desktop + Supabase CLI + PostgreSQL + Edge Functions
 
-> 🛠️ **詳細說明**: 完整的開發流程、環境配置、DevOps 自動化腳本請參考 [部署指南](./docs/03-operations/deployment/DEPLOYMENT.md)。
+> **詳細說明**: 完整的開發流程、環境配置、DevOps 自動化腳本請參考 [部署指南](./docs/03-operations/deployment/DEPLOYMENT.md)。
 
 ---
 
@@ -307,7 +307,7 @@ ecommerce-admin-platform/
 
 ---
 
-## 🔧 DevOps 自動化
+## DevOps 自動化
 
 | 工具 | 功能 | 行數 | 技術亮點 |
 |------|------|------|----------|
@@ -315,7 +315,7 @@ ecommerce-admin-platform/
 | **prod.sh** | 生產環境管理 | 175 行 | 一鍵啟動/停止 + 錯誤處理 + 健康檢查 |
 | **Supabase CLI** | 資料庫管理 | - | Migration 管理 + 本地開發環境 |
 
-> 🛠️ **使用指南**: 詳細的 DevOps 工作流程與腳本使用說明請參考 [部署指南](./docs/03-operations/deployment/DEPLOYMENT.md)。
+> **使用指南**: 詳細的 DevOps 工作流程與腳本使用說明請參考 [部署指南](./docs/03-operations/deployment/DEPLOYMENT.md)。
 
 ---
 
@@ -361,9 +361,7 @@ function getSidebarItemsRecursive(dir: string, depth: number = 0): SidebarItem[]
 
 ---
 
-## 🎓 學習重點
-
-如果您是面試官或技術審閱者，建議重點關注以下檔案：
+## 學習重點
 
 ### 1. 架構設計能力
 
@@ -428,8 +426,8 @@ function getSidebarItemsRecursive(dir: string, depth: number = 0): SidebarItem[]
 
 **開發者**: [楊雅喬]
 
-- 📧 Email: chiaoyyc@gmail.com
-- 💼 LinkedIn: [www.linkedin.com/in/yachiaoyang](https://www.linkedin.com/in/yachiaoyang)
-- 🐙 GitHub: [github.com/chiao-yyc](https://github.com/chiao-yyc)
-- 🌐 個人網站: [yachiaoyang.dev/](https://yachiaoyang.dev/)
+- Email: chiaoyyc@gmail.com
+- LinkedIn: [www.linkedin.com/in/yachiaoyang](https://www.linkedin.com/in/yachiaoyang)
+- GitHub: [github.com/chiao-yyc](https://github.com/chiao-yyc)
+- 個人網站: [yachiaoyang.dev/](https://yachiaoyang.dev/)
 

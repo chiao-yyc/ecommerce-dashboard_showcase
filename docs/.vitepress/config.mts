@@ -8,16 +8,16 @@ export default defineConfig({
       port: 8080,
     },
   },
-  title: "電商儀表板文檔",
+  title: "電商儀表板文件",
   description:
-    "Vue.js 電商後台管理系統完整文檔 - 企業級分析平台，包含 Campaign 管理、四大分析系統、通知管理等完整功能",
+    "Vue.js 電商後台管理系統完整文件 - 企業級分析平台，包含 Campaign 管理、四大分析系統、通知管理等完整功能",
   lang: "zh-TW",
 
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "首頁", link: "/" },
-      { text: "文檔索引", link: "/documentation-index" },
+      { text: "文件索引", link: "/documentation-index" },
       {
         text: "快速導航",
         items: [
@@ -47,8 +47,8 @@ export default defineConfig({
           "zh-TW": {
             translations: {
               button: {
-                buttonText: "搜尋文檔",
-                buttonAriaLabel: "搜尋文檔",
+                buttonText: "搜尋文件",
+                buttonAriaLabel: "搜尋文件",
               },
               modal: {
                 searchBox: {
@@ -88,7 +88,7 @@ export default defineConfig({
       },
     },
 
-    // 文檔底部編輯連結
+    // 文件底部編輯連結
     editLink: {
       pattern:
         "https://github.com/your-repo/ecommerce-dashboard/edit/main/docs/:path",
@@ -140,19 +140,19 @@ export default defineConfig({
       {
         name: "keywords",
         content:
-          "Vue.js, TypeScript, 電商, 儀表板, Analytics, Campaign, 分析平台, 企業級, 文檔",
+          "Vue.js, TypeScript, 電商, 儀表板, Analytics, Campaign, 分析平台, 企業級, 文件",
       },
     ],
     [
       "meta",
-      { property: "og:title", content: "電商儀表板文檔 - 企業級分析平台" },
+      { property: "og:title", content: "電商儀表板文件 - 企業級分析平台" },
     ],
     [
       "meta",
       {
         property: "og:description",
         content:
-          "Vue.js 電商後台管理系統完整文檔 - 企業級分析平台，包含 Campaign 管理、四大分析系統、通知管理等完整功能",
+          "Vue.js 電商後台管理系統完整文件 - 企業級分析平台，包含 Campaign 管理、四大分析系統、通知管理等完整功能",
       },
     ],
     ["meta", { property: "og:type", content: "website" }],
@@ -175,7 +175,7 @@ export default defineConfig({
 
   // 精細化失效連結忽略配置（VitePress 官方最佳實踐）
   ignoreDeadLinks: [
-    // 忽略 localhost URL（開發文檔中的範例連結）
+    // 忽略 localhost URL（開發文件中的範例連結）
     /^https?:\/\/localhost/,
 
     // 忽略 127.0.0.1（Supabase 本地實例）
